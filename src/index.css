@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light theme - softer grays like rauchg.com */
+  --text: 20 20 20;
+  --main: 255 255 255;
+  --border: 40 40 40;
+  --darkBorder: 40 40 40;
+  --shadow-light: 4px 4px 0px rgb(40 40 40);
+  --shadow-dark: 0px 0px 0px transparent;
+  --boxShadowX: 4px;
+  --boxShadowY: 4px;
+  --reverseBoxShadowX: -4px;
+  --reverseBoxShadowY: -4px;
+  --mainAccent: 229 229 229;
+  --mainAccent2: 20 20 20;
+  --radius: 0px;
+}
+
+.dark {
+  /* Dark theme - softer grays instead of pure black */
+  --text: 240 240 240;
+  --darkText: 240 240 240;
+  --main: 20 20 20;
+  --darkBg: 15 15 15;
+  --border: 240 240 240;
+  --darkBorder: 240 240 240;
+  --shadow-light: 0px 0px 0px transparent;
+  --shadow-dark: 4px 4px 0px rgb(240 240 240);
+  --boxShadowX: 4px;
+  --boxShadowY: 4px;
+  --reverseBoxShadowX: -4px;
+  --reverseBoxShadowY: -4px;
+  --mainAccent: 51 51 51;
+  --mainAccent2: 240 240 240;
+}
+
+@theme inline {
+  --color-text: rgb(var(--text));
+  --color-darkText: rgb(var(--text));
+  --color-main: rgb(var(--main));
+  --color-darkBg: rgb(var(--darkBg));
+  --color-border: rgb(var(--border));
+  --color-darkBorder: rgb(var(--darkBorder));
+  --color-mainAccent: rgb(var(--mainAccent));
+  --color-mainAccent2: rgb(var(--mainAccent2));
+  --radius-base: var(--radius);
+  --shadow-light: var(--shadow-light);
+  --shadow-dark: var(--shadow-dark);
+}
+
+@layer base {
+  body {
+    @apply bg-main text-text;
+  }
+}
