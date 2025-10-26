@@ -14,23 +14,23 @@ export function Nav() {
 
   return (
     <nav className="sticky top-0 z-50 bg-main border-b border-border">
-      <div className="flex items-center justify-between px-6 py-4">
+      <div className="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
         {/* Left: Profile Info */}
         <button
           onClick={() => handleNavigation('/')}
-          className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 sm:gap-3 hover:opacity-80 transition-opacity"
         >
           {/* Avatar */}
           <img
             src="/avatar.png"
             alt="Ahmed Felfel"
-            className="w-10 h-10 border border-border flex-shrink-0 object-cover rounded-sm"
+            className="w-9 h-9 sm:w-11 sm:h-11 border border-border flex-shrink-0 object-cover rounded-sm"
           />
 
           {/* Name and Title */}
-          <div className="hidden sm:block">
-            <h2 className="font-bold text-base leading-tight">Ahmed Felfel</h2>
-            <p className="text-xs text-border/60">AI × Product × GTM × ENG</p>
+          <div className="flex flex-col gap-0 items-start">
+            <h2 className="font-bold text-sm sm:text-lg tracking-wide leading-none m-0">Ahmed Felfel</h2>
+            <p className="text-xs sm:text-sm text-border/60 leading-none m-0 mt-0.5">AI × GTM × ENG</p>
           </div>
         </button>
 
@@ -39,7 +39,7 @@ export function Nav() {
           <button
             onClick={() => handleNavigation('/')}
             className={`text-sm transition-colors ${
-              isActive('/') ? 'text-text underline underline-offset-4' : 'text-border hover:text-text'
+              isActive('/') ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2' : 'text-border hover:text-text'
             }`}
           >
             About
@@ -48,7 +48,7 @@ export function Nav() {
             onClick={() => handleNavigation('/writing')}
             className={`text-sm transition-colors ${
               isActive('/writing')
-                ? 'text-text underline underline-offset-4'
+                ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2'
                 : 'text-border hover:text-text'
             }`}
           >
@@ -57,9 +57,9 @@ export function Nav() {
         </div>
 
         {/* Right: Social Links + Theme Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           {/* GitHub */}
-          <Button variant="ghost" size="icon" asChild>
+          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
             <a
               href="https://github.com/paprikaf"
               target="_blank"
@@ -70,7 +70,7 @@ export function Nav() {
                 role="img"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                 fill="currentColor"
               >
                 <title>GitHub</title>
@@ -80,7 +80,7 @@ export function Nav() {
           </Button>
 
           {/* LinkedIn */}
-          <Button variant="ghost" size="icon" asChild>
+          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
             <a
               href="https://www.linkedin.com/in/ahmed-felfel-080895/"
               target="_blank"
@@ -91,7 +91,7 @@ export function Nav() {
                 role="img"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                 fill="currentColor"
               >
                 <title>LinkedIn</title>
@@ -101,7 +101,7 @@ export function Nav() {
           </Button>
 
           {/* X (Twitter) */}
-          <Button variant="ghost" size="icon" asChild>
+          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
             <a
               href="https://x.com/zpaprikaf"
               target="_blank"
@@ -112,7 +112,7 @@ export function Nav() {
                 role="img"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-4 h-4"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                 fill="currentColor"
               >
                 <title>X</title>
