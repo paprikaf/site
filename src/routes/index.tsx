@@ -8,9 +8,17 @@ function IndexComponent() {
         <h1 className="text-4xl md:text-5xl font-bold mb-6">About</h1>
         <p className="text-lg md:text-xl text-border/80 leading-relaxed">
           Product engineer exploring AI agents and MCP. I bridge strategy and
-          execution for GTM systems at Builder.io. Passionate about automation
-          and UX, I care about how tools feel as much as how they scale. I write
-          to make sense of the work.
+          execution for GTM systems at{' '}
+          <a
+            href="https://www.builder.io"
+            className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Builder.io
+          </a>
+          . Passionate about automation and UX, I care about how tools feel as
+          much as how they scale. I write to make sense of the work.
         </p>
       </section>
 
