@@ -36,7 +36,6 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       variant="default"
       size="icon"
-      className="fixed top-6 right-6"
       aria-label="Toggle theme"
     >
       <Sun className="hidden dark:inline h-5 w-5 stroke-foreground" />
