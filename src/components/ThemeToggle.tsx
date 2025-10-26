@@ -34,9 +34,10 @@ export function ThemeToggle() {
   return (
     <Button
       onClick={toggleTheme}
-      variant="default"
+      variant="ghost"
       size="icon"
       aria-label="Toggle theme"
+      className="rounded-sm"
     >
       <Sun className="hidden dark:inline h-5 w-5 stroke-foreground" />
       <Moon className="inline dark:hidden h-5 w-5 stroke-foreground" />
