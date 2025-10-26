@@ -10,7 +10,9 @@ function ArticleComponent() {
     return (
       <div className="mx-auto max-w-2xl px-6 py-12 md:py-20">
         <h1 className="text-3xl font-bold mb-4">Article Not Found</h1>
-        <p className="text-border/70 mb-6">The article you're looking for doesn't exist.</p>
+        <p className="text-border/70 mb-6">
+          The article you're looking for doesn't exist.
+        </p>
         <a
           href="/writing"
           className="inline-block text-base font-semibold text-text underline underline-offset-4 hover:opacity-70 transition-opacity"
@@ -40,7 +42,10 @@ function ArticleComponent() {
               <span>•</span>
               <div className="flex gap-2 flex-wrap">
                 {article.tags.map((tag) => (
-                  <span key={tag} className="px-2 py-1 bg-mainAccent rounded text-xs">
+                  <span
+                    key={tag}
+                    className="px-2 py-1 bg-mainAccent rounded text-xs"
+                  >
                     {tag}
                   </span>
                 ))}

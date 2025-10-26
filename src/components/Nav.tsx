@@ -29,8 +29,12 @@ export function Nav() {
 
           {/* Name and Title */}
           <div className="flex flex-col gap-0 items-start">
-            <h2 className="font-bold text-sm sm:text-lg tracking-wide leading-none m-0">Ahmed Felfel</h2>
-            <p className="text-xs sm:text-sm text-border/60 leading-none m-0 mt-0.5">AI × GTM × ENG</p>
+            <h2 className="font-bold text-sm sm:text-lg tracking-wide leading-none m-0">
+              Ahmed Felfel
+            </h2>
+            <p className="text-xs sm:text-sm text-border/60 leading-none m-0 mt-0.5">
+              AI × GTM × ENG
+            </p>
           </div>
         </button>
 
@@ -39,7 +43,9 @@ export function Nav() {
           <button
             onClick={() => handleNavigation('/')}
             className={`text-sm transition-colors ${
-              isActive('/') ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2' : 'text-border hover:text-text'
+              isActive('/')
+                ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2'
+                : 'text-border hover:text-text'
             }`}
           >
             About
@@ -59,7 +65,12 @@ export function Nav() {
         {/* Right: Social Links + Theme Toggle */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* GitHub */}
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
             <a
               href="https://github.com/paprikaf"
               target="_blank"
@@ -80,7 +91,12 @@ export function Nav() {
           </Button>
 
           {/* LinkedIn */}
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
             <a
               href="https://www.linkedin.com/in/ahmed-felfel-080895/"
               target="_blank"
@@ -101,7 +117,12 @@ export function Nav() {
           </Button>
 
           {/* X (Twitter) */}
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
             <a
               href="https://x.com/zpaprikaf"
               target="_blank"

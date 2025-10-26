@@ -1,6 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { ArticleCard } from '@/components/ArticleCard';
-import { groupPreviewsByYear, sortPreviews, calculateReadTime } from '@/lib/markdown';
+import {
+  groupPreviewsByYear,
+  sortPreviews,
+  calculateReadTime,
+} from '@/lib/markdown';
 import type { ArticlePreview } from '@/types/article';
 import articles from '@/data/articles';
 
@@ -20,7 +24,9 @@ function WritingComponent() {
   const grouped = groupPreviewsByYear(sorted);
 
   // Get years in descending order
-  const years = Array.from(grouped.keys()).sort((a, b) => parseInt(b) - parseInt(a));
+  const years = Array.from(grouped.keys()).sort(
+    (a, b) => parseInt(b) - parseInt(a)
+  );
 
   return (
     <div className="mx-auto max-w-2xl px-6 py-12 md:py-20">
@@ -28,7 +34,8 @@ function WritingComponent() {
       <section className="mb-16">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Writing</h1>
         <p className="text-lg text-border/80">
-          Thoughts on product engineering, AI, and career transitions. Updated regularly.
+          Thoughts on product engineering, AI, and career transitions. Updated
+          regularly.
         </p>
       </section>
 
