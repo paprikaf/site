@@ -30,7 +30,7 @@ function IndexComponent() {
       </section>
 
       {/* Currently */}
-      <section className="mb-20 pb-12 border-b border-border/20">
+      <section className="mb-6 pb-12 border-b border-border/20">
         <h2 className="text-2xl font-bold mb-6">Currently</h2>
         <div className="space-y-3 text-base leading-relaxed text-border/80">
           <div>
@@ -50,17 +50,14 @@ function IndexComponent() {
         </div>
       </section>
 
-      <section>
-        {/* Writing Link */}
-        {/* <div className="mt-12 pt-12 border-t border-border/20"> */}
-          <p className="text-border/70 mb-3">Interested in my thoughts on tech, product, and AI?</p>
-          <a
-            href="/writing"
-            className="inline-block text-base font-semibold text-text underline underline-offset-4 hover:opacity-70 transition-opacity"
-          >
-            Read my writing →
-          </a>
-        {/* </div> */}
+      <section className="mt-1">
+        <p className="text-border/70 mb-3">Interested in my thoughts on tech, product, and AI?</p>
+        <a
+          href="/writing"
+          className="inline-block text-base font-semibold text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:opacity-70 transition-opacity"
+        >
+          Read my writing →
+        </a>
       </section>
     </div>
   );
