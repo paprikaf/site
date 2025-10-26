@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Mail, Github, Twitter } from 'lucide-react';
 
 function IndexComponent() {
   return (
@@ -51,39 +50,9 @@ function IndexComponent() {
         </div>
       </section>
 
-      {/* Get in Touch */}
       <section>
-        <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-        <div className="space-y-3">
-          <a
-            href="mailto:hello@example.com"
-            className="flex items-center gap-3 text-base text-border hover:text-text transition-colors group"
-          >
-            <Mail className="w-5 h-5 flex-shrink-0" />
-            <span className="group-hover:underline">Email</span>
-          </a>
-          <a
-            href="https://github.com/paprikaf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-base text-border hover:text-text transition-colors group"
-          >
-            <Github className="w-5 h-5 flex-shrink-0" />
-            <span className="group-hover:underline">GitHub</span>
-          </a>
-          <a
-            href="https://x.com/zpaprikaf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-base text-border hover:text-text transition-colors group"
-          >
-            <Twitter className="w-5 h-5 flex-shrink-0" />
-            <span className="group-hover:underline">X / Twitter</span>
-          </a>
-        </div>
-
         {/* Writing Link */}
-        <div className="mt-12 pt-12 border-t border-border/20">
+        {/* <div className="mt-12 pt-12 border-t border-border/20"> */}
           <p className="text-border/70 mb-3">Interested in my thoughts on tech, product, and AI?</p>
           <a
             href="/writing"
@@ -91,7 +60,7 @@ function IndexComponent() {
           >
             Read my writing →
           </a>
-        </div>
+        {/* </div> */}
       </section>
     </div>
   );

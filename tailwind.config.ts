@@ -8,6 +8,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Sora', 'sans-serif'],
+      },
       colors: {
         dark: '#0a0a0a',
         light: '#ffffff',
