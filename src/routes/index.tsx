@@ -6,7 +6,7 @@ function IndexComponent() {
     <div className="mx-auto max-w-2xl px-6 py-12 md:py-20">
       {/* Hero Section */}
       <section className="mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Ahmed Felfel</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">About</h1>
         <p className="text-lg md:text-xl text-border/80 leading-relaxed">
           Product engineer obsessed with building things that matter. I bridge the gap between
           vision and execution, combining systems thinking with practical engineering.
