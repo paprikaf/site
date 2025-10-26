@@ -40,4 +40,6 @@ function Badge({
   )
 }
 
-export { Badge, badgeVariants }
+export { Badge }
+export { badgeVariants }
+export type { VariantProps }
