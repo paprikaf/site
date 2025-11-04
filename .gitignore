@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Context directory
-@context
+context/

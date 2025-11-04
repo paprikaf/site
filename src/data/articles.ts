@@ -163,7 +163,7 @@ But here's the thing: automation handles ninety percent of cases. The dashboard 
 
 That's why we built manual overrides. With audit trails. Every override gets logged. Who did it. When. Why. Full transparency. Because when you give humans control, you need visibility.
 
-The HubSpot integration runs in the background. It syncs accounts. Maps owners. Links organizations. Prevents duplicates. Keeps everything in sync. The CS team works in HubSpot. Academy stays current. No manual data entry. No drift.
+The HubSpot integration runs in the background, syncing accounts, mapping owners, and linking organizations to prevent duplicates. But it's a hybrid enrichment system. The CS team works in both HubSpot and Academy. They can set call bookings, add recordings after sessions, write notes, and make changes directly in Academy. HubSpot remains the source of truth for accounts and owners, while Academy enriches that foundation with session details, progress tracking, and onboarding context. No manual data entry for the basics. No drift on core account data. But full flexibility where it matters most.
 
 Three surfaces. One foundation. That's the architecture. But how does it actually work? Let me pull back the curtain.
 
