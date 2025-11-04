@@ -54,13 +54,14 @@ function IndexComponent() {
             I build systems that connect ideas to execution. At Builder.io, I
             focus on GTM automation, partner enablement, and AI integrations.
             Recent work includes our CMS MCP Server, giving the tools necessary
-            to mange content and build through prompting
+            to manage content and build through prompting
           </p>
           <p>
-            I like projects that solve real pain and scale well — from Academy,
-            our self-serve learning platform, to internal agent workflows that
-            remove repetitive work. On the side, I maintain Discogs SDK - a
-            library offering seamless OAuth and API access for Discogs.
+            I focus on projects that solve real problems and scale well. This
+            includes Academy, our customer success, on-demand learning and
+            certification platform. I also build internal workflows that
+            automate repetitive work. On the side, I maintain Discogs SDK — a
+            library for OAuth and API access.
           </p>
         </div>
       </section>
@@ -74,15 +75,15 @@ function IndexComponent() {
               Building &amp; Learning
             </p>
             <p>
-              Exploring MCP servers and AI agent architectures. Documenting my
-              journey through practical guides and case studies.
+              Exploring AI systems and agent architectures. I document what I
+              learn through guides and case studies.
             </p>
           </div>
           <div>
             <p className="font-semibold text-text mb-1">Writing</p>
             <p>
-              Sharing notes on MCP ecosystems, productivity workflows, and
-              navigating the path from IC to partnerships/leadership.
+              Sharing notes on productivity and career growth. Topics include
+              moving from hands-on work to team leadership roles.
             </p>
           </div>
         </div>

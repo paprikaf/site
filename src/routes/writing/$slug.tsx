@@ -45,7 +45,8 @@ function ArticleComponent() {
   }
 
   const hasToggle = article.contextContent && article.outputContent;
-  const activeContent = viewMode === 'context' ? article.contextContent : article.outputContent;
+  const activeContent =
+    viewMode === 'context' ? article.contextContent : article.outputContent;
   const activeHtml = viewMode === 'context' ? contextHtml : outputHtml;
   const readTime = calculateReadTime(activeContent || article.content);
 
