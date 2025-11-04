@@ -1,10 +1,128 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { formatDate, calculateReadTime } from '@/lib/markdown';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import articles from '@/data/articles';
+
+function ImageLightbox({ src, alt, isOpen, onClose }: { src: string; alt: string; isOpen: boolean; onClose: () => void }) {
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const imageRef = useRef<HTMLImageElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      setScale(1);
+      setPosition({ x: 0, y: 0 });
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const handleWheel = (e: React.WheelEvent) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? 0.9 : 1.1;
+    setScale((prev) => Math.max(0.5, Math.min(prev * delta, 5)));
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (scale > 1) {
+      setIsDragging(true);
+      setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y });
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && scale > 1) {
+      setPosition({
+        x: e.clientX - dragStart.x,
+        y: e.clientY - dragStart.y,
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const resetZoom = () => {
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div
+      ref={containerRef}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+      onClick={(e) => {
+        if (e.target === containerRef.current) onClose();
+      }}
+      onWheel={handleWheel}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors p-2"
+        aria-label="Close"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      
+      <div className="absolute top-4 left-4 z-10 flex gap-2">
+        <button
+          onClick={() => setScale((prev) => Math.min(prev + 0.25, 5))}
+          className="bg-black/50 text-white px-3 py-1 rounded hover:bg-black/70 transition-colors text-sm"
+          aria-label="Zoom in"
+        >
+          +
+        </button>
+        <button
+          onClick={() => setScale((prev) => Math.max(prev - 0.25, 0.5))}
+          className="bg-black/50 text-white px-3 py-1 rounded hover:bg-black/70 transition-colors text-sm"
+          aria-label="Zoom out"
+        >
+          −
+        </button>
+        <button
+          onClick={resetZoom}
+          className="bg-black/50 text-white px-3 py-1 rounded hover:bg-black/70 transition-colors text-sm"
+          aria-label="Reset zoom"
+        >
+          Reset
+        </button>
+        <span className="bg-black/50 text-white px-3 py-1 rounded text-sm">
+          {Math.round(scale * 100)}%
+        </span>
+      </div>
+
+      <img
+        ref={imageRef}
+        src={src}
+        alt={alt}
+        className="max-w-[90vw] max-h-[90vh] object-contain transition-transform duration-200 cursor-move"
+        style={{
+          transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+        }}
+        onMouseDown={handleMouseDown}
+        draggable={false}
+      />
+    </div>
+  );
+}
 
 function ArticleComponent() {
   const { slug } = Route.useParams();
@@ -12,11 +130,53 @@ function ArticleComponent() {
   const [viewMode, setViewMode] = useState<'context' | 'output'>('context');
   const [contextHtml, setContextHtml] = useState<string>('');
   const [outputHtml, setOutputHtml] = useState<string>('');
+  const [contentHtml, setContentHtml] = useState<string>('');
+  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
 
   useEffect(() => {
     const processMarkdown = async (content: string) => {
       const processor = unified().use(remarkParse).use(remarkHtml);
-      return String(await processor.process(content));
+      let html = String(await processor.process(content));
+      
+      // Ensure images are properly rendered (handle markdown images that might not have been converted)
+      // This regex matches markdown image syntax that wasn't converted: ![alt](path)
+      html = html.replace(
+        /!\[([^\]]*)\]\(([^)]+)\)/g,
+        (match, alt, src) => {
+          // URL encode the path if it has spaces
+          const encodedSrc = src.replace(/ /g, '%20');
+          return `<img src="${encodedSrc}" alt="${alt}" class="max-w-full h-auto rounded-lg my-8 cursor-zoom-in hover:opacity-90 transition-opacity" data-lightbox-src="${encodedSrc}" data-lightbox-alt="${alt}" />`;
+        }
+      );
+      
+      // Also add click handlers to existing img tags
+      html = html.replace(
+        /<img([^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*)>/g,
+        (match, attrs, src, alt) => {
+          if (!attrs.includes('data-lightbox-src')) {
+            const encodedSrc = src.replace(/ /g, '%20');
+            return `<img${attrs} class="${attrs.includes('class=') ? attrs.match(/class="([^"]*)"/)?.[1] || '' : ''} cursor-zoom-in hover:opacity-90 transition-opacity" data-lightbox-src="${encodedSrc}" data-lightbox-alt="${alt || ''}" />`;
+          }
+          return match;
+        }
+      );
+      
+      // Replace placeholder images with styled placeholder divs
+      html = html.replace(
+        /<img[^>]*src="placeholder:([^"]+)"[^>]*alt="([^"]*)"[^>]*>/g,
+        (match, placeholderId, altText) => {
+          const placeholderName = altText || placeholderId.replace(/figma-diagram-/, '').replace(/-/g, ' ');
+          return `<div class="diagram-placeholder" data-placeholder="${placeholderId}">
+            <div class="diagram-placeholder-content">
+              <p class="diagram-placeholder-label">📊 Diagram Placeholder</p>
+              <p class="diagram-placeholder-name">${placeholderName}</p>
+              <p class="diagram-placeholder-note">Replace with actual diagram image</p>
+            </div>
+          </div>`;
+        }
+      );
+      
+      return html;
     };
 
     if (article?.contextContent) {
@@ -24,6 +184,9 @@ function ArticleComponent() {
     }
     if (article?.outputContent) {
       processMarkdown(article.outputContent).then(setOutputHtml);
+    }
+    if (article?.content && !article.contextContent) {
+      processMarkdown(article.content).then(setContentHtml);
     }
   }, [article]);
 
@@ -45,6 +208,27 @@ function ArticleComponent() {
   }
 
   const hasToggle = article.contextContent && article.outputContent;
+
+  // Handle image clicks for lightbox
+  useEffect(() => {
+    const handleImageClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'IMG' && target.hasAttribute('data-lightbox-src')) {
+        e.preventDefault();
+        const src = target.getAttribute('data-lightbox-src') || '';
+        const alt = target.getAttribute('data-lightbox-alt') || '';
+        setLightboxImage({ src, alt });
+      }
+    };
+
+    const contentDiv = document.querySelector('[data-article-content]');
+    if (contentDiv) {
+      contentDiv.addEventListener('click', handleImageClick);
+      return () => {
+        contentDiv.removeEventListener('click', handleImageClick);
+      };
+    }
+  }, [contentHtml, contextHtml, outputHtml]);
   const activeContent =
     viewMode === 'context' ? article.contextContent : article.outputContent;
   const activeHtml = viewMode === 'context' ? contextHtml : outputHtml;
@@ -108,15 +292,26 @@ function ArticleComponent() {
         {/* Article Content */}
         <div className="prose prose-invert max-w-none mb-12 leading-relaxed">
           <div
+            data-article-content
             dangerouslySetInnerHTML={{
               __html: hasToggle
                 ? activeHtml || `<p>${activeContent}</p>`
-                : article.html || `<p>${article.content}</p>`,
+                : contentHtml || article.html || `<p>${article.content}</p>`,
             }}
-            className="space-y-6 text-base text-border/80 prose-headings:text-text prose-headings:font-bold prose-a:text-text prose-a:underline hover:prose-a:opacity-70 prose-code:text-xs prose-code:bg-mainAccent prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-mainAccent prose-pre:p-4 prose-pre:rounded-lg"
+            className="space-y-6 text-base text-border/80 prose-headings:text-text prose-headings:font-bold prose-a:text-text prose-a:underline hover:prose-a:opacity-70 prose-code:text-xs prose-code:bg-mainAccent prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-mainAccent prose-pre:p-4 prose-pre:rounded-lg prose-img:rounded-lg prose-img:my-8 [&_img]:cursor-zoom-in [&_img]:hover:opacity-90 [&_img]:transition-opacity [&_.diagram-placeholder]:my-8 [&_.diagram-placeholder]:border-2 [&_.diagram-placeholder]:border-dashed [&_.diagram-placeholder]:border-border/30 [&_.diagram-placeholder]:rounded-lg [&_.diagram-placeholder]:p-12 [&_.diagram-placeholder]:text-center [&_.diagram-placeholder-content]:space-y-2 [&_.diagram-placeholder-label]:text-xl [&_.diagram-placeholder-name]:text-base [&_.diagram-placeholder-name]:font-semibold [&_.diagram-placeholder-name]:text-text [&_.diagram-placeholder-note]:text-sm [&_.diagram-placeholder-note]:text-border/60"
           />
         </div>
       </article>
+
+      {/* Image Lightbox */}
+      {lightboxImage && (
+        <ImageLightbox
+          src={lightboxImage.src}
+          alt={lightboxImage.alt}
+          isOpen={!!lightboxImage}
+          onClose={() => setLightboxImage(null)}
+        />
+      )}
 
       {/* Navigation */}
       <div className="pt-8 border-t border-border/20">
