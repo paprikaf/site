@@ -232,7 +232,7 @@ function ArticleComponent() {
 
       // Ensure images are properly rendered (handle markdown images that might not have been converted)
       // This regex matches markdown image syntax that wasn't converted: ![alt](path)
-      html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+      html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_match, alt, src) => {
         // URL encode the path if it has spaces
         const encodedSrc = src.replace(/ /g, '%20');
         return `<img src="${encodedSrc}" alt="${alt}" class="max-w-full h-auto rounded-lg my-8 cursor-zoom-in hover:opacity-90 transition-opacity" data-lightbox-src="${encodedSrc}" data-lightbox-alt="${alt}" />`;
@@ -253,7 +253,7 @@ function ArticleComponent() {
       // Replace placeholder images with styled placeholder divs
       html = html.replace(
         /<img[^>]*src="placeholder:([^"]+)"[^>]*alt="([^"]*)"[^>]*>/g,
-        (match, placeholderId, altText) => {
+        (_match, placeholderId, altText) => {
           const placeholderName =
             altText ||
             placeholderId.replace(/figma-diagram-/, '').replace(/-/g, ' ');
@@ -268,7 +268,7 @@ function ArticleComponent() {
       );
 
       // Add yellow underline styling to all links using inline styles for highest specificity
-      html = html.replace(/<a([^>]*)>/g, (match, attrs) => {
+      html = html.replace(/<a([^>]*)>/g, (_match, attrs) => {
         // Remove any existing style attribute to avoid conflicts
         let cleanAttrs = attrs.replace(/style="[^"]*"/g, '');
 
@@ -277,7 +277,7 @@ function ArticleComponent() {
           // Add our classes and inline style to existing class attribute
           cleanAttrs = cleanAttrs.replace(
             /class="([^"]*)"/,
-            (classMatch, existingClasses) => {
+            (_classMatch: string, existingClasses: string) => {
               const newClasses =
                 `${existingClasses} text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors`.trim();
               return `class="${newClasses}" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
@@ -367,7 +367,7 @@ function ArticleComponent() {
 
   // Handle image clicks for lightbox
   useEffect(() => {
-    const handleImageClick = (e: MouseEvent) => {
+    const handleImageClick = (e: Event) => {
       const target = e.target as HTMLElement;
       if (
         target.tagName === 'IMG' &&
