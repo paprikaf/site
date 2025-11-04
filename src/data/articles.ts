@@ -125,8 +125,6 @@ But here's what happened: once you solve one problem, you see patterns everywher
 
 Today, Academy serves three surfaces. Each solves a different problem. But they're all built on the same foundation.
 
-![System Architecture Diagram](/diagrams/Academy System Architecture.png)
-
 ### The Learning Portal
 
 This is where it started. Partners and customers access courses. Watch videos. Take quizzes. Get certified.
@@ -151,8 +149,6 @@ Here's how it works: organizations get assigned a plan. Different plans for diff
 
 Sessions unlock in order. You can't skip ahead. That's intentional. Onboarding is a journey, not a sprint. But the system is flexible. If someone needs to move faster, we can override. Human judgment beats rigid rules.
 
-![Module to Session Unlock Flow](placeholder:figma-diagram-module-unlock)
-
 ### The CS Dashboard
 
 This is the command center. Where we see everything. Manage accounts. Assign owners. Handle exceptions.
@@ -164,8 +160,6 @@ But here's the thing: automation handles ninety percent of cases. The dashboard 
 That's why we built manual overrides. With audit trails. Every override gets logged. Who did it. When. Why. Full transparency. Because when you give humans control, you need visibility.
 
 The HubSpot integration runs in the background. It syncs accounts. Maps owners. Links organizations. Prevents duplicates. Keeps everything in sync. The CS team works in HubSpot. Academy stays current. No manual data entry. No drift.
-
-![HubSpot Sync Flow](placeholder:figma-diagram-hubspot-sync)
 
 Three surfaces. One foundation. That's the architecture. But how does it actually work? Let me pull back the curtain.
 
@@ -187,57 +181,13 @@ HubSpot is the source of truth for accounts, owners, and customer stages. We syn
 
 The tech stack is boring. That's the point. Next.js. Convex. Builder CMS. HubSpot. Tailwind. Nothing fancy. Everything proven. When you're moving fast, you want tools that don't fight you.
 
-### The Flow
-
-Here's what happens when someone completes a module.
-
-They finish. Click done. The system records the completion. That's step one.
-
-Then the system looks up. Are they part of an organization? Do they have checkpoints assigned? It checks membership. It counts completions. It calculates progress.
-
-When enough people complete the checkpoints, the gate opens. The session unlocks. It becomes bookable. Simple logic. Complex reality.
-
-![Module to Session Unlock Flow](placeholder:figma-diagram-module-unlock)
-
-### Session Unlock Logic
-
-Sessions unlock in a specific order. Like a combination lock. You need the right sequence.
-
-First, check if someone manually locked it. Manual lock beats everything. That's the highest priority.
-
-Next, check if someone manually unlocked it. Sometimes you need exceptions. A CEO with a tight schedule. A customer who needs to move fast. Manual unlock allows that.
-
-Then check the sequence. Can't unlock session three if session two isn't done. That's intentional. Onboarding is linear for a reason.
-
-Finally, check the threshold. Did enough people complete the checkpoints? If yes, unlock. If no, wait.
-
-![Session Status Precedence](placeholder:figma-diagram-session-precedence)
-
-This precedence system handles edge cases. It respects human judgment. But it defaults to automation. That's the balance.
-
-### The HubSpot Sync
-
-HubSpot runs the show. The CS team lives there. They manage accounts. Assign owners. Track stages. Academy needs to stay in sync.
-
-So we built a sync. It runs periodically. Pulls accounts. Maps owners. Links organizations. Prevents duplicates.
-
-The sync is smart. It looks for existing accounts before creating new ones. It links organizations automatically. It prevents data drift.
-
-![HubSpot Sync Flow](placeholder:figma-diagram-hubspot-sync)
-
-The key insight: HubSpot is the source of truth. We read from it. We never write to it. That prevents conflicts. Keeps everyone aligned.
-
 ### The Data Model
 
 The system tracks progress at different levels. Individual users complete modules. Organizations complete checkpoints. Sessions unlock based on both.
 
 A bridge table connects content to progress. Checkpoints in Builder CMS map to modules in the system. This decoupling is crucial. Change content without touching code. Change code without touching content.
 
-Progress tracking stores completion status. Who finished what. When. Simple boolean tracking. But powerful when aggregated.
-
-Account data syncs from HubSpot. Owner assignments. Customer stages. Organization links. Everything stays current. No manual updates. No stale data.
-
-Plans define the journey. Different plans for different needs. Each plan has sessions. Sessions have checkpoints. Checkpoints gate progress. It's turtles all the way down.
+Plans define the journey. Different plans for different needs. Each plan has sessions. Sessions have checkpoints. Checkpoints gate progress.
 
 The architecture is elegant in its simplicity. But it didn't start that way. It evolved. And the evolution tells a story.
 
