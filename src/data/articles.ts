@@ -131,13 +131,11 @@ Want to see Academy in action? This demo from **[Figma Config](https://www.figma
 
 ### The Learning Portal
 
-This is where it started. Partners and customers access courses. Watch videos. Take quizzes. Get certified.
+This is where it started. Partners and customers access courses, watch videos, take quizzes, and get certified. The portal delivers everything you'd expect from a learning platform—course libraries, progress tracking, certifications. Standard stuff. But here's what makes it different: the magic isn't in the features themselves. It's in who can change them.
 
-The magic isn't in the features. It's in who can change them. Marketing updates courses. Content teams add modules. No engineering required. Everything lives in Builder CMS. When you decouple content from code, good things happen.
+Marketing updates courses without touching code. Content teams add modules without waiting for engineering. Everything lives in **[Builder CMS](https://www.builder.io/publish)**, which means when you decouple content from code, good things happen. The system adapts. Need a new course? Add it in the CMS. Update a module? Change it in Builder. The app reflects changes instantly, without deployments or code reviews.
 
-Here's what users see: a course library, progress tracking, certifications. Standard stuff. But here's what they don't see: the flexibility. The system adapts. New course? Add it in the CMS. Update a module? Change it in Builder. The app reflects changes instantly.
-
-The access control works like gates. Different user types get different access. Free users can browse but can't dive deep. Clients and partners unlock full course access. Simple rules. They work.
+The access control works like gates—different user types get different access levels. Free users can browse the catalog but can't dive deep into courses. Clients and partners unlock full course access. Simple rules. They work.
 
 ### The Onboarding Workspace
 
@@ -155,13 +153,9 @@ Sessions unlock in order. You can't skip ahead. That's intentional. Onboarding i
 
 ### The CS Dashboard
 
-This is the command center. Where we see everything. Manage accounts. Assign owners. Handle exceptions.
+This is the command center—where we see everything, manage accounts, assign owners, and handle exceptions. The customer success team needed visibility because they couldn't manage what they couldn't see. So we built a dashboard with real-time progress, account status, owner assignments, and threshold controls.
 
-The customer success team needed visibility. They couldn't manage what they couldn't see. So we built a dashboard. Real-time progress. Account status. Owner assignments. Threshold controls.
-
-But here's the thing: automation handles ninety percent of cases. The dashboard handles the other ten. The exceptions. The edge cases. The "this customer needs special treatment" moments.
-
-That's why we built manual overrides. With audit trails. Every override gets logged. Who did it. When. Why. Full transparency. Because when you give humans control, you need visibility.
+Automation handles ninety percent of cases. The dashboard handles the other ten—the exceptions, the edge cases, the "this customer needs special treatment" moments. That's why we built manual overrides with audit trails. Every override gets logged: who did it, when, and why. Full transparency. Because when you give humans control, you need visibility.
 
 The HubSpot integration runs in the background, syncing accounts, mapping owners, and linking organizations to prevent duplicates. But it's a hybrid enrichment system. The CS team works in both HubSpot and Academy. They can set call bookings, add recordings after sessions, write notes, and make changes directly in Academy. HubSpot remains the source of truth for accounts and owners, while Academy enriches that foundation with session details, progress tracking, and onboarding context. No manual data entry for the basics. No drift on core account data. But full flexibility where it matters most.
 
@@ -239,13 +233,13 @@ Owner mapping extracts team assignments from HubSpot, ensuring different roles g
 
 ### Access Control
 
-User types define access through simple gates that work reliably. The authorization logic is straightforward: check user type, check organization membership, check permissions, then allow or deny. No complex rules, just clear gates.
+User types define access through simple gates. The logic is straightforward: check user type, check organization membership, check permissions. Then allow or deny. No complex rules. Just clear gates that work reliably.
 
-Free users can browse the catalog but can't dive deep into courses. They see what's available, but course access is restricted. That's intentional—the free tier drives upgrades while giving potential customers a taste of what's available.
+Free users can browse the catalog but can't access courses. They see what's available, but course content is restricted. That's intentional. The free tier drives upgrades while giving potential customers a taste of what's available.
 
-Clients get full course access. They see their organization's journey, progress tracking, session visibility—everything they need to navigate their onboarding path. Partners get everything clients get, plus certification: capstone projects, badges, the full program.
+Clients get full course access. They see their organization's journey, progress tracking, session visibility. Everything they need to navigate their onboarding path. Partners get everything clients get, plus certification. Capstone projects. Badges. The full program.
 
-Super admins get the dashboard with full control and visibility. They can manage accounts, adjust thresholds, handle exceptions. The system gives them the tools they need to oversee the entire operation while maintaining the audit trails that ensure accountability.
+Super admins get the dashboard with full control and visibility. They can manage accounts, adjust thresholds, handle exceptions. The system gives them the tools they need to oversee the entire operation. It also maintains audit trails that ensure accountability.
 
 Those are the mechanics. But what did we actually learn? What matters? What doesn't? That's where the real insights live.
 
