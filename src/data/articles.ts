@@ -125,6 +125,10 @@ But here's what happened: once you solve one problem, you see patterns everywher
 
 Today, Academy serves three surfaces. Each solves a different problem. But they're all built on the same foundation.
 
+Want to see Academy in action? This demo from **[Figma Config](https://www.figma.com/blog/config-2025-recap/)** shows Academy being used to showcase **[Fusion](https://www.builder.io/c/docs/get-started-fusion)**. It's a great spot to see the platform demonstrated.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oMkHIRHGhow?si=SaviFFEOiBg60u-j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### The Learning Portal
 
 This is where it started. Partners and customers access courses. Watch videos. Take quizzes. Get certified.
@@ -133,7 +137,7 @@ The magic isn't in the features. It's in who can change them. Marketing updates 
 
 Here's what users see: a course library, progress tracking, certifications. Standard stuff. But here's what they don't see: the flexibility. The system adapts. New course? Add it in the CMS. Update a module? Change it in Builder. The app reflects changes instantly.
 
-The access control works like gates. Different user types get different access. Free users can browse but can't dive deep. Paid users get everything. Simple rules. They work.
+The access control works like gates. Different user types get different access. Free users can browse but can't dive deep. Clients and partners unlock full course access. Simple rules. They work.
 
 ### The Onboarding Workspace
 
@@ -195,31 +199,23 @@ The architecture is elegant in its simplicity. But it didn't start that way. It 
 
 ## The Evolution
 
-Phase one was simple. A learning center. Access control. Content management. Progress tracking. Three components. That's it.
+Phase one emerged from necessity. A learning center that would let partners self-serve certification materials—no more "send me the slides" requests, no more hunting for that one video buried in a shared drive. Everything centralized. Accessible. Trackable. The foundation was straightforward: access control, content management, and progress tracking. Three components that would prove to be more powerful than they first appeared.
 
-The goal was clear: let partners self-serve certification materials. No more "send me the slides." No more "where's that video?" Everything in one place. Accessible. Trackable.
+I built it fast, leveraging what was available. **[Builder Fusion](https://www.builder.io/c/docs/get-started-fusion)** hadn't launched yet, so I used **[Builder's Figma plugin](https://www.builder.io/c/docs/builder-figma-plugin)** to import design sketches and prototype the design system. I pulled styles from Figma, prototyped with the plugin, and shipped with **[Tailwind](https://tailwindcss.com/)**. It worked. More importantly, it gave me a canvas to see what patterns were actually emerging.
 
-I built it fast. Used what I had. Builder Fusion hadn't launched yet, so I used Builder's Figma plugin to import design sketches and prototype the design system. Pulled styles from Figma. Prototyped with the plugin. Shipped with Tailwind. It worked.
+Here's what happened: once the learning center began functioning, the patterns started revealing themselves everywhere. Onboarding wasn't fundamentally different from learning—it was just learning with gates. Progress tracking followed the same logical structure. Session management mirrored course structure so closely it felt inevitable. The architecture I'd built was already solving problems I hadn't explicitly designed it for.
 
-But here's what happened: once the learning center worked, I saw the same patterns everywhere. Onboarding was just learning with gates. Progress tracking was the same logic. Session management mirrored course structure.
-
-The pivot wasn't planned. It was obvious. The architecture already solved the problem. I just needed to see it.
+The pivot wasn't planned. It was obvious. The architecture already solved the problem. I just needed to recognize the connections.
 
 ### The Pivot
 
-The moment came during a customer call. We were talking about onboarding. The customer was frustrated. Too many meetings. Unclear progress. No visibility.
+The moment crystallized during a customer call. We were discussing onboarding, and the customer's frustration was palpable. Too many meetings. Unclear progress. No visibility into where teams stood in their journey. That's when I realized: we had all the pieces already built. Progress tracking. Session gates. User management. We just needed to connect them differently, to see how the same architecture could solve a different problem with minimal changes.
 
-I realized: we had all the pieces. Progress tracking. Session gates. User management. We just needed to connect them differently.
+So we added organization-level tracking, checkpoint mapping, session gating, **[HubSpot](https://www.hubspot.com/)** sync, and a CS dashboard. But the core remained unchanged. Same architecture. Same patterns. Different problem. That's the insight: good architecture scales not through complexity, but through simplicity. The same simple patterns solve different problems when you recognize the underlying connections.
 
-So we added organization-level tracking. Checkpoint mapping. Session gating. HubSpot sync. A CS dashboard. But the core stayed the same. Same architecture. Same patterns. Different problem.
+What changed? We added layers—bridge tables, progress aggregation, sync jobs. But the foundation stayed constant. **[Next.js](https://nextjs.org/)**. **[Convex](https://convex.dev/)**. **[Builder CMS](https://www.builder.io/publish)**. Access control. Progress tracking. Those pieces worked because they were built right. We just used them differently, applying the same principles to new problems.
 
-That's the insight: good architecture scales. Not through complexity. Through simplicity. The same simple patterns solve different problems. You just need to see the connections.
-
-What changed? We added layers. Bridge tables. Progress aggregation. Sync jobs. But the foundation? It stayed. Next.js. Convex. Builder CMS. Access control. Progress tracking. Those pieces worked. We just used them differently.
-
-What stayed the same? Everything that mattered. The architecture. The patterns. The philosophy. Build simple. Build fast. Build what you need.
-
-That's the high-level story. But the devil is in the details. And the details are where the magic happens.
+What stayed the same? Everything that mattered. The architecture. The patterns. The philosophy. Build simple. Build fast. Build what you need. That's the high-level story. But the devil is in the details. And the details are where the magic happens.
 
 ---
 
@@ -227,43 +223,29 @@ That's the high-level story. But the devil is in the details. And the details ar
 
 ### Session Gating
 
-Sessions unlock when the team hits the threshold. Simple concept. But reality is messy.
+Sessions unlock when the team hits the threshold—a simple concept that becomes complex in practice. The system enforces linear progression: session two waits for session one, session three waits for session two. You can't skip ahead, which is intentional. Onboarding is a journey, not a sprint.
 
-The first session always unlocks. That's the kickoff. No gates. Everyone can start.
+The first session always unlocks—that's the kickoff, the entry point where everyone can start. After that, the gates tighten. The threshold varies based on team size: small teams might need everyone to complete checkpoints, while large teams might require most people. The system lets you configure these thresholds, but defaults matter. Most teams use the default because it works.
 
-After that, it gets strict. Session two waits for session one. Session three waits for session two. Linear progression. You can't skip ahead.
-
-The threshold varies. Small teams might need everyone. Large teams might need most people. The system lets you configure it. But defaults matter. Most teams use the default. It works.
-
-Manual overrides exist for exceptions. A CEO with a packed schedule. A customer who needs to move fast. We can unlock early. But it gets logged. Who did it. When. Why. Full transparency.
-
-The audit trail is crucial. When you give humans control, you need visibility. Every override. Every threshold change. Every lock. It's all tracked. Because trust requires transparency.
+Manual overrides exist for exceptions—a CEO with a packed schedule, a customer who needs to move faster than the standard pace. We can unlock early, but every override gets logged: who did it, when, and why. Full transparency. The audit trail is crucial because when you give humans control, you need visibility. Every override, every threshold change, every lock is tracked. Trust emerges from transparency.
 
 ### The HubSpot Sync
 
-HubSpot holds the truth. Accounts. Owners. Customer stages. The CS team lives there. Academy needs to stay aligned.
+**[HubSpot](https://www.hubspot.com/)** holds the truth: accounts, owners, customer stages. The CS team lives there, managing relationships and tracking progress. Academy needs to stay aligned with that source of truth, so we sync periodically—pulling accounts, mapping owners, linking organizations, preventing duplicates.
 
-So we sync. Periodically. Pull accounts. Map owners. Link organizations. Prevent duplicates.
+The sync is intelligent. It checks for existing accounts before creating new ones, links organizations automatically, and prevents data drift. But it's strictly one-way: we read from HubSpot, we never write to it. That one-way flow prevents conflicts and keeps everyone aligned with a single source of truth.
 
-The sync is smart. It checks for existing accounts before creating new ones. It links organizations automatically. It prevents data drift. But it's one-way. We read from HubSpot. We never write to it. That prevents conflicts.
-
-Owner mapping extracts team assignments. Different roles get different access. The sync keeps it current. No manual updates. No stale data.
-
-Organization linking happens automatically. When we see a match, we link it. Prevents duplicate accounts. Keeps everything aligned. Simple logic. Powerful results.
+Owner mapping extracts team assignments from HubSpot, ensuring different roles get different access levels. The sync keeps this current—no manual updates, no stale data. Organization linking happens automatically when the system detects a match, preventing duplicate accounts and keeping everything aligned. Simple logic, powerful results.
 
 ### Access Control
 
-User types define access. Simple gates. They work.
+User types define access through simple gates that work reliably. The authorization logic is straightforward: check user type, check organization membership, check permissions, then allow or deny. No complex rules, just clear gates.
 
-Free users can browse but can't dive deep. They see the catalog. They can't access courses. That's intentional. Free tier drives upgrades.
+Free users can browse the catalog but can't dive deep into courses. They see what's available, but course access is restricted. That's intentional—the free tier drives upgrades while giving potential customers a taste of what's available.
 
-Clients get full course access. They see their organization's journey. Progress tracking. Session visibility. Everything they need.
+Clients get full course access. They see their organization's journey, progress tracking, session visibility—everything they need to navigate their onboarding path. Partners get everything clients get, plus certification: capstone projects, badges, the full program.
 
-Partners get everything clients get, plus certification. Capstone projects. Badges. The full program.
-
-Super admins get the dashboard. They can manage accounts. Adjust thresholds. Handle exceptions. Full control. Full visibility.
-
-The authorization is simple. Check user type. Check organization membership. Check permissions. Then allow or deny. No complex rules. Just clear gates.
+Super admins get the dashboard with full control and visibility. They can manage accounts, adjust thresholds, handle exceptions. The system gives them the tools they need to oversee the entire operation while maintaining the audit trails that ensure accountability.
 
 Those are the mechanics. But what did we actually learn? What matters? What doesn't? That's where the real insights live.
 
@@ -273,7 +255,7 @@ Those are the mechanics. But what did we actually learn? What matters? What does
 
 ### The Impact
 
-Before Academy, onboarding was manual. Spreadsheets tracked progress. Calls repeated the same script. Thirty hours a week disappeared into the void.
+Before Academy, onboarding was manual. Spreadsheets tracked progress. Calls repeated the same script. Time disappeared into the void.
 
 After Academy, the math changed. One customer takes the same effort as before. But a hundred customers? The system handles the tracking. The CS team handles exceptions. Not routine.
 
@@ -289,7 +271,7 @@ I started solving my own problem. Repetitive calls. Manual tracking. No visibili
 
 **Automate the repetitive.**
 
-Twenty-five hours a week saying the same thing? That's automation gold. Find the pattern. Codify it. Let the system handle it. Your time is better spent elsewhere.
+Repetitive tasks consume time better spent elsewhere. Find the pattern. Codify it. Let the system handle it. That's automation gold.
 
 **Empower humans for exceptions.**
 
@@ -321,7 +303,7 @@ Bridge tables connect systems without coupling them. Change content without touc
 
 ## The End (Or Is It?)
 
-Academy started as a solution to my own problem. Thirty hours a week. Same script. Same questions. Same answers. There had to be a better way.
+Academy started as a solution to my own problem. Same script. Same questions. Same answers. Week after week. There had to be a better way.
 
 It evolved into something bigger. Not because I planned it. Because the patterns were universal. Track progress. Manage sessions. Empower teams. Those patterns scale.
 

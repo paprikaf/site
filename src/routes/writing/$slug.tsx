@@ -6,7 +6,17 @@ import remarkParse from 'remark-parse';
 import remarkHtml from 'remark-html';
 import articles from '@/data/articles';
 
-function ImageLightbox({ src, alt, isOpen, onClose }: { src: string; alt: string; isOpen: boolean; onClose: () => void }) {
+function ImageLightbox({
+  src,
+  alt,
+  isOpen,
+  onClose,
+}: {
+  src: string;
+  alt: string;
+  isOpen: boolean;
+  onClose: () => void;
+}) {
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
@@ -77,11 +87,21 @@ function ImageLightbox({ src, alt, isOpen, onClose }: { src: string; alt: string
         className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors p-2"
         aria-label="Close"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       </button>
-      
+
       <div className="absolute top-4 left-4 z-10 flex gap-2">
         <button
           onClick={() => setScale((prev) => Math.min(prev + 0.25, 5))}
@@ -131,24 +151,78 @@ function ArticleComponent() {
   const [contextHtml, setContextHtml] = useState<string>('');
   const [outputHtml, setOutputHtml] = useState<string>('');
   const [contentHtml, setContentHtml] = useState<string>('');
-  const [lightboxImage, setLightboxImage] = useState<{ src: string; alt: string } | null>(null);
+  const [lightboxImage, setLightboxImage] = useState<{
+    src: string;
+    alt: string;
+  } | null>(null);
 
   useEffect(() => {
     const processMarkdown = async (content: string) => {
-      const processor = unified().use(remarkParse).use(remarkHtml);
-      let html = String(await processor.process(content));
+      // Step 1: Extract ALL iframes and store them with unique markers
+      const iframes: Array<{ marker: string; html: string }> = [];
+      const iframeRegex = /<iframe[\s\S]*?<\/iframe>/g;
       
+      let processedContent = content.replace(iframeRegex, (match) => {
+        // Create a unique marker that won't be processed by markdown
+        const marker = `__IFRAME_MARKER_${iframes.length}__`;
+        iframes.push({ marker, html: match });
+        return marker;
+      });
+
+      // Step 2: Process markdown
+      const processor = unified().use(remarkParse).use(remarkHtml);
+      let html = String(await processor.process(processedContent));
+
+      // Step 3: Replace markers with wrapped iframes
+      iframes.forEach(({ marker, html: iframeHtml }) => {
+        // Create responsive wrapper
+        const wrappedIframe = `<div class="my-8 rounded-lg overflow-hidden" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          ${iframeHtml
+            .replace(/width="[^"]*"/, 'width="100%"')
+            .replace(/height="[^"]*"/, 'height="100%"')
+            .replace(/<iframe/, '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"')}
+        </div>`;
+        
+        // Replace marker in ALL possible formats - be very aggressive
+        const escapedMarker = marker.replace(/_/g, '&#95;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const patterns = [
+          marker, // Plain marker
+          `<p>${marker}</p>`, // Wrapped in paragraph
+          `<p>${marker}</p>\n`, // With newline
+          `&lt;p&gt;${marker}&lt;/p&gt;`, // Escaped paragraph
+          `&lt;p&gt;${escapedMarker}&lt;/p&gt;`, // Double escaped
+          escapedMarker, // Escaped marker
+          `<!-- ${marker} -->`, // HTML comment
+          `&lt;!-- ${marker} --&gt;`, // Escaped comment
+        ];
+        
+        // Try each pattern
+        for (const pattern of patterns) {
+          const regex = new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+          if (html.includes(pattern) || html.match(regex)) {
+            html = html.replace(regex, wrappedIframe);
+            break; // Found and replaced, move to next iframe
+          }
+        }
+        
+        // Last resort: search for any occurrence of the marker number
+        const markerNum = marker.match(/\d+/)?.[0];
+        if (markerNum !== undefined) {
+          const lastResortRegex = new RegExp(`[^\\w]IFRAME_MARKER_${markerNum}[^\\w]`, 'g');
+          html = html.replace(lastResortRegex, (match) => {
+            return match.replace(new RegExp(`IFRAME_MARKER_${markerNum}`, 'g'), wrappedIframe);
+          });
+        }
+      });
+
       // Ensure images are properly rendered (handle markdown images that might not have been converted)
       // This regex matches markdown image syntax that wasn't converted: ![alt](path)
-      html = html.replace(
-        /!\[([^\]]*)\]\(([^)]+)\)/g,
-        (match, alt, src) => {
-          // URL encode the path if it has spaces
-          const encodedSrc = src.replace(/ /g, '%20');
-          return `<img src="${encodedSrc}" alt="${alt}" class="max-w-full h-auto rounded-lg my-8 cursor-zoom-in hover:opacity-90 transition-opacity" data-lightbox-src="${encodedSrc}" data-lightbox-alt="${alt}" />`;
-        }
-      );
-      
+      html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
+        // URL encode the path if it has spaces
+        const encodedSrc = src.replace(/ /g, '%20');
+        return `<img src="${encodedSrc}" alt="${alt}" class="max-w-full h-auto rounded-lg my-8 cursor-zoom-in hover:opacity-90 transition-opacity" data-lightbox-src="${encodedSrc}" data-lightbox-alt="${alt}" />`;
+      });
+
       // Also add click handlers to existing img tags
       html = html.replace(
         /<img([^>]*src="([^"]+)"[^>]*alt="([^"]*)"[^>]*)>/g,
@@ -160,12 +234,14 @@ function ArticleComponent() {
           return match;
         }
       );
-      
+
       // Replace placeholder images with styled placeholder divs
       html = html.replace(
         /<img[^>]*src="placeholder:([^"]+)"[^>]*alt="([^"]*)"[^>]*>/g,
         (match, placeholderId, altText) => {
-          const placeholderName = altText || placeholderId.replace(/figma-diagram-/, '').replace(/-/g, ' ');
+          const placeholderName =
+            altText ||
+            placeholderId.replace(/figma-diagram-/, '').replace(/-/g, ' ');
           return `<div class="diagram-placeholder" data-placeholder="${placeholderId}">
             <div class="diagram-placeholder-content">
               <p class="diagram-placeholder-label">📊 Diagram Placeholder</p>
@@ -175,33 +251,72 @@ function ArticleComponent() {
           </div>`;
         }
       );
-      
+
       // Add yellow underline styling to all links using inline styles for highest specificity
-      html = html.replace(
-        /<a([^>]*)>/g,
-        (match, attrs) => {
-          // Remove any existing style attribute to avoid conflicts
-          let cleanAttrs = attrs.replace(/style="[^"]*"/g, '');
-          
-          // Check if class already exists
-          if (cleanAttrs.includes('class=')) {
-            // Add our classes and inline style to existing class attribute
-            cleanAttrs = cleanAttrs.replace(
-              /class="([^"]*)"/,
-              (classMatch, existingClasses) => {
-                const newClasses = `${existingClasses} text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors`.trim();
-                return `class="${newClasses}" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
-              }
-            );
-          } else {
-            // Add class attribute and inline style
-            cleanAttrs += ` class="text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
-          }
-          
-          return `<a${cleanAttrs}>`;
+      html = html.replace(/<a([^>]*)>/g, (match, attrs) => {
+        // Remove any existing style attribute to avoid conflicts
+        let cleanAttrs = attrs.replace(/style="[^"]*"/g, '');
+
+        // Check if class already exists
+        if (cleanAttrs.includes('class=')) {
+          // Add our classes and inline style to existing class attribute
+          cleanAttrs = cleanAttrs.replace(
+            /class="([^"]*)"/,
+            (classMatch, existingClasses) => {
+              const newClasses =
+                `${existingClasses} text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors`.trim();
+              return `class="${newClasses}" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
+            }
+          );
+        } else {
+          // Add class attribute and inline style
+          cleanAttrs += ` class="text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
         }
-      );
-      
+
+        return `<a${cleanAttrs}>`;
+      });
+
+      // Final pass: find and replace any escaped iframe HTML (fallback for iframes that weren't caught earlier)
+      // Match escaped iframe tags - use a more flexible pattern that matches everything between the tags
+      const escapedIframePattern = /&lt;iframe[\s\S]*?&lt;\/iframe&gt;/g;
+      html = html.replace(escapedIframePattern, (match) => {
+        // Unescape the iframe HTML
+        const unescaped = match
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&quot;/g, '"')
+          .replace(/&#x27;/g, "'")
+          .replace(/&#x2F;/g, '/')
+          .replace(/&amp;/g, '&');
+        // Wrap in responsive container
+        return `<div class="my-8 rounded-lg overflow-hidden" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+          ${unescaped
+            .replace(/width="[^"]*"/, 'width="100%"')
+            .replace(/height="[^"]*"/, 'height="100%"')
+            .replace(
+              /<iframe/,
+              '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"'
+            )}
+        </div>`;
+      });
+
+      // Also handle plain iframe tags that might have been missed (non-escaped)
+      html = html.replace(/<iframe([^>]*)>.*?<\/iframe>/gs, (match) => {
+        // Wrap in responsive container if not already wrapped
+        if (!match.includes('my-8 rounded-lg')) {
+          return `<div class="my-8 rounded-lg overflow-hidden" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+              ${match
+                .replace(/width="[^"]*"/, 'width="100%"')
+                .replace(/height="[^"]*"/, 'height="100%"')
+                .replace(
+                  /<iframe/,
+                  '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"'
+                )}
+            </div>`;
+        }
+        return match;
+      });
+
       return html;
     };
 
@@ -239,7 +354,10 @@ function ArticleComponent() {
   useEffect(() => {
     const handleImageClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === 'IMG' && target.hasAttribute('data-lightbox-src')) {
+      if (
+        target.tagName === 'IMG' &&
+        target.hasAttribute('data-lightbox-src')
+      ) {
         e.preventDefault();
         const src = target.getAttribute('data-lightbox-src') || '';
         const alt = target.getAttribute('data-lightbox-alt') || '';
