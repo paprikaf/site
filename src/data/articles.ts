@@ -79,30 +79,29 @@ Keep this authentic and personal. Your readers will connect with genuine experie
     tags: ['case-study', 'product', 'learning'],
     content: `# Academy Case Study: Building a Self-Server Learning Center
 
-This is a placeholder for your case study about building the Academy platform.
+Let's make a toggle between Context and Output. Context being the why we built this and the personal touch. The output is more of how we shipped it.`,
+    contextContent: `## Context
 
-## The Problem
+Academy came from a pain point like any other project I worked on. The driver for me is how I can automate and save time (PS: if you are building a piece of software that won't save time, it's useless—unless you are building a video game or something of the sort).
 
-Document what you were trying to solve:
-- Slow onboarding for internal team members
-- Lack of standardized knowledge base
-- Manual certification tracking
+When I first joined Builder as a customer engineer, I noticed a pattern that onboarding our clients was a tedious task that requires repeating yourself multiple times. We were lean at the time, so I probably would total around 25 to 30 hours of calls every week with clients, repeating the same thing.
 
-## The Solution
+After Builder raised, we hired more CEs and I had more bandwidth as I joined the partnership team. They really wanted a certification program for our SIs. There comes the opportunity to build Academy.`,
+    outputContent: `## Execution
 
-How did you approach building this?
-- Product decisions made
-- Technology choices
-- Design principles
+To make a project like this work, you have to execute FAST. Chances are, without velocity you won't find the support needed within the company to see your product shipped—especially in a lean startup. So you have to give more of your time. The 9-to-5 won't do it.
 
-## Results
+## The MVP
 
-What did you achieve?
-- Metrics that improved
-- Feedback from users
-- Unexpected learnings
+**IAM System** — To control access. The main use case was for partners, Builder employees (super admins), and clients. Free users will login but can't access courses.
 
-This format helps readers follow the narrative and understand your decision-making process.`,
+**Content Management Boilerplate** — To make it possible for the team to create courses, course modules, and quiz entries.
+
+## Tech Stack & Approach
+
+To ship fast, I needed to prototype fast and use a tech stack that cut corners for me. I settled on Next.js with Convex as a database. At that time, Fusion was not live yet, so I shipped with the Builder.io Figma plugin to take the prototype design and make it into a full app. At the time, the only thing I needed is the Tailwind file—I just wanted the core of the design system.
+
+The requirements were a self-serve platform with enablement materials: docs, videos, and quizzes to get certified as partners. Content was guardrailed for free users.`,
     draft: false,
     html: '',
   },
