@@ -93,23 +93,27 @@ Then the pieces aligned. New team. New role. I moved to partnerships. They neede
 
 Speed kills. Not the kind that gets you pulled over. The kind that kills projects before they see daylight.
 
+You're building blind. No roadmap. No guarantee it'll work. Just momentum and hope.
+
 In a startup, you have a window. It's small. And it's closing. Build too slow, and by the time you ship, the problem changed. The team moved on. The opportunity evaporated. Build fast, or don't build at all.
 
-So I made a bet. In the margins. Early mornings, late nights. The nine-to-five wouldn't cut it. I needed velocity. The kind that comes from cutting corners intelligently.
+So I made a bet. In the margins. Early mornings, late nights. The nine-to-five wouldn't cut it. I needed velocity. The kind that comes from knowing what to skip.
 
-I chose Next.js with Convex. Fast to prototype. Real-time out of the box. No infrastructure headaches. Builder Fusion hadn't launched yet, so I used Builder's Figma plugin to import design sketches and prototype the design system. Pulled the Tailwind styles, and built the rest.
+I chose **[Next.js](https://nextjs.org/)** with **[Convex](https://convex.dev/)**. Fast to prototype. **Real-time** out of the box. No infrastructure headaches. **[Builder Fusion](https://www.builder.io/c/docs/get-started-fusion)** hadn't launched yet, so I used **[Builder's Figma plugin](https://www.builder.io/c/docs/builder-figma-plugin)** to prototype the design system and import design sketches. Pulled **[Tailwind](https://tailwindcss.com/)** styles from the generated code, and built the rest.
 
-The MVP had three parts: access control, content management, and progress tracking. That's it. No bells. No whistles. Just enough to prove the concept.
+The **MVP** had three parts: **access control**, **content management**, and **progress tracking**. That's it. No bells. No whistles. Just enough to prove the concept.
 
-Access control meant three user types—partners, internal team, and clients. Free users could log in but couldn't see courses. Simple gates. They work.
+**Access control** meant three user types—partners, internal team, and clients. Users authenticate with their Builder accounts. Free users could log in but couldn't see courses. Simple gates. They work.
 
-Content management let the team create courses without touching code. This was crucial. Marketing needed to update materials. Content teams needed to add modules. They couldn't wait for engineering.
+**Content management** let the team create courses without touching code. I hooked up **[Builder.io Publish](https://www.builder.io/publish)**, the content management system. Marketing needed to update materials. Content teams needed to add modules. They couldn't wait for engineering.
 
-Progress tracking watched who completed what. Real-time. No refresh needed. You finish a module, the system knows. That sounds simple, but it's the foundation everything else built on.
+**Progress tracking** watched who completed what. **Real-time**. No refresh needed. You finish a module, the system knows. That sounds simple, but it's the foundation everything else built on.
 
 The goal was clear: a self-serve platform. Docs, videos, quizzes. Partner certification. No hand-holding. Learn when you're ready. The system doesn't let you skip steps.
 
-And then something interesting happened. The MVP worked. Partners started using it. Progress tracked. Content updated. Certifications flowed. But I kept seeing the same patterns everywhere. Onboarding sessions looked like course modules. Checkpoints looked like quizzes. The architecture was solving problems I hadn't built it for.
+I shipped it. Then I watched.
+
+The MVP worked. Partners started using it. Progress tracked. Content updated. Certifications flowed. But I kept seeing the same patterns everywhere. Onboarding sessions looked like course modules. Checkpoints looked like quizzes. The architecture was solving problems I hadn't planned for—onboarding, session management, progress gates.
 
 ---
 

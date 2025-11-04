@@ -176,6 +176,32 @@ function ArticleComponent() {
         }
       );
       
+      // Add yellow underline styling to all links using inline styles for highest specificity
+      html = html.replace(
+        /<a([^>]*)>/g,
+        (match, attrs) => {
+          // Remove any existing style attribute to avoid conflicts
+          let cleanAttrs = attrs.replace(/style="[^"]*"/g, '');
+          
+          // Check if class already exists
+          if (cleanAttrs.includes('class=')) {
+            // Add our classes and inline style to existing class attribute
+            cleanAttrs = cleanAttrs.replace(
+              /class="([^"]*)"/,
+              (classMatch, existingClasses) => {
+                const newClasses = `${existingClasses} text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors`.trim();
+                return `class="${newClasses}" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
+              }
+            );
+          } else {
+            // Add class attribute and inline style
+            cleanAttrs += ` class="text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors" style="text-decoration: underline; text-decoration-color: #eab308; text-underline-offset: 4px; text-decoration-thickness: 2px;"`;
+          }
+          
+          return `<a${cleanAttrs}>`;
+        }
+      );
+      
       return html;
     };
 
@@ -298,7 +324,7 @@ function ArticleComponent() {
                 ? activeHtml || `<p>${activeContent}</p>`
                 : contentHtml || article.html || `<p>${article.content}</p>`,
             }}
-            className="space-y-6 text-base text-border/80 prose-headings:text-text prose-headings:font-bold prose-a:text-text prose-a:underline hover:prose-a:opacity-70 prose-code:text-xs prose-code:bg-mainAccent prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-mainAccent prose-pre:p-4 prose-pre:rounded-lg prose-img:rounded-lg prose-img:my-8 [&_img]:cursor-zoom-in [&_img]:hover:opacity-90 [&_img]:transition-opacity [&_.diagram-placeholder]:my-8 [&_.diagram-placeholder]:border-2 [&_.diagram-placeholder]:border-dashed [&_.diagram-placeholder]:border-border/30 [&_.diagram-placeholder]:rounded-lg [&_.diagram-placeholder]:p-12 [&_.diagram-placeholder]:text-center [&_.diagram-placeholder-content]:space-y-2 [&_.diagram-placeholder-label]:text-xl [&_.diagram-placeholder-name]:text-base [&_.diagram-placeholder-name]:font-semibold [&_.diagram-placeholder-name]:text-text [&_.diagram-placeholder-note]:text-sm [&_.diagram-placeholder-note]:text-border/60"
+            className="space-y-6 text-base text-border/80 prose-headings:text-text prose-headings:font-bold prose-code:text-xs prose-code:bg-mainAccent prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-mainAccent prose-pre:p-4 prose-pre:rounded-lg prose-img:rounded-lg prose-img:my-8 [&_img]:cursor-zoom-in [&_img]:hover:opacity-90 [&_img]:transition-opacity [&_a]:text-text [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-yellow-500 [&_a]:decoration-2 [&_a:hover]:text-mainAccent [&_a]:transition-colors [&_.diagram-placeholder]:my-8 [&_.diagram-placeholder]:border-2 [&_.diagram-placeholder]:border-dashed [&_.diagram-placeholder]:border-border/30 [&_.diagram-placeholder]:rounded-lg [&_.diagram-placeholder]:p-12 [&_.diagram-placeholder]:text-center [&_.diagram-placeholder-content]:space-y-2 [&_.diagram-placeholder-label]:text-xl [&_.diagram-placeholder-name]:text-base [&_.diagram-placeholder-name]:font-semibold [&_.diagram-placeholder-name]:text-text [&_.diagram-placeholder-note]:text-sm [&_.diagram-placeholder-note]:text-border/60"
           />
         </div>
       </article>
