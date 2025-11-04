@@ -161,7 +161,7 @@ function ArticleComponent() {
       // Step 1: Extract ALL iframes and store them with unique markers
       const iframes: Array<{ marker: string; html: string }> = [];
       const iframeRegex = /<iframe[\s\S]*?<\/iframe>/g;
-      
+
       let processedContent = content.replace(iframeRegex, (match) => {
         // Create a unique marker that won't be processed by markdown
         const marker = `__IFRAME_MARKER_${iframes.length}__`;
@@ -180,11 +180,17 @@ function ArticleComponent() {
           ${iframeHtml
             .replace(/width="[^"]*"/, 'width="100%"')
             .replace(/height="[^"]*"/, 'height="100%"')
-            .replace(/<iframe/, '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"')}
+            .replace(
+              /<iframe/,
+              '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"'
+            )}
         </div>`;
-        
+
         // Replace marker in ALL possible formats - be very aggressive
-        const escapedMarker = marker.replace(/_/g, '&#95;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        const escapedMarker = marker
+          .replace(/_/g, '&#95;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
         const patterns = [
           marker, // Plain marker
           `<p>${marker}</p>`, // Wrapped in paragraph
@@ -195,22 +201,31 @@ function ArticleComponent() {
           `<!-- ${marker} -->`, // HTML comment
           `&lt;!-- ${marker} --&gt;`, // Escaped comment
         ];
-        
+
         // Try each pattern
         for (const pattern of patterns) {
-          const regex = new RegExp(pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+          const regex = new RegExp(
+            pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
+            'gi'
+          );
           if (html.includes(pattern) || html.match(regex)) {
             html = html.replace(regex, wrappedIframe);
             break; // Found and replaced, move to next iframe
           }
         }
-        
+
         // Last resort: search for any occurrence of the marker number
         const markerNum = marker.match(/\d+/)?.[0];
         if (markerNum !== undefined) {
-          const lastResortRegex = new RegExp(`[^\\w]IFRAME_MARKER_${markerNum}[^\\w]`, 'g');
+          const lastResortRegex = new RegExp(
+            `[^\\w]IFRAME_MARKER_${markerNum}[^\\w]`,
+            'g'
+          );
           html = html.replace(lastResortRegex, (match) => {
-            return match.replace(new RegExp(`IFRAME_MARKER_${markerNum}`, 'g'), wrappedIframe);
+            return match.replace(
+              new RegExp(`IFRAME_MARKER_${markerNum}`, 'g'),
+              wrappedIframe
+            );
           });
         }
       });

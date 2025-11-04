@@ -149,6 +149,8 @@ The workspace breaks onboarding into sessions. Each session has checkpoints. Com
 
 Here's how it works: organizations get assigned a plan. Different plans for different needs. The plan defines sessions. Sessions have checkpoints. Checkpoints link to modules or docs. Users complete modules. The system watches. When enough people finish, the gate opens. The session becomes bookable.
 
+The plans themselves came from our existing Excel workbook—the Builder Acceleration Workbook Checklist. Hundreds of rows of onboarding checkpoints, organized by week and persona. I transformed that entire spreadsheet into structured onboarding plans using the **[Builder CMS MCP Server](https://www.builder.io/c/docs/mcp-builder-server)**, another feature I built. The MCP server let me query Builder's content API, create models, and populate checkpoints programmatically. What used to live in spreadsheets now lives in the system. What used to require manual tracking now tracks itself.
+
 Sessions unlock in order. You can't skip ahead. That's intentional. Onboarding is a journey, not a sprint. But the system is flexible. If someone needs to move faster, we can override. Human judgment beats rigid rules.
 
 ### The CS Dashboard
