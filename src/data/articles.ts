@@ -77,19 +77,17 @@ Keep this authentic and personal. Your readers will connect with genuine experie
     description:
       'How we built a customer success, on-demand learning and certification platform that transformed onboarding.',
     tags: ['case-study', 'product', 'learning'],
-    content: `## The Problem
+    content: `## The Opportunity
 
-Picture this: Same script. Same questions. Same answers. Twenty-five, sometimes thirty hours a week. Every customer call felt like Groundhog Day, except Bill Murray got to keep his sanity.
+Picture this: You're onboarding customers. Week after week. Same fundamentals. Same questions. Same answers. It's important work—getting customers set up right matters. But here's the thing: when you find yourself repeating the same onboarding flow dozens of times, you start seeing patterns. And patterns mean opportunity.
 
-I was a customer engineer at Builder. We were lean, scrappy, the kind of team where everyone wears multiple hats. That's the dream until you realize you're saying the same thing for the tenth time that day. Your voice starts to crack. You check the clock. Another call in fifteen minutes. Same questions. Same answers.
+I was a customer engineer at Builder. We were lean, scrappy, the kind of team where good ideas become projects. When you see a problem worth solving, you can solve it.
 
-There had to be a better way.
+My philosophy is simple: if software doesn't save time, it's useless. Unless you're building games. Games get a pass. Social media? That's the exception—a bottomless time pit masquerading as connection. And yes, I'm guilty of oiling that wheel too. Everything else? It better give people hours back.
 
-My philosophy is simple: if software doesn't save time, it's useless. Unless you're building games. Games get a pass. Everything else? It better give me hours back.
+The spreadsheets told the story. Row after row of manual tracking. Which customers completed which checkpoints. Which session they're on. Who needs follow-up. Which accounts are stuck. Good intentions, but manual processes don't scale. As Builder grew, so did our customer base. The old way wouldn't cut it.
 
-The spreadsheets told the story. Row after row of manual tracking. Who's on what call. What stage they're at. Who needs follow-up. A graveyard of good intentions. This doesn't scale. This can't scale.
-
-Then Builder raised. We hired more engineers. I moved to partnerships. They needed a certification program for our partners. That's when I saw it—not just a certification program, but a way to kill those thirty hours. A way to automate what shouldn't require a human.
+Then the pieces aligned. New team. New role. I moved to partnerships. They needed a certification program for our partners. That's when I saw it—not just a certification program, but a way to transform how we ramp up and onboard customers. A way to scale what worked. A way to give that time back to the team.
 
 ## Building in the Dark
 
@@ -97,9 +95,9 @@ Speed kills. Not the kind that gets you pulled over. The kind that kills project
 
 In a startup, you have a window. It's small. And it's closing. Build too slow, and by the time you ship, the problem changed. The team moved on. The opportunity evaporated. Build fast, or don't build at all.
 
-So I made a bet. Nights and weekends. The nine-to-five wouldn't cut it. I needed velocity. The kind that comes from cutting corners intelligently.
+So I made a bet. In the margins. Early mornings, late nights. The nine-to-five wouldn't cut it. I needed velocity. The kind that comes from cutting corners intelligently.
 
-I chose Next.js with Convex. Fast to prototype. Real-time out of the box. No infrastructure headaches. Builder's design tools weren't ready yet, so I used what I had—the Figma plugin, pulled the Tailwind styles, and built the rest.
+I chose Next.js with Convex. Fast to prototype. Real-time out of the box. No infrastructure headaches. Builder Fusion hadn't launched yet, so I used Builder's Figma plugin to import design sketches and prototype the design system. Pulled the Tailwind styles, and built the rest.
 
 The MVP had three parts: access control, content management, and progress tracking. That's it. No bells. No whistles. Just enough to prove the concept.
 
@@ -109,7 +107,7 @@ Content management let the team create courses without touching code. This was c
 
 Progress tracking watched who completed what. Real-time. No refresh needed. You finish a module, the system knows. That sounds simple, but it's the foundation everything else built on.
 
-The goal was clear: a self-serve platform. Docs, videos, quizzes. Partner certification. No hand-holding. If someone wants to learn, they should be able to. If they're not ready, they can't access the good stuff.
+The goal was clear: a self-serve platform. Docs, videos, quizzes. Partner certification. No hand-holding. Learn when you're ready. The system doesn't let you skip steps.
 
 And then something interesting happened. The MVP worked. Partners started using it. Progress tracked. Content updated. Certifications flowed. But I kept seeing the same patterns everywhere. Onboarding sessions looked like course modules. Checkpoints looked like quizzes. The architecture was solving problems I hadn't built it for.
 
@@ -247,7 +245,7 @@ Phase one was simple. A learning center. Access control. Content management. Pro
 
 The goal was clear: let partners self-serve certification materials. No more "send me the slides." No more "where's that video?" Everything in one place. Accessible. Trackable.
 
-I built it fast. Used what I had. Builder's design tools weren't ready, so I pulled styles from Figma. Prototyped with the plugin. Shipped with Tailwind. It worked.
+I built it fast. Used what I had. Builder Fusion hadn't launched yet, so I used Builder's Figma plugin to import design sketches and prototype the design system. Pulled styles from Figma. Prototyped with the plugin. Shipped with Tailwind. It worked.
 
 But here's what happened: once the learning center worked, I saw the same patterns everywhere. Onboarding was just learning with gates. Progress tracking was the same logic. Session management mirrored course structure.
 
