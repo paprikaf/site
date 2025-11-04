@@ -18,9 +18,7 @@ export async function parseMarkdown(fileContent: string): Promise<{
 }> {
   const { data, content } = matter(fileContent);
 
-  const processor = unified()
-    .use(remarkParse)
-    .use(remarkHtml);
+  const processor = unified().use(remarkParse).use(remarkHtml);
 
   const html = String(await processor.process(content));
 

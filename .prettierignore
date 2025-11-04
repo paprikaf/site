@@ -1,0 +1,9 @@
+node_modules
+dist
+build
+coverage
+.git
+.next
+out
+pnpm-lock.yaml
+**/routeTree.gen.ts

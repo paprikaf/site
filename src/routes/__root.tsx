@@ -1,5 +1,5 @@
-import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { Nav } from '@/components/Nav'
+import { createRootRoute, Outlet } from '@tanstack/react-router';
+import { Nav } from '@/components/Nav';
 
 function RootComponent() {
   return (
@@ -9,9 +9,9 @@ function RootComponent() {
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
 
 export const Route = createRootRoute({
   component: RootComponent,
-})
+});

@@ -14,7 +14,7 @@ A modern, minimal personal website built with React, Vite, and Tailwind CSS. Fea
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - pnpm (recommended) - `npm install -g pnpm`
 - ni (universal package manager) - `npm install -g @antfu/ni`
 
@@ -121,9 +121,9 @@ Edit `src/App.tsx` and replace "Your Name" with your actual name:
 Replace the SVG icon in `src/App.tsx` with an actual image:
 
 ```typescript
-<img 
-  src="/path/to/avatar.jpg" 
-  alt="Avatar" 
+<img
+  src="/path/to/avatar.jpg"
+  alt="Avatar"
   className="w-24 h-24 border-2 border-border bg-card"
 />
 ```
@@ -161,6 +161,7 @@ html.dark {
 ## Neobrutalism Design
 
 This site uses the Neobrutalism design system with:
+
 - **Bold 2px borders** on all interactive elements
 - **Sharp corners** (no border radius)
 - **High contrast** colors (black/white)

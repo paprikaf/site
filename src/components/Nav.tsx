@@ -29,8 +29,12 @@ export function Nav() {
 
           {/* Name and Title */}
           <div className="flex flex-col gap-0 items-start">
-            <h2 className="font-bold text-sm sm:text-lg tracking-wide leading-none m-0">Ahmed Felfel</h2>
-            <p className="text-xs sm:text-sm text-border/60 leading-none m-0 mt-0.5">AI × GTM × ENG</p>
+            <h2 className="font-bold text-sm sm:text-lg tracking-wide leading-none m-0">
+              Ahmed Felfel
+            </h2>
+            <p className="text-xs sm:text-sm text-border/60 leading-none m-0 mt-0.5">
+              AI × GTM × ENG
+            </p>
           </div>
         </button>
 
@@ -39,7 +43,9 @@ export function Nav() {
           <button
             onClick={() => handleNavigation('/')}
             className={`text-sm transition-colors ${
-              isActive('/') ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2' : 'text-border hover:text-text'
+              isActive('/')
+                ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2'
+                : 'text-border hover:text-text'
             }`}
           >
             About
@@ -59,7 +65,12 @@ export function Nav() {
         {/* Right: Social Links + Theme Toggle */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* GitHub */}
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
             <a
               href="https://github.com/paprikaf"
               target="_blank"
@@ -80,7 +91,12 @@ export function Nav() {
           </Button>
 
           {/* LinkedIn */}
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
             <a
               href="https://www.linkedin.com/in/ahmed-felfel-080895/"
               target="_blank"
@@ -101,7 +117,12 @@ export function Nav() {
           </Button>
 
           {/* X (Twitter) */}
-          <Button variant="ghost" size="icon" asChild className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm">
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
             <a
               href="https://x.com/zpaprikaf"
               target="_blank"
@@ -117,6 +138,38 @@ export function Nav() {
               >
                 <title>X</title>
                 <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" />
+              </svg>
+            </a>
+          </Button>
+
+          {/* CV Download */}
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="hidden sm:flex hover:text-yellow-500 transition-colors h-9 w-9 sm:h-10 sm:w-10 rounded-sm"
+          >
+            <a
+              href="https://drive.google.com/uc?export=download&id=12WmataH9rGO22WhI9a4Y14KYHzKqiUEo"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download CV"
+            >
+              <svg
+                role="img"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <title>Download CV</title>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
             </a>
           </Button>

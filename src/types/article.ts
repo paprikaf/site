@@ -11,6 +11,10 @@ export interface Article extends ArticleMetadata {
   content: string;
   html?: string;
   readTime?: number;
+  contextContent?: string;
+  contextHtml?: string;
+  outputContent?: string;
+  outputHtml?: string;
 }
 
 export interface ArticlePreview extends ArticleMetadata {

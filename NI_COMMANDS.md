@@ -11,6 +11,7 @@ npm install -g @antfu/ni
 ## Commands
 
 ### `ni` - Install packages
+
 ```bash
 # Install dependencies
 ni
@@ -29,6 +30,7 @@ ni -g vercel
 ```
 
 ### `nr` - Run scripts
+
 ```bash
 # Run dev server
 nr dev
@@ -45,6 +47,7 @@ nr
 ```
 
 ### `nu` - Upgrade packages
+
 ```bash
 # Interactive upgrade - select which packages to upgrade
 nu
@@ -54,6 +57,7 @@ nu --latest
 ```
 
 ### `nun` - Uninstall packages
+
 ```bash
 # Remove package
 nun react
@@ -66,6 +70,7 @@ nun -D eslint
 ```
 
 ### `nlx` - Execute packages
+
 ```bash
 # Run a package binary
 nlx create-vite@latest
@@ -98,6 +103,7 @@ nr build
 ## Our Setup
 
 This project uses:
+
 - **pnpm** - Fast, disk-space efficient package manager
 - **ni** - Universal CLI that auto-detects pnpm
 - **shadcn/ui** - Component library with neobrutalism theme
@@ -106,15 +112,15 @@ This project uses:
 
 ## Quick Reference
 
-| Task | Command |
-|------|---------|
-| Install | `ni` |
-| Install package | `ni react` |
+| Task                | Command        |
+| ------------------- | -------------- |
+| Install             | `ni`           |
+| Install package     | `ni react`     |
 | Install dev package | `ni -D eslint` |
-| Run dev server | `nr dev` |
-| Build | `nr build` |
-| Upgrade packages | `nu` |
-| Uninstall | `nun react` |
-| Choose script | `nr` |
+| Run dev server      | `nr dev`       |
+| Build               | `nr build`     |
+| Upgrade packages    | `nu`           |
+| Uninstall           | `nun react`    |
+| Choose script       | `nr`           |
 
 That's it! Happy coding! 🚀
