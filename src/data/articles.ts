@@ -77,440 +77,309 @@ Keep this authentic and personal. Your readers will connect with genuine experie
     description:
       'How we built a customer success, on-demand learning and certification platform that transformed onboarding.',
     tags: ['case-study', 'product', 'learning'],
-    content: `## Context
+    content: `## The Problem
 
-Academy started with a simple problem: I spent 25 to 30 hours every week repeating the same onboarding calls. As a customer engineer at Builder, I noticed this pattern early. We were a small team then, so repetition was necessary but exhausting.
+Picture this: Same script. Same questions. Same answers. Twenty-five, sometimes thirty hours a week. Every customer call felt like Groundhog Day, except Bill Murray got to keep his sanity.
 
-My philosophy is simple: build software that saves time. If it doesn't save time, it's not useful—unless you're building games or entertainment.
+I was a customer engineer at Builder. We were lean, scrappy, the kind of team where everyone wears multiple hats. That's the dream until you realize you're saying the same thing for the tenth time that day. Your voice starts to crack. You check the clock. Another call in fifteen minutes. Same questions. Same answers.
 
-After Builder raised funding, we hired more customer engineers. I moved to the partnerships team. They needed a certification program for our system integrators. That's when I saw the chance to build Academy.
+There had to be a better way.
 
-## Execution
+My philosophy is simple: if software doesn't save time, it's useless. Unless you're building games. Games get a pass. Everything else? It better give me hours back.
 
-To ship a project like this, you need to move fast. Without speed, you won't get the support needed to ship—especially at a startup. You'll need to put in extra time. Regular hours won't cut it.
+The spreadsheets told the story. Row after row of manual tracking. Who's on what call. What stage they're at. Who needs follow-up. A graveyard of good intentions. This doesn't scale. This can't scale.
 
-### The MVP
+Then Builder raised. We hired more engineers. I moved to partnerships. They needed a certification program for our partners. That's when I saw it—not just a certification program, but a way to kill those thirty hours. A way to automate what shouldn't require a human.
 
-**IAM System** — Controls who can access what. Built for three user types: partners, Builder employees (super admins), and clients. Free users can log in but can't access courses.
+## Building in the Dark
 
-**Content Management** — Lets the team create courses, modules, and quizzes without code changes.
+Speed kills. Not the kind that gets you pulled over. The kind that kills projects before they see daylight.
 
-**Progress Tracking** — Monitors user completion at the module level. Tracks which users finish which modules and displays progress in real time.
+In a startup, you have a window. It's small. And it's closing. Build too slow, and by the time you ship, the problem changed. The team moved on. The opportunity evaporated. Build fast, or don't build at all.
 
-### Tech Stack & Approach
+So I made a bet. Nights and weekends. The nine-to-five wouldn't cut it. I needed velocity. The kind that comes from cutting corners intelligently.
 
-I needed to prototype fast. I chose Next.js with Convex as the database. Fusion wasn't live yet, so I used the Builder.io Figma plugin to turn designs into a working app. I only needed the Tailwind file—just the core design system.
+I chose Next.js with Convex. Fast to prototype. Real-time out of the box. No infrastructure headaches. Builder's design tools weren't ready yet, so I used what I had—the Figma plugin, pulled the Tailwind styles, and built the rest.
 
-The goal was a self-serve platform with enablement materials: docs, videos, and quizzes for partner certification. Free users couldn't access paid content.
+The MVP had three parts: access control, content management, and progress tracking. That's it. No bells. No whistles. Just enough to prove the concept.
+
+Access control meant three user types—partners, internal team, and clients. Free users could log in but couldn't see courses. Simple gates. They work.
+
+Content management let the team create courses without touching code. This was crucial. Marketing needed to update materials. Content teams needed to add modules. They couldn't wait for engineering.
+
+Progress tracking watched who completed what. Real-time. No refresh needed. You finish a module, the system knows. That sounds simple, but it's the foundation everything else built on.
+
+The goal was clear: a self-serve platform. Docs, videos, quizzes. Partner certification. No hand-holding. If someone wants to learn, they should be able to. If they're not ready, they can't access the good stuff.
+
+And then something interesting happened. The MVP worked. Partners started using it. Progress tracked. Content updated. Certifications flowed. But I kept seeing the same patterns everywhere. Onboarding sessions looked like course modules. Checkpoints looked like quizzes. The architecture was solving problems I hadn't built it for.
 
 ---
 
-## What Academy Does
+## What We Built
 
-Academy started as a learning center. It grew into a full customer success platform. Today, it serves three different areas. Each one solves a specific problem in the customer journey.
+Academy started simple. A learning center. Courses, modules, quizzes. Nothing fancy.
+
+But here's what happened: once you solve one problem, you see patterns everywhere. The same logic that tracks course completion? It tracks onboarding progress. The same gates that control course access? They control session unlocks. Patterns repeat. Architecture scales.
+
+Today, Academy serves three surfaces. Each solves a different problem. But they're all built on the same foundation.
 
 ![System Architecture Diagram](/diagrams/Academy System Architecture.png)
 
-### 1. Self-Service Learning Portal
+### The Learning Portal
 
-The foundation of Academy is a learning platform. Partners and customers can access courses, modules, and quizzes here. All content lives in Builder.io CMS. This means marketing and content teams can update materials without touching code.
+This is where it started. Partners and customers access courses. Watch videos. Take quizzes. Get certified.
 
-**Key Features:**
+The magic isn't in the features. It's in who can change them. Marketing updates courses. Content teams add modules. No engineering required. Everything lives in Builder CMS. When you decouple content from code, good things happen.
 
-- **Course Library**: Courses pulled from Builder CMS with modules, videos, and quizzes
-- **Progress Tracking**: Tracks completion at the module level for each user
-- **Certifications**: Partner certification program with capstone projects
-- **Access Control**: Free users can log in but can't access course content. Only clients, partners, and super admins get full access
+Here's what users see: a course library, progress tracking, certifications. Standard stuff. But here's what they don't see: the flexibility. The system adapts. New course? Add it in the CMS. Update a module? Change it in Builder. The app reflects changes instantly.
 
-**Technical Implementation:**
+The access control works like gates. Different user types get different access. Free users can browse but can't dive deep. Paid users get everything. Simple rules. They work.
 
-- Courses stored in Builder CMS as content models
-- Module completion tracked in Convex \`courseProgress\` table
-- User type determines access level (\`free\`, \`client\`, \`partner\`, \`super_admin\`)
+### The Onboarding Workspace
 
-### 2. Customer Onboarding Workspace
+This is where Academy became something else. Not just a learning center. A customer success platform.
 
-This is where Academy became a customer success platform. Organizations go through structured onboarding journeys with sessions, checkpoints, and progress gates.
+Organizations need structure. Not chaos. Not "figure it out yourself." But a clear path. Session one leads to session two. Checkpoints gate progress. Most of the team completes requirements, the next session unlocks.
 
-**Key Features:**
+I remember the moment I realized this could work. We were building the learning portal. Tracking module completion. Showing progress. Then it hit me: onboarding is just learning with gates. Same patterns. Same architecture. Different problem.
 
-- **Session-Based Journeys**: Onboarding broken into sessions (Kickoff, Session 1, Session 2, etc.)
-- **Checkpoints**: Each session has checkpoints linked to modules or documentation
-- **Session Gating**: Sessions unlock when 70% of the team completes required checkpoints (you can change this per org)
-- **Meeting Management**: Each session can have custom meeting URLs (plan default, org default, or session-specific)
-- **Progress Visibility**: Teams see their progress breakdown by checkpoint and user
+The workspace breaks onboarding into sessions. Each session has checkpoints. Complete the checkpoints, unlock the session. Simple concept. Complex execution.
 
-**How It Works:**
+Here's how it works: organizations get assigned a plan. Different plans for different needs. The plan defines sessions. Sessions have checkpoints. Checkpoints link to modules or docs. Users complete modules. The system watches. When enough people finish, the gate opens. The session becomes bookable.
 
-1. Organization gets assigned an onboarding plan (e.g., "Publish", "Fusion", "Hybrid")
-2. Plan defines sessions with checkpoint IDs
-3. Checkpoints map to modules via \`checkpointModuleMap\` table
-4. As users complete modules, \`recalculateOrgProgress\` computes checkpoint completion
-5. When threshold is met, session becomes "ready" and bookable
-6. Sessions unlock in order—Session N requires Session N-1 to be complete
+Sessions unlock in order. You can't skip ahead. That's intentional. Onboarding is a journey, not a sprint. But the system is flexible. If someone needs to move faster, we can override. Human judgment beats rigid rules.
 
 ![Module to Session Unlock Flow](placeholder:figma-diagram-module-unlock)
 
-### 3. Customer Success Dashboard
+### The CS Dashboard
 
-The command center for Builder's CS team. This is where we manage accounts, assign owners, monitor progress, and handle exceptions.
+This is the command center. Where we see everything. Manage accounts. Assign owners. Handle exceptions.
 
-**Key Features:**
+The customer success team needed visibility. They couldn't manage what they couldn't see. So we built a dashboard. Real-time progress. Account status. Owner assignments. Threshold controls.
 
-- **Account Management**: HubSpot integration auto-syncs accounts, owners, and customer stage
-- **Owner Assignment**: Assign CE, CSM, AE, or Partner Manager to accounts
-- **Threshold Control**: Adjust completion threshold per organization (default 70%)
-- **Manual Overrides**: Unlock sessions manually with audit trails (who, when, why)
-- **Progress Monitoring**: See progress breakdown across all customers
-- **User Progress Breakdown**: Drill down to see which users completed which checkpoints
+But here's the thing: automation handles ninety percent of cases. The dashboard handles the other ten. The exceptions. The edge cases. The "this customer needs special treatment" moments.
 
-**HubSpot Integration:**
+That's why we built manual overrides. With audit trails. Every override gets logged. Who did it. When. Why. Full transparency. Because when you give humans control, you need visibility.
 
-- Accounts sync automatically from HubSpot (companies)
-- Owner relationships sync from HubSpot teams
-- Auto-linking organizations by \`root_org_id\` prevents duplicates
-- Customer stage and sentiment sync for CS visibility
+The HubSpot integration runs in the background. It syncs accounts. Maps owners. Links organizations. Prevents duplicates. Keeps everything in sync. The CS team works in HubSpot. Academy stays current. No manual data entry. No drift.
 
 ![HubSpot Sync Flow](placeholder:figma-diagram-hubspot-sync)
 
+Three surfaces. One foundation. That's the architecture. But how does it actually work? Let me pull back the curtain.
+
 ---
 
-## How It Works: Technical Deep Dive
+## How It Works
 
-### Architecture Overview
+The architecture is simple. Four pieces. Each does one job well.
+
+Builder CMS holds the content. Courses, checkpoints, plans. Marketing owns it. Engineering doesn't touch it. That separation matters. When content lives outside code, good things happen.
+
+Convex handles the data with real-time updates. No polling required. No cache invalidation needed. You change something, the UI knows immediately. That's the magic. When real-time is default, you build differently.
+
+Next.js renders the three surfaces: learning portal, onboarding workspace, CS dashboard. Same codebase. Different views. Same architecture. Different problems.
+
+HubSpot is the source of truth for accounts, owners, and customer stages. We sync from HubSpot, never to it. Read-only prevents drift. One-way sync keeps everyone aligned.
 
 ![System Architecture Diagram](/diagrams/Academy System Architecture.png)
 
-The system has four main parts:
+The tech stack is boring. That's the point. Next.js. Convex. Builder CMS. HubSpot. Tailwind. Nothing fancy. Everything proven. When you're moving fast, you want tools that don't fight you.
 
-- **Builder CMS**: Content source (courses, checkpoints, plans)
-- **Convex Backend**: Serverless database with real-time updates
-- **Next.js Frontend**: React app with three surfaces (learning portal, onboarding workspace, CS dashboard)
-- **HubSpot**: Source of truth for accounts and owners
+### The Flow
 
-**Tech Stack:**
+Here's what happens when someone completes a module.
 
-- **Frontend**: Next.js 15 (React 19) with App Router
-- **Backend**: Convex (serverless database with real-time reactivity)
-- **CMS**: Builder.io (content source for courses and onboarding plans)
-- **CRM**: HubSpot (source of truth for accounts and owners)
-- **Styling**: Tailwind CSS
+They finish. Click done. The system records the completion. That's step one.
 
-### Data Flow: Module Completion → Session Unlock
+Then the system looks up. Are they part of an organization? Do they have checkpoints assigned? It checks membership. It counts completions. It calculates progress.
 
-Here's how a user completing a module triggers a session unlock:
+When enough people complete the checkpoints, the gate opens. The session unlocks. It becomes bookable. Simple logic. Complex reality.
 
 ![Module to Session Unlock Flow](placeholder:figma-diagram-module-unlock)
 
-\`\`\`typescript
-// 1. User completes module (client-side)
-handleQuizComplete() {
-  updateProgress(courseId, moduleId, true);
-}
-
-// 2. Progress saved to Convex
-export const saveCourseProgress = mutation({
-  handler: async (ctx, args) => {
-    await ctx.db.insert('courseProgress', {
-      userId: args.userId,
-      moduleId: args.moduleId,
-      completed: true,
-    });
-  },
-});
-
-// 3. Recalculate org-level checkpoint completion
-export const recalculateOrgProgress = mutation({
-  handler: async (ctx, args) => {
-    const threshold = orgProgress?.completionThreshold || 70;
-    const progressMap = await resolveMultipleCheckpointProgress(
-      ctx,
-      orgId,
-      checkpointIds
-    );
-    
-    // Check if threshold met for each checkpoint
-    const completed = checkpointIds.filter(id => {
-      const progress = progressMap[id];
-      const percent = (progress.completedUsers / progress.totalUsers) * 100;
-      return percent >= threshold;
-    });
-    
-    await ctx.db.patch(orgProgressId, {
-      completedCheckpointIds: completed,
-    });
-  },
-});
-
-// 4. Session status computed on-demand
-export function computeSessionStatus(input: {
-  checkpointIds: string[];
-  completedCheckpointIds: string[];
-  completionThreshold: number;
-  manualOverride?: { isUnlocked: boolean };
-  previousSessionComplete: boolean;
-}): 'pending' | 'ready' {
-  // Precedence: manual lock → manual unlock → sequence → threshold
-  if (input.manualOverride?.isUnlocked === false) return 'pending';
-  if (input.manualOverride?.isUnlocked === true) return 'ready';
-  if (!input.previousSessionComplete) return 'pending';
-  
-  const percent = (input.completedCheckpointIds.length / input.checkpointIds.length) * 100;
-  return percent >= input.completionThreshold ? 'ready' : 'pending';
-}
-\`\`\`
-
 ### Session Unlock Logic
 
-The \`computeSessionStatus\` function uses a precedence system:
+Sessions unlock in a specific order. Like a combination lock. You need the right sequence.
+
+First, check if someone manually locked it. Manual lock beats everything. That's the highest priority.
+
+Next, check if someone manually unlocked it. Sometimes you need exceptions. A CEO with a tight schedule. A customer who needs to move fast. Manual unlock allows that.
+
+Then check the sequence. Can't unlock session three if session two isn't done. That's intentional. Onboarding is linear for a reason.
+
+Finally, check the threshold. Did enough people complete the checkpoints? If yes, unlock. If no, wait.
 
 ![Session Status Precedence](placeholder:figma-diagram-session-precedence)
 
-1. **Manual Lock** (highest): If CS team explicitly locked the session, it stays locked
-2. **Manual Unlock**: If CS team unlocked it, it's ready (allows exceptions)
-3. **Sequence Dependency**: Session N requires Session N-1 to be complete
-4. **Threshold Check**: Finally, check if enough checkpoints are complete
+This precedence system handles edge cases. It respects human judgment. But it defaults to automation. That's the balance.
 
-This design ensures sessions unlock naturally, but CS can override when needed—with full audit trails.
+### The HubSpot Sync
 
-### HubSpot Integration
+HubSpot runs the show. The CS team lives there. They manage accounts. Assign owners. Track stages. Academy needs to stay in sync.
 
-The HubSpot sync runs periodically to keep accounts and owners in sync:
+So we built a sync. It runs periodically. Pulls accounts. Maps owners. Links organizations. Prevents duplicates.
 
-\`\`\`typescript
-export const syncAccounts = internalAction({
-  handler: async ctx => {
-    const companies = await hubspotRequest('/crm/v3/objects/companies');
-    
-    for (const company of companies) {
-      // Map HubSpot properties to our schema
-      const assignedOwnerIds = extractOwners(company.properties);
-      const onboardingStage = mapCustomerStage(company.properties.customer_stage);
-      
-      // Upsert account
-      const accountId = await ctx.runMutation(internal.accounts.upsert.upsertAccount, {
-        hubspotId: company.id,
-        name: company.properties.name,
-        assignedOwnerIds,
-        onboardingStage,
-        rootOrgId: company.properties.root_org_id,
-        // ... other fields
-      });
-      
-      // Auto-link organization if root_org_id exists
-      if (company.properties.root_org_id) {
-        await ctx.runAction(internal.hubspot.autoLink.tryAutoLink, {
-          accountId,
-          rootOrgId: company.properties.root_org_id,
-        });
-      }
-    }
-  },
-});
-\`\`\`
+The sync is smart. It looks for existing accounts before creating new ones. It links organizations automatically. It prevents data drift.
 
-**Key Features:**
+![HubSpot Sync Flow](placeholder:figma-diagram-hubspot-sync)
 
-- **Deduplication**: Queries by \`rootOrgId\` to prevent duplicate accounts
-- **Auto-linking**: Links HubSpot accounts to Builder organizations automatically
-- **Owner mapping**: Extracts CE, CSM, AE, PM from HubSpot team assignments
+The key insight: HubSpot is the source of truth. We read from it. We never write to it. That prevents conflicts. Keeps everyone aligned.
 
-### Data Model Highlights
+### The Data Model
 
-**Core Tables:**
+The system tracks progress at different levels. Individual users complete modules. Organizations complete checkpoints. Sessions unlock based on both.
 
-1. **\`checkpointModuleMap\`**: Bridge table connecting Builder CMS checkpoints to Convex modules
-   - Fields: \`checkpointId\`, \`moduleId\`, \`planKey\`, \`sessionId\`
-   - Enables flexible content-to-progress mapping
+A bridge table connects content to progress. Checkpoints in Builder CMS map to modules in the system. This decoupling is crucial. Change content without touching code. Change code without touching content.
 
-2. **\`orgProgress\`**: Organization-level progress tracking
-   - Fields: \`completedCheckpointIds[]\`, \`completionThreshold\`, \`manualUnlocks\`
-   - Stores audit trail for manual overrides
+Progress tracking stores completion status. Who finished what. When. Simple boolean tracking. But powerful when aggregated.
 
-3. **\`courseProgress\`**: Individual user module completion
-   - Fields: \`userId\`, \`moduleId\`, \`completed\`
-   - Simple boolean tracking per user per module
+Account data syncs from HubSpot. Owner assignments. Customer stages. Organization links. Everything stays current. No manual updates. No stale data.
 
-4. **\`accounts\`**: HubSpot company data with owner relationships
-   - Fields: \`hubspotId\`, \`assignedOwnerIds[]\`, \`onboardingStage\`, \`rootOrgId\`
-   - Source of truth synced from HubSpot
+Plans define the journey. Different plans for different needs. Each plan has sessions. Sessions have checkpoints. Checkpoints gate progress. It's turtles all the way down.
 
-5. **\`onboardingPlans\`**: Plan templates (Publish, Fusion, Hybrid)
-   - Defines sessions, checkpoints, and thresholds per plan type
+The architecture is elegant in its simplicity. But it didn't start that way. It evolved. And the evolution tells a story.
 
 ---
 
-## Evolution: From Learning Center to CS Platform
+## The Evolution
 
-### Phase 1: MVP (Learning Center)
+Phase one was simple. A learning center. Access control. Content management. Progress tracking. Three components. That's it.
 
-Started simple:
+The goal was clear: let partners self-serve certification materials. No more "send me the slides." No more "where's that video?" Everything in one place. Accessible. Trackable.
 
-- IAM system for access control (free vs. paid users)
-- Content management boilerplate (courses, modules, quizzes)
-- Builder.io Figma plugin for rapid prototyping
-- Tailwind CSS for design system
+I built it fast. Used what I had. Builder's design tools weren't ready, so I pulled styles from Figma. Prototyped with the plugin. Shipped with Tailwind. It worked.
 
-Goal: Enable partners to self-serve certification materials.
+But here's what happened: once the learning center worked, I saw the same patterns everywhere. Onboarding was just learning with gates. Progress tracking was the same logic. Session management mirrored course structure.
 
-### Phase 2: Customer Success Platform
+The pivot wasn't planned. It was obvious. The architecture already solved the problem. I just needed to see it.
 
-The pivot happened naturally. After building the learning center, I realized the same patterns applied to customer onboarding:
+### The Pivot
 
-- **Session-based journeys**: Replace ad-hoc onboarding with structured sessions
-- **Progress tracking**: Track checkpoint completion instead of just module completion
-- **HubSpot integration**: Sync accounts and owners automatically
-- **CS dashboard**: Give CS team visibility and control
+The moment came during a customer call. We were talking about onboarding. The customer was frustrated. Too many meetings. Unclear progress. No visibility.
 
-**Key Insight**: The patterns were identical—tracking progress, managing sessions, empowering teams. The learning center architecture could serve both use cases.
+I realized: we had all the pieces. Progress tracking. Session gates. User management. We just needed to connect them differently.
 
-### What Changed
+So we added organization-level tracking. Checkpoint mapping. Session gating. HubSpot sync. A CS dashboard. But the core stayed the same. Same architecture. Same patterns. Different problem.
 
-1. **Added \`checkpointModuleMap\`**: Bridge table to connect Builder CMS checkpoints to modules
-2. **Added \`orgProgress\`**: Organization-level progress tracking with thresholds
-3. **Added session gating logic**: \`computeSessionStatus\` function with precedence rules
-4. **Added HubSpot sync**: Automatic account and owner syncing
-5. **Added CS dashboard**: Admin interface for managing accounts and overrides
+That's the insight: good architecture scales. Not through complexity. Through simplicity. The same simple patterns solve different problems. You just need to see the connections.
 
-**What Stayed the Same:**
+What changed? We added layers. Bridge tables. Progress aggregation. Sync jobs. But the foundation? It stayed. Next.js. Convex. Builder CMS. Access control. Progress tracking. Those pieces worked. We just used them differently.
 
-- Core architecture (Next.js + Convex + Builder CMS)
-- Module completion tracking (\`courseProgress\` table)
-- Access control system (user types)
+What stayed the same? Everything that mattered. The architecture. The patterns. The philosophy. Build simple. Build fast. Build what you need.
+
+That's the high-level story. But the devil is in the details. And the details are where the magic happens.
 
 ---
 
-## Key Features Deep Dive
+## The Details
 
 ### Session Gating
 
-Sessions unlock based on checkpoint completion, but with smart defaults and manual overrides.
+Sessions unlock when the team hits the threshold. Simple concept. But reality is messy.
 
-**Default Behavior:**
+The first session always unlocks. That's the kickoff. No gates. Everyone can start.
 
-- Session 1 (Kickoff): Always unlocked
-- Sessions 2+: Locked until previous session complete AND checkpoint threshold met
-- Default threshold: 70% of team must complete checkpoints
+After that, it gets strict. Session two waits for session one. Session three waits for session two. Linear progression. You can't skip ahead.
 
-**Manual Overrides:**
+The threshold varies. Small teams might need everyone. Large teams might need most people. The system lets you configure it. But defaults matter. Most teams use the default. It works.
 
-- CS team can unlock sessions early (e.g., CEO has tight schedule)
-- Requires reason (recorded in audit trail)
-- Can re-lock if needed
-- Full audit trail: who, when, why
+Manual overrides exist for exceptions. A CEO with a packed schedule. A customer who needs to move fast. We can unlock early. But it gets logged. Who did it. When. Why. Full transparency.
 
-**Threshold Configuration:**
+The audit trail is crucial. When you give humans control, you need visibility. Every override. Every threshold change. Every lock. It's all tracked. Because trust requires transparency.
 
-- Configurable per organization (default 70%)
-- Common values: 50% (small teams), 70% (balanced), 100% (strict)
-- Change history tracked in \`thresholdHistory\` array
+### The HubSpot Sync
 
-### HubSpot Integration
+HubSpot holds the truth. Accounts. Owners. Customer stages. The CS team lives there. Academy needs to stay aligned.
 
-**What Syncs:**
+So we sync. Periodically. Pull accounts. Map owners. Link organizations. Prevent duplicates.
 
-- Accounts (companies) with metadata (customer stage, industry, location)
-- Owners (CE, CSM, AE, PM) from HubSpot team assignments
-- Onboarding stage (mapped from customer_stage property)
-- Organization linking (via \`root_org_id\`)
+The sync is smart. It checks for existing accounts before creating new ones. It links organizations automatically. It prevents data drift. But it's one-way. We read from HubSpot. We never write to it. That prevents conflicts.
 
-**Deduplication Logic:**
+Owner mapping extracts team assignments. Different roles get different access. The sync keeps it current. No manual updates. No stale data.
 
-- If account not found by \`hubspotId\`, query by \`rootOrgId\`
-- Update existing account instead of creating duplicate
-- Prevents multiple records for same organization
-
-**Auto-Linking:**
-
-- When \`root_org_id\` exists, automatically links HubSpot account to Builder organization
-- Creates relationship for progress tracking
+Organization linking happens automatically. When we see a match, we link it. Prevents duplicate accounts. Keeps everything aligned. Simple logic. Powerful results.
 
 ### Access Control
 
-**User Types:**
+User types define access. Simple gates. They work.
 
-- \`free\`: Can log in but cannot access courses
-- \`client\`: Full course access, sees their org's onboarding journey
-- \`partner\`: Full course access, certification program
-- \`super_admin\`: CS dashboard access, can manage all accounts
+Free users can browse but can't dive deep. They see the catalog. They can't access courses. That's intentional. Free tier drives upgrades.
 
-**Authorization:**
+Clients get full course access. They see their organization's journey. Progress tracking. Session visibility. Everything they need.
 
-- Middleware checks user type before route access
-- Queries validate \`assertViewerCanAccessOrg\` before returning data
-- Mutations check permissions (super_admin or org admin)
+Partners get everything clients get, plus certification. Capstone projects. Badges. The full program.
 
----
+Super admins get the dashboard. They can manage accounts. Adjust thresholds. Handle exceptions. Full control. Full visibility.
 
-## Impact & Lessons
+The authorization is simple. Check user type. Check organization membership. Check permissions. Then allow or deny. No complex rules. Just clear gates.
 
-### Automation Impact
-
-**Before Academy:**
-
-- 25-30 hours/week of repetitive onboarding calls
-- Manual tracking in spreadsheets
-- No visibility into progress
-- Doesn't scale with team growth
-
-**After Academy:**
-
-- 1 customer = same effort
-- 100 customers = marginally more effort (system handles tracking)
-- Real-time progress visibility
-- CS team handles exceptions, not routine tracking
-
-**Transformation:**
-
-- From reactive → proactive CS
-- From manual → automated tracking
-- From opaque → transparent progress
-
-### Key Lessons
-
-**1. Build What You Need**
-
-Started solving my own problem (repetitive calls). When you build for yourself, you understand the pain points deeply.
-
-**2. Automate the Repetitive**
-
-25 hours/week of saying the same thing? That's automation gold. Identify patterns, codify them, let the system handle it.
-
-**3. Empower Humans for Exceptions**
-
-Automation handles 90% of cases. Manual overrides with audit trails handle the rest. Don't try to automate edge cases—give humans control with visibility.
-
-**4. Ship Fast**
-
-MVP in weeks, not months. Used tech stack that cut corners (Convex for backend, Builder CMS for content). Fast iteration > perfect architecture.
-
-### Technical Learnings
-
-**Convex's Reactivity**
-
-Real-time progress tracking is trivial with Convex. Queries auto-refetch when data changes. No manual cache invalidation needed.
-
-**Builder CMS as Content Source**
-
-Marketing can update courses without touching code. Content and code are properly separated. Reduces maintenance burden.
-
-**HubSpot as Source of Truth**
-
-Accounts and owners sync automatically. Prevents data drift. CS team works in HubSpot, Academy stays in sync.
-
-**Bridge Tables Enable Flexibility**
-
-\`checkpointModuleMap\` decouples content (Builder CMS) from progress (Convex). Can change checkpoint definitions without touching progress logic.
+Those are the mechanics. But what did we actually learn? What matters? What doesn't? That's where the real insights live.
 
 ---
 
-## Conclusion
+## What We Learned
 
-Academy started as a solution to my own pain point—25 hours a week of repetitive calls. It evolved into a full customer success platform because the patterns were universal: track progress, manage sessions, empower teams.
+### The Impact
 
-The technical architecture enabled this evolution. Convex's reactivity made real-time tracking trivial. Builder CMS as content source reduced maintenance. HubSpot integration prevented data drift. Bridge tables enabled flexible content-to-progress mapping.
+Before Academy, onboarding was manual. Spreadsheets tracked progress. Calls repeated the same script. Thirty hours a week disappeared into the void.
 
-But the real lesson isn't technical—it's about building what you need, automating the repetitive, and empowering humans for exceptions. When you solve your own problem deeply, you build something others need too.
+After Academy, the math changed. One customer takes the same effort as before. But a hundred customers? The system handles the tracking. The CS team handles exceptions. Not routine.
+
+The transformation is clear: from reactive to proactive. From manual to automated. From opaque to transparent. That's the shift.
+
+But numbers don't tell the whole story. The real impact is invisible. Fewer frustrated customers. Clearer progress. Better visibility. That's what automation buys you.
+
+### The Lessons
+
+**Build what you need.**
+
+I started solving my own problem. Repetitive calls. Manual tracking. No visibility. When you build for yourself, you understand the pain. Deeply. That understanding shapes everything.
+
+**Automate the repetitive.**
+
+Twenty-five hours a week saying the same thing? That's automation gold. Find the pattern. Codify it. Let the system handle it. Your time is better spent elsewhere.
+
+**Empower humans for exceptions.**
+
+Automation handles most cases. Ninety percent, maybe more. But edge cases exist. Special situations. Unexpected needs. That's where humans shine. Give them control. Give them visibility. Audit trails provide transparency. Trust emerges from transparency.
+
+**Ship fast.**
+
+MVP in weeks, not months. Use tools that cut corners intelligently. Convex for backend. Builder CMS for content. Fast iteration beats perfect architecture. Every time.
+
+### Technical Insights
+
+**Real-time is trivial when it's built in.**
+
+Convex's reactivity changed everything. Data changes, the UI updates. No polling. No cache invalidation. No manual sync. That's the magic. When real-time is default, you build differently.
+
+**Content should live outside code.**
+
+Builder CMS separates content from code. Marketing updates courses. Content teams add modules. Engineering doesn't touch it. That separation reduces maintenance. It enables velocity.
+
+**Source of truth matters.**
+
+HubSpot runs the CS team. They manage accounts there. Assign owners there. Track stages there. Academy syncs from HubSpot. Never to it. That one-way sync prevents conflicts. Keeps everyone aligned.
+
+**Decoupling enables flexibility.**
+
+Bridge tables connect systems without coupling them. Change content without touching code. Change code without touching content. That flexibility is crucial. It's how systems evolve without breaking.
+
+---
+
+## The End (Or Is It?)
+
+Academy started as a solution to my own problem. Thirty hours a week. Same script. Same questions. Same answers. There had to be a better way.
+
+It evolved into something bigger. Not because I planned it. Because the patterns were universal. Track progress. Manage sessions. Empower teams. Those patterns scale.
+
+The technical architecture enabled that evolution. Real-time updates made progress visible. Content separation reduced maintenance. One-way syncs prevented drift. Bridge tables enabled flexibility. But those are just tools. The real lesson is deeper.
+
+Build what you need. Automate the repetitive. Empower humans for exceptions. When you solve your own problem deeply, you build something others need too.
+
+That's the thing about good architecture. It doesn't just solve one problem. It reveals patterns. It enables evolution. It scales through simplicity, not complexity.
+
+Academy isn't done. It's evolving. New features. New patterns. New problems. But the foundation stays. Simple. Fast. Flexible. That's how systems grow.
 
 ---
 
