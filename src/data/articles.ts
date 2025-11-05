@@ -79,27 +79,24 @@ Keep this authentic and personal. Your readers will connect with genuine experie
     tags: ['case-study', 'product', 'learning'],
     content: `## The Opportunity
 
-Picture this: You're onboarding customers. Week after week. Same fundamentals. Same questions. Same answers. It's important work—getting customers set up right matters. But here's the thing: when you find yourself repeating the same onboarding flow dozens of times, you start seeing patterns. And patterns mean opportunity.
-
 I was a customer engineer at Builder. We were lean, scrappy, the kind of team where good ideas become projects. When you see a problem worth solving, you can solve it.
 
-My philosophy is simple: if software doesn't save time, it's useless. Unless you're building games. Games get a pass. Social media? That's the exception—a bottomless time pit masquerading as connection. And yes, I'm guilty of oiling that wheel too. Everything else? It better give people hours back.
+And at builder we had a problem. Getting customers set up right matters. But here's the thing: when you find yourself repeating the same onboarding flow dozens of times, you start seeing patterns. And patterns mean opportunity.
 
-The spreadsheets told the story. Row after row of manual tracking. Which customers completed which checkpoints. Which session they're on. Who needs follow-up. Which accounts are stuck. Good intentions, but manual processes don't scale. As Builder grew, so did our customer base. The old way wouldn't cut it.
 
-Then the pieces aligned. New team. New role. I moved to partnerships. They needed a certification program for our partners. That's when I saw it—not just a certification program, but a way to transform how we ramp up and onboard customers. A way to scale what worked. A way to give that time back to the team.
+The spreadsheets told the story. Row after row of manual tracking. Which session they're on. Who needs follow-up. Which accounts are stuck. Good intentions, but manual processes don't scale. As Builder grew, so did our customer base. The old way wouldn't cut it.
+
+Then the pieces aligned. New team. New role. I moved to partnerships. They needed a certification program for our partners. That's when I saw it—not just a certification program, but a way to transform how we ramp up and onboard customers. A way to scale what worked. A way to give that time back to the team. **[Academy](https://academy.builder.io)** came from that.
 
 ## Building in the Dark
 
-Speed kills. Not the kind that gets you pulled over. The kind that kills projects before they see daylight.
+No clear blueprint. No guarantee it'll work. Just momentum and hope, and the conviction that automation could solve a real problem. That's what it felt like building Academy. I was building blind—no clear path forward, no certainty it would work. Just the willingness to bet on it.
 
-You're building blind. No roadmap. No guarantee it'll work. Just momentum and hope.
-
-In a startup, you have a window. It's small. And it's closing. Build too slow, and by the time you ship, the problem changed. The team moved on. The opportunity evaporated. Build fast, or don't build at all.
+In a startup, you have a window—small and closing. Build too slow, and by the time you ship, the problem has changed, the team moved on, the opportunity evaporated. You build fast, or you don't build at all.
 
 So I made a bet. In the margins. Early mornings, late nights. The nine-to-five wouldn't cut it. I needed velocity. The kind that comes from knowing what to skip.
 
-I chose **[Next.js](https://nextjs.org/)** with **[Convex](https://convex.dev/)**. Fast to prototype. **Real-time** out of the box. No infrastructure headaches. **[Builder Fusion](https://www.builder.io/c/docs/get-started-fusion)** hadn't launched yet, so I used **[Builder's Figma plugin](https://www.builder.io/c/docs/builder-figma-plugin)** to prototype the design system and import design sketches. Pulled **[Tailwind](https://tailwindcss.com/)** styles from the generated code, and built the rest.
+**[Builder Fusion](https://www.builder.io/c/docs/get-started-fusion)** hadn't launched yet, so I used **[Builder's Figma plugin](https://www.builder.io/c/docs/builder-figma-plugin)** to prototype the design system and import design sketches. Pulled **[Tailwind](https://tailwindcss.com/)** styles from the generated code. I chose **[Next.js](https://nextjs.org/)** with **[Convex](https://convex.dev/)**. Fast to prototype. **Real-time** out of the box. No infrastructure headaches. And built the rest.
 
 The **MVP** had three parts: **access control**, **content management**, and **progress tracking**. That's it. No bells. No whistles. Just enough to prove the concept.
 
@@ -197,7 +194,7 @@ The architecture is elegant in its simplicity. But it didn't start that way. It 
 
 Phase one emerged from necessity. A learning center that would let partners self-serve certification materials—no more "send me the slides" requests, no more hunting for that one video buried in a shared drive. Everything centralized. Accessible. Trackable. The foundation was straightforward: access control, content management, and progress tracking. Three components that would prove to be more powerful than they first appeared.
 
-I built it fast, leveraging what was available. **[Builder Fusion](https://www.builder.io/c/docs/get-started-fusion)** hadn't launched yet, so I used **[Builder's Figma plugin](https://www.builder.io/c/docs/builder-figma-plugin)** to import design sketches and prototype the design system. I pulled styles from Figma, prototyped with the plugin, and shipped with **[Tailwind](https://tailwindcss.com/)**. It worked. More importantly, it gave me a canvas to see what patterns were actually emerging.
+I built it fast, leveraging what was available. **[Builder Fusion](https://www.builder.io/c/docs/get-started-fusion)** hadn't launched yet, so I used **[Builder's Figma plugin](https://www.builder.io/c/docs/builder-figma-plugin)** to import design sketches and prototype the design system. The plugin generated code with **[Tailwind](https://tailwindcss.com/)** classes, which I extracted and used to build the actual application. It worked. More importantly, it gave me a canvas to see what patterns were actually emerging.
 
 Here's what happened: once the learning center began functioning, the patterns started revealing themselves everywhere. Onboarding wasn't fundamentally different from learning—it was just learning with gates. Progress tracking followed the same logical structure. Session management mirrored course structure so closely it felt inevitable. The architecture I'd built was already solving problems I hadn't explicitly designed it for.
 
