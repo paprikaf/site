@@ -51,6 +51,16 @@ export function Nav() {
             About
           </button>
           <button
+            onClick={() => handleNavigation('/resume')}
+            className={`text-sm transition-colors ${
+              isActive('/resume')
+                ? 'text-text underline underline-offset-4 decoration-yellow-500 decoration-2'
+                : 'text-border hover:text-text'
+            }`}
+          >
+            Resume
+          </button>
+          <button
             onClick={() => handleNavigation('/writing')}
             className={`text-sm transition-colors ${
               isActive('/writing')

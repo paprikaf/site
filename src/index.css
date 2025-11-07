@@ -153,3 +153,53 @@
     @apply transition-all duration-300 ease-in-out;
   }
 }
+
+/* Print styles for resume */
+@media print {
+  /* Hide navigation and non-essential elements */
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Optimize page layout */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Ensure proper page breaks */
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  ul,
+  ol {
+    page-break-inside: avoid;
+  }
+
+  /* Remove shadows and borders for cleaner print */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure links are visible */
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  /* Optimize spacing */
+  .mx-auto {
+    max-width: 100% !important;
+  }
+
+  /* Remove padding for better page usage */
+  .px-6,
+  .py-12,
+  .py-20 {
+    padding: 0.5rem !important;
+  }
+}
