@@ -30,3 +30,4 @@ context/*
 !context/*.pdf
 
 .env
+.vercel

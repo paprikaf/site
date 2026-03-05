@@ -12,7 +12,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.58",
+    "@ai-sdk/react": "^3.0.118",
     "@radix-ui/react-slot": "^1.2.3",
+    "ai": "^6.0.116",
     "class-variance-authority": "^0.7.1",
     "lucide-react": "^0.548.0",
     "react": "^19.1.1",
