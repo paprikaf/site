@@ -36,15 +36,6 @@ function ResumeComponent() {
       {/* Contact Info */}
       <div className="flex flex-wrap gap-4 text-sm text-border/80 mb-12 pb-8 border-b border-border/20">
         <a
-          href="mailto:ahmed.felfel@gmail.com"
-          className="hover:text-yellow-500 transition-colors"
-        >
-          ahmed.felfel@gmail.com
-        </a>
-        <span>•</span>
-        <span>+1 (514) 506-7010</span>
-        <span>•</span>
-        <a
           href="https://www.linkedin.com/in/ahmed-felfel-080895/"
           target="_blank"
           rel="noopener noreferrer"
@@ -71,10 +62,11 @@ function ResumeComponent() {
         <p className="text-lg leading-relaxed text-border/90">
           Full-stack engineer with 6+ years building AI-powered platforms and
           GTM automation. Built Builder Academy serving 500+ users with 40%
-          reduction in support needs. Track record unblocking $100K+ deals and
-          managing $300K+ ARR portfolios. Trilingual (English, French, Arabic).
-          Specialized in workflow automation, scalable systems, and partner
-          enablement.
+          reduction in support needs. Architected AI agents (Dobby, CLAW) for
+          GTM and product development automation. Track record unblocking $100K+
+          deals and managing $300K+ ARR portfolios. Trilingual (English,
+          French, Arabic). Specialized in workflow automation, scalable
+          systems, and partner enablement.
         </p>
       </section>
 
@@ -89,13 +81,25 @@ function ResumeComponent() {
             <span className="text-sm text-border/60 italic">Remote</span>
           </div>
 
-          {/* Partnerships Engineer */}
+          {/* GTM Engineer */}
           <div className="mb-6 ml-0 sm:ml-4">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
-              <h4 className="text-lg font-semibold">Partnerships Engineer</h4>
+              <h4 className="text-lg font-semibold">GTM Engineer</h4>
               <span className="text-sm text-border/60">Dec 2024 – Present</span>
             </div>
             <ul className="list-disc list-inside space-y-2 text-border/90 ml-2">
+              <li>
+                Works directly with both cofounders and head of revops on GTM
+                strategy and automation
+              </li>
+              <li>
+                Built <strong>Dobby</strong> (ai-gtm), an AI agent for GTM
+                automation, lead qualification, and pipeline intelligence
+              </li>
+              <li>
+                Contributed to <strong>CLAW</strong>, an org-level agent
+                framework for automated product development orchestration
+              </li>
               <li>
                 Built <strong>Builder Academy</strong> platform serving{' '}
                 <strong>500+ users</strong>
@@ -331,7 +335,7 @@ function ResumeComponent() {
             <h4 className="font-semibold mb-2">AI/Automation</h4>
             <p className="text-border/90 text-sm">
               MCP (Model Context Protocol), LLM/agent integrations, workflow
-              automation
+              automation, agent development
             </p>
           </div>
           <div>
