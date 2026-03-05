@@ -64,9 +64,9 @@ function ResumeComponent() {
           GTM automation. Built Builder Academy serving 500+ users with 40%
           reduction in support needs. Architected AI agents (Dobby, CLAW) for
           GTM and product development automation. Track record unblocking $100K+
-          deals and managing $300K+ ARR portfolios. Trilingual (English,
-          French, Arabic). Specialized in workflow automation, scalable
-          systems, and partner enablement.
+          deals and managing $300K+ ARR portfolios. Trilingual (English, French,
+          Arabic). Specialized in workflow automation, scalable systems, and
+          partner enablement.
         </p>
       </section>
 
@@ -136,7 +136,9 @@ function ResumeComponent() {
           <div className="ml-0 sm:ml-4">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
               <h4 className="text-lg font-semibold">Customer Engineer</h4>
-              <span className="text-sm text-border/60">Apr 2023 – Dec 2024</span>
+              <span className="text-sm text-border/60">
+                Apr 2023 – Dec 2024
+              </span>
             </div>
             <ul className="list-disc list-inside space-y-2 text-border/90 ml-2">
               <li>
@@ -196,18 +198,19 @@ function ResumeComponent() {
         <div className="mb-8">
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
             <h3 className="text-xl font-bold">Appnovation</h3>
-            <span className="text-sm text-border/60 italic">
-              Remote/Hybrid
-            </span>
+            <span className="text-sm text-border/60 italic">Remote/Hybrid</span>
           </div>
           <div className="ml-0 sm:ml-4">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
               <h4 className="text-lg font-semibold">Full-Stack Developer</h4>
-              <span className="text-sm text-border/60">May 2021 – Apr 2023</span>
+              <span className="text-sm text-border/60">
+                May 2021 – Apr 2023
+              </span>
             </div>
             <ul className="list-disc list-inside space-y-2 text-border/90 ml-2">
               <li>
-                Built <strong>VMware interactive video communication app</strong>{' '}
+                Built{' '}
+                <strong>VMware interactive video communication app</strong>{' '}
                 (Electron, React, TypeScript, Contentful) with complex access
                 control and high traffic
               </li>
@@ -239,7 +242,9 @@ function ResumeComponent() {
           <div className="ml-0 sm:ml-4">
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-2">
               <h4 className="text-lg font-semibold">Web Developer</h4>
-              <span className="text-sm text-border/60">Apr 2019 – Apr 2021</span>
+              <span className="text-sm text-border/60">
+                Apr 2019 – Apr 2021
+              </span>
             </div>
             <ul className="list-disc list-inside space-y-2 text-border/90 ml-2">
               <li>
@@ -270,9 +275,7 @@ function ResumeComponent() {
                 Crate.audio
               </a>
             </h3>
-            <span className="text-sm text-border/60">
-              — Founder & Engineer
-            </span>
+            <span className="text-sm text-border/60">— Founder & Engineer</span>
           </div>
           <p className="text-border/90 mb-3">
             AI-powered DJ setlist tool leveraging Discogs/vinyl metadata for

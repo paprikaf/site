@@ -57,10 +57,15 @@ function processInline(text: string): React.ReactNode {
   return <>{parts}</>;
 }
 
-function getMessageText(message: { parts?: Array<{ type: string; text?: string }> }): string {
+function getMessageText(message: {
+  parts?: Array<{ type: string; text?: string }>;
+}): string {
   if (!message.parts) return '';
   return message.parts
-    .filter((p): p is { type: string; text: string } => p.type === 'text' && typeof p.text === 'string')
+    .filter(
+      (p): p is { type: string; text: string } =>
+        p.type === 'text' && typeof p.text === 'string'
+    )
     .map((p) => p.text)
     .join('');
 }
@@ -93,9 +98,12 @@ export function ChatWidget() {
     [input, status, sendMessage]
   );
 
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setInput(e.target.value);
-  }, []);
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setInput(e.target.value);
+    },
+    []
+  );
 
   const isStreaming = status === 'streaming' || status === 'submitted';
   const hasUserMessages = messages.some((m) => m.role === 'user');
@@ -129,14 +137,25 @@ export function ChatWidget() {
           aria-label="Chat with Ahmed's AI"
         >
           <header className="flex items-center justify-between border-b-2 border-border px-4 py-3 shrink-0">
-            <h2 className="font-semibold text-text">Chat with Ahmed&apos;s AI</h2>
+            <h2 className="font-semibold text-text">
+              Chat with Ahmed&apos;s AI
+            </h2>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
               className="p-1 hover:opacity-70 transition-opacity"
               aria-label="Close chat"
             >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
@@ -147,7 +166,8 @@ export function ChatWidget() {
             {!hasUserMessages && (
               <div className="flex justify-start">
                 <div className="px-3 py-2 rounded-sm max-w-[85%] text-sm bg-main border-2 border-border">
-                  Hey! I&apos;m Ahmed&apos;s AI assistant. Ask me anything about my experience, projects, or skills.
+                  Hey! I&apos;m Ahmed&apos;s AI assistant. Ask me anything about
+                  my experience, projects, or skills.
                 </div>
               </div>
             )}
@@ -156,7 +176,11 @@ export function ChatWidget() {
               <div className="flex justify-start">
                 <div className="px-3 py-2 rounded-sm max-w-[85%] text-sm bg-red-500/20 border-2 border-red-500 text-red-700 dark:text-red-300">
                   {error.message}
-                  <button type="button" onClick={clearError} className="ml-2 underline">
+                  <button
+                    type="button"
+                    onClick={clearError}
+                    className="ml-2 underline"
+                  >
                     Dismiss
                   </button>
                 </div>
@@ -197,7 +221,10 @@ export function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          <form onSubmit={handleSubmit} className="border-t-2 border-border px-4 py-3 shrink-0 flex gap-2">
+          <form
+            onSubmit={handleSubmit}
+            className="border-t-2 border-border px-4 py-3 shrink-0 flex gap-2"
+          >
             <input
               type="text"
               value={input}

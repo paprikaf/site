@@ -13,11 +13,13 @@
 ## Task 1: Install Chatbot Dependencies
 
 **Files:**
+
 - Modify: `package.json`
 
 **Step 1: Install Vercel AI SDK + Anthropic provider**
 
 Run:
+
 ```bash
 npm install ai @ai-sdk/anthropic
 ```
@@ -39,6 +41,7 @@ git commit -m "deps: add vercel ai sdk and anthropic provider"
 ## Task 2: Add Projects Nav Link
 
 **Files:**
+
 - Modify: `src/components/Nav.tsx`
 
 **Step 1: Add Projects button to the center navigation links**
@@ -75,6 +78,7 @@ git commit -m "feat: add projects link to nav"
 ## Task 3: Create Projects Page
 
 **Files:**
+
 - Create: `src/routes/projects.tsx`
 
 **Step 1: Create the projects route**
@@ -87,7 +91,8 @@ Projects data (inline in the component -- no separate data file needed for 6 ite
 const projects = [
   {
     title: 'Builder Academy',
-    description: 'Customer success platform serving 500+ users. Reduced CE dependency by 40%. Courses, onboarding workspace, and CS dashboard.',
+    description:
+      'Customer success platform serving 500+ users. Reduced CE dependency by 40%. Courses, onboarding workspace, and CS dashboard.',
     tags: ['React', 'Next.js', 'Convex', 'Builder CMS'],
     role: 'Built',
     link: 'https://academy.builder.io',
@@ -95,7 +100,8 @@ const projects = [
   },
   {
     title: 'Builder CMS MCP Server',
-    description: 'AI-driven content automation for Builder.io Publish and Fusion platforms. Create and manage content models through prompts.',
+    description:
+      'AI-driven content automation for Builder.io Publish and Fusion platforms. Create and manage content models through prompts.',
     tags: ['MCP', 'TypeScript', 'AI'],
     role: 'Built',
     link: 'https://www.builder.io/c/docs/mcp-builder-server',
@@ -103,7 +109,8 @@ const projects = [
   },
   {
     title: 'ai-gtm (Dobby)',
-    description: 'GTM automation agent. Cross-functional work with cofounders on sales automation, lead scoring, and pipeline intelligence.',
+    description:
+      'GTM automation agent. Cross-functional work with cofounders on sales automation, lead scoring, and pipeline intelligence.',
     tags: ['AI', 'Agents', 'GTM', 'TypeScript'],
     role: 'Built',
     link: 'https://github.com/BuilderIO/ai-gtm',
@@ -111,7 +118,8 @@ const projects = [
   },
   {
     title: 'CLAW',
-    description: 'Org-level agent framework for automated product development orchestration. Monitors Slack, Jira, GitHub and coordinates work.',
+    description:
+      'Org-level agent framework for automated product development orchestration. Monitors Slack, Jira, GitHub and coordinates work.',
     tags: ['Agents', 'Slack', 'Jira', 'Node.js'],
     role: 'Contributed',
     link: 'https://github.com/BuilderIO/claw-starter',
@@ -119,7 +127,8 @@ const projects = [
   },
   {
     title: 'Crate.audio',
-    description: 'AI-powered DJ setlist tool leveraging Discogs and vinyl metadata for mood-based playlist curation. Founded as startup, pivoted to open-source.',
+    description:
+      'AI-powered DJ setlist tool leveraging Discogs and vinyl metadata for mood-based playlist curation. Founded as startup, pivoted to open-source.',
     tags: ['React', 'AI', 'Music', 'TypeScript'],
     role: 'Founded',
     link: 'https://crate.audio',
@@ -127,7 +136,8 @@ const projects = [
   },
   {
     title: 'Discogs SDK',
-    description: 'Published TypeScript SDK for Discogs OAuth authentication and API access. Supports collection management, search, and user identity.',
+    description:
+      'Published TypeScript SDK for Discogs OAuth authentication and API access. Supports collection management, search, and user identity.',
     tags: ['TypeScript', 'NPM', 'OAuth', 'SDK'],
     role: 'Built',
     link: 'https://github.com/Crate-AI/discogs-sdk',
@@ -157,6 +167,7 @@ git commit -m "feat: add projects page with 6 project cards"
 ## Task 4: Polish Resume Content
 
 **Files:**
+
 - Modify: `src/routes/resume.tsx`
 
 **Step 1: Update current role title and content**
@@ -188,6 +199,7 @@ git commit -m "feat: update resume with current GTM engineer role and agent work
 ## Task 5: Polish About Page Content
 
 **Files:**
+
 - Modify: `src/routes/index.tsx`
 
 **Step 1: Update About page copy**
@@ -221,6 +233,7 @@ git commit -m "feat: update about page with current GTM role and agent work"
 ## Task 6: Create Chat Widget Component
 
 **Files:**
+
 - Create: `src/components/ChatWidget.tsx`
 
 **Step 1: Create the chat widget component**
@@ -255,6 +268,7 @@ git commit -m "feat: add chat widget component with useChat hook"
 ## Task 7: Add Chat Widget to Root Layout
 
 **Files:**
+
 - Modify: `src/routes/__root.tsx`
 
 **Step 1: Import and render ChatWidget**
@@ -293,6 +307,7 @@ git commit -m "feat: add chat widget to root layout"
 ## Task 8: Create Chatbot API Route
 
 **Files:**
+
 - Create: `api/chat.ts`
 
 **Step 1: Create the Vercel serverless function**
@@ -325,6 +340,7 @@ export async function POST(request: Request) {
 The `AHMED_CONTEXT` string is built by concatenating the key context files. For a serverless function, we'll bake the context inline (copy-paste the content of the most important context files into the system prompt).
 
 Key context files to include (by priority, ~80KB total):
+
 1. `context/personal_knowledge_base.md` (22KB) - comprehensive profile
 2. `context/resume.md` (3.7KB) - resume facts
 3. `context/part2_technical_deep_dives.md` (20KB) - technical depth
@@ -336,6 +352,7 @@ Simple rate limiting: track requests per IP using a Map with TTL cleanup. 10 req
 **Step 2: Test locally**
 
 For local dev, need `ANTHROPIC_API_KEY` env var. Create `.env.local`:
+
 ```
 ANTHROPIC_API_KEY=sk-ant-...
 ```
@@ -354,6 +371,7 @@ git commit -m "feat: add chatbot api route with claude and context"
 ## Task 9: Build Context File for Chatbot
 
 **Files:**
+
 - Create: `api/context.ts`
 
 **Step 1: Create a context module**
@@ -407,6 +425,7 @@ git commit -m "feat: load context files for chatbot system prompt"
 ## Task 10: Configure Vercel + Local Dev
 
 **Files:**
+
 - Create: `vercel.json`
 - Create: `.env.local`
 - Modify: `vite.config.ts` (add proxy for local dev)
@@ -472,6 +491,7 @@ Run: `vercel --prod`
 **Step 5: Verify production**
 
 Visit the deployed URL. Check:
+
 - [ ] About page loads with updated content
 - [ ] Resume page shows "GTM Engineer"
 - [ ] Projects page shows 6 cards
@@ -492,17 +512,17 @@ git commit -m "chore: final adjustments for production deploy"
 
 ## Summary
 
-| Task | What | Time Est |
-|------|------|----------|
-| 1 | Install deps | 2 min |
-| 2 | Add Projects nav link | 5 min |
-| 3 | Create Projects page | 30 min |
-| 4 | Polish Resume | 20 min |
-| 5 | Polish About | 15 min |
-| 6 | Chat Widget component | 45 min |
-| 7 | Add widget to root | 5 min |
-| 8 | Chat API route | 30 min |
-| 9 | Context loader | 15 min |
-| 10 | Vercel config + local dev | 15 min |
-| 11 | Deploy | 20 min |
-| **Total** | | **~3.5 hours** |
+| Task      | What                      | Time Est       |
+| --------- | ------------------------- | -------------- |
+| 1         | Install deps              | 2 min          |
+| 2         | Add Projects nav link     | 5 min          |
+| 3         | Create Projects page      | 30 min         |
+| 4         | Polish Resume             | 20 min         |
+| 5         | Polish About              | 15 min         |
+| 6         | Chat Widget component     | 45 min         |
+| 7         | Add widget to root        | 5 min          |
+| 8         | Chat API route            | 30 min         |
+| 9         | Context loader            | 15 min         |
+| 10        | Vercel config + local dev | 15 min         |
+| 11        | Deploy                    | 20 min         |
+| **Total** |                           | **~3.5 hours** |

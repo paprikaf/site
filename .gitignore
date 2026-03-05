@@ -24,10 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 
-# Context directory - ignore cloned repos, keep markdown files
-context/*
-!context/*.md
-!context/*.pdf
+# Context directory - local dev only
+context/
 
 .env
 .vercel

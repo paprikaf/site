@@ -1,32 +1,7 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
-import { readFileSync } from 'fs';
-import { join } from 'path';
 import type { IncomingMessage, ServerResponse } from 'http';
-
-function loadContext(): string {
-  const contextDir = join(process.cwd(), 'context');
-  const files = [
-    'personal_knowledge_base.md',
-    'resume.md',
-    'part2_technical_deep_dives.md',
-    'part3_career_philosophy.md',
-    'part4_personal_context.md',
-  ];
-
-  return files
-    .map((f) => {
-      try {
-        return readFileSync(join(contextDir, f), 'utf-8');
-      } catch {
-        return '';
-      }
-    })
-    .filter(Boolean)
-    .join('\n\n---\n\n');
-}
-
-const AHMED_CONTEXT = loadContext();
+import { AHMED_CONTEXT } from './_context';
 
 const SYSTEM_PROMPT = `You are Ahmed Felfel's AI assistant on his personal website. You answer questions about his experience, projects, skills, philosophy, and background.
 
@@ -79,7 +54,10 @@ function parseBody(req: IncomingMessage): Promise<Record<string, unknown>> {
   });
 }
 
-export default async function handler(req: IncomingMessage, res: ServerResponse) {
+export default async function handler(
+  req: IncomingMessage,
+  res: ServerResponse
+) {
   if (req.method !== 'POST') {
     res.statusCode = 405;
     res.end(JSON.stringify({ error: 'Method not allowed' }));

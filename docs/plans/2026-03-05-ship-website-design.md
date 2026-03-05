@@ -44,14 +44,14 @@ Grid of project cards in neobrutalism style. Responsive: 1 col mobile, 2 col tab
 
 ### Projects
 
-| Project | Description | Tags | Link Type |
-|---------|-------------|------|-----------|
-| Builder Academy | Platform serving 500+ users, 40% reduction in CE dependency | React, TypeScript, HubSpot | Demo/Docs |
-| Builder CMS MCP Server | AI-driven content automation for Publish + Fusion | MCP, TypeScript, AI | Docs |
-| ai-gtm (Dobby) | GTM automation agent, cross-functional with cofounders | AI, Agents, GTM | GitHub |
-| CLAW / claw-starter | Org-level agent framework at Builder | Agents, Slack, Jira | GitHub |
-| Crate.audio | AI-powered DJ setlist tool, vinyl metadata | React, AI, Music | Website |
-| Discogs SDK | Published TypeScript SDK for Discogs API | TypeScript, NPM, OAuth | NPM/GitHub |
+| Project                | Description                                                 | Tags                       | Link Type  |
+| ---------------------- | ----------------------------------------------------------- | -------------------------- | ---------- |
+| Builder Academy        | Platform serving 500+ users, 40% reduction in CE dependency | React, TypeScript, HubSpot | Demo/Docs  |
+| Builder CMS MCP Server | AI-driven content automation for Publish + Fusion           | MCP, TypeScript, AI        | Docs       |
+| ai-gtm (Dobby)         | GTM automation agent, cross-functional with cofounders      | AI, Agents, GTM            | GitHub     |
+| CLAW / claw-starter    | Org-level agent framework at Builder                        | Agents, Slack, Jira        | GitHub     |
+| Crate.audio            | AI-powered DJ setlist tool, vinyl metadata                  | React, AI, Music           | Website    |
+| Discogs SDK            | Published TypeScript SDK for Discogs API                    | TypeScript, NPM, OAuth     | NPM/GitHub |
 
 ### Card Design
 
@@ -77,6 +77,7 @@ Expandable panel       ◀──   @ai-sdk/anthropic
 ### System Prompt
 
 Concatenated context files:
+
 - `context/resume.md`
 - `context/personal_knowledge_base.md`
 - `context/interview_session_1_summary.md`

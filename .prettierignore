@@ -7,3 +7,5 @@ coverage
 out
 pnpm-lock.yaml
 **/routeTree.gen.ts
+context
+api

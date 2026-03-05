@@ -25,8 +25,8 @@ function IndexComponent() {
           >
             builder.io
           </a>
-          , I work directly with our cofounders on GTM systems where AI agents serve people — simplifying
-          what's complex and scaling what works.
+          , I work directly with our cofounders on GTM systems where AI agents
+          serve people — simplifying what's complex and scaling what works.
           <br />
           Outside of work, I ski, DJ, travel, and build side projects that make
           life a bit smoother. That same curiosity led me to create{' '}
@@ -51,10 +51,18 @@ function IndexComponent() {
         <h2 className="text-2xl font-bold mb-6">What I Do</h2>
         <div className="space-y-4 text-base leading-relaxed text-border/80">
           <p>
-            I build systems that connect ideas to execution. At Builder.io, I work with both cofounders and the head of revops on GTM automation, partner enablement, and AI agent development. Recent work includes Dobby, our AI agent for GTM automation and pipeline intelligence, and contributions to CLAW, an org-level agent framework.
+            I build systems that connect ideas to execution. At Builder.io, I
+            work with both cofounders and the head of revops on GTM automation,
+            partner enablement, and AI agent development. Recent work includes
+            Dobby, our AI agent for GTM automation and pipeline intelligence,
+            and contributions to CLAW, an org-level agent framework.
           </p>
           <p>
-            I focus on projects that solve real problems and scale well. This includes Academy, our customer success and certification platform serving 500+ users. I also architect AI tools like the Builder CMS MCP Server for content automation. On the side, I maintain Discogs SDK — a library for OAuth and API access.
+            I focus on projects that solve real problems and scale well. This
+            includes Academy, our customer success and certification platform
+            serving 500+ users. I also architect AI tools like the Builder CMS
+            MCP Server for content automation. On the side, I maintain Discogs
+            SDK — a library for OAuth and API access.
           </p>
         </div>
       </section>
@@ -68,7 +76,9 @@ function IndexComponent() {
               Building &amp; Learning
             </p>
             <p>
-              Building AI agents for GTM automation (Dobby) and product development orchestration (CLAW). Exploring agent architectures, MCP servers, and workflow automation at scale.
+              Building AI agents for GTM automation (Dobby) and product
+              development orchestration (CLAW). Exploring agent architectures,
+              MCP servers, and workflow automation at scale.
             </p>
           </div>
           <div>
