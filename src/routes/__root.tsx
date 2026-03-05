@@ -1,4 +1,5 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router';
+import { ChatWidget } from '@/components/ChatWidget';
 import { Nav } from '@/components/Nav';
 
 function RootComponent() {
@@ -8,6 +9,7 @@ function RootComponent() {
       <main className="min-h-[calc(100vh-60px)]">
         <Outlet />
       </main>
+      <ChatWidget />
     </div>
   );
 }
