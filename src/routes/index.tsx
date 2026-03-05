@@ -25,7 +25,7 @@ function IndexComponent() {
           >
             builder.io
           </a>
-          , I design GTM systems where AI agents serve people — simplifying
+          , I work directly with our cofounders on GTM systems where AI agents serve people — simplifying
           what's complex and scaling what works.
           <br />
           Outside of work, I ski, DJ, travel, and build side projects that make
@@ -51,17 +51,10 @@ function IndexComponent() {
         <h2 className="text-2xl font-bold mb-6">What I Do</h2>
         <div className="space-y-4 text-base leading-relaxed text-border/80">
           <p>
-            I build systems that connect ideas to execution. At Builder.io, I
-            focus on GTM automation, partner enablement, and AI integrations.
-            Recent work includes our CMS MCP Server, giving the tools necessary
-            to manage content and build through prompting
+            I build systems that connect ideas to execution. At Builder.io, I work with both cofounders and the head of revops on GTM automation, partner enablement, and AI agent development. Recent work includes Dobby, our AI agent for GTM automation and pipeline intelligence, and contributions to CLAW, an org-level agent framework.
           </p>
           <p>
-            I focus on projects that solve real problems and scale well. This
-            includes Academy, our customer success, on-demand learning and
-            certification platform. I also build internal workflows that
-            automate repetitive work. On the side, I maintain Discogs SDK — a
-            library for OAuth and API access.
+            I focus on projects that solve real problems and scale well. This includes Academy, our customer success and certification platform serving 500+ users. I also architect AI tools like the Builder CMS MCP Server for content automation. On the side, I maintain Discogs SDK — a library for OAuth and API access.
           </p>
         </div>
       </section>
@@ -75,8 +68,7 @@ function IndexComponent() {
               Building &amp; Learning
             </p>
             <p>
-              Exploring AI systems and agent architectures. I document what I
-              learn through guides and case studies.
+              Building AI agents for GTM automation (Dobby) and product development orchestration (CLAW). Exploring agent architectures, MCP servers, and workflow automation at scale.
             </p>
           </div>
           <div>
@@ -93,6 +85,20 @@ function IndexComponent() {
       <section className="mt-1 text-sm text-border/70">
         <p className="mb-2">Related links</p>
         <ul className="list-disc ml-5 space-y-1">
+          <li>
+            <a
+              href="https://github.com/BuilderIO/ai-gtm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open('https://github.com/BuilderIO/ai-gtm', '_blank');
+              }}
+            >
+              ai-gtm (Dobby)
+            </a>
+          </li>
           <li>
             <a
               href="https://www.builder.io/c/docs/mcp-builder-server"
