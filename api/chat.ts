@@ -1,7 +1,7 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 import type { IncomingMessage, ServerResponse } from 'http';
-import { AHMED_CONTEXT } from './_context';
+import { AHMED_CONTEXT } from './_context.js';
 
 const SYSTEM_PROMPT = `You are Ahmed Felfel's AI assistant on his personal website. You answer questions about his experience, projects, skills, philosophy, and background.
 
@@ -82,7 +82,7 @@ export default async function handler(
       messages,
     });
 
-    return result.pipeDataStreamToResponse(res);
+    return result.pipeTextStreamToResponse(res);
   } catch {
     res.statusCode = 500;
     res.end(JSON.stringify({ error: 'Internal server error' }));
