@@ -184,10 +184,7 @@ function ResumeComponent() {
                 <strong>Hired 3 engineers</strong> during transition
               </li>
               <li>
-                <Badge
-                  variant="outline"
-                  className="border-yellow-500 text-yellow-500"
-                >
+                <Badge className="border-yellow-500 text-yellow-500">
                   Voted MVP Q1 2025
                 </Badge>
               </li>
@@ -225,10 +222,7 @@ function ResumeComponent() {
                 instances)
               </li>
               <li>
-                <Badge
-                  variant="outline"
-                  className="border-yellow-500 text-yellow-500"
-                >
+                <Badge className="border-yellow-500 text-yellow-500">
                   Certified GCP Associate Engineer
                 </Badge>
               </li>
