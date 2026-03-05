@@ -2,6 +2,7 @@ import { anthropic } from '@ai-sdk/anthropic';
 import { streamText } from 'ai';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import type { IncomingMessage, ServerResponse } from 'http';
 
 function loadContext(): string {
   const contextDir = join(process.cwd(), 'context');
@@ -61,20 +62,51 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-export async function POST(request: Request) {
-  const ip = request.headers.get('x-forwarded-for') || 'unknown';
+function parseBody(req: IncomingMessage): Promise<Record<string, unknown>> {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', (chunk: Buffer) => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      try {
+        resolve(JSON.parse(body));
+      } catch {
+        reject(new Error('Invalid JSON'));
+      }
+    });
+    req.on('error', reject);
+  });
+}
 
-  if (isRateLimited(ip)) {
-    return new Response('Rate limited. Please wait a moment.', { status: 429 });
+export default async function handler(req: IncomingMessage, res: ServerResponse) {
+  if (req.method !== 'POST') {
+    res.statusCode = 405;
+    res.end(JSON.stringify({ error: 'Method not allowed' }));
+    return;
   }
 
-  const { messages } = await request.json();
+  const ip = (req.headers['x-forwarded-for'] as string) || 'unknown';
 
-  const result = streamText({
-    model: anthropic('claude-sonnet-4-20250514'),
-    system: SYSTEM_PROMPT,
-    messages,
-  });
+  if (isRateLimited(ip)) {
+    res.statusCode = 429;
+    res.end('Rate limited. Please wait a moment.');
+    return;
+  }
 
-  return result.toDataStreamResponse();
+  try {
+    const body = await parseBody(req);
+    const messages = body.messages as Array<{ role: string; content: string }>;
+
+    const result = streamText({
+      model: anthropic('claude-sonnet-4-20250514'),
+      system: SYSTEM_PROMPT,
+      messages,
+    });
+
+    return result.pipeDataStreamToResponse(res);
+  } catch {
+    res.statusCode = 500;
+    res.end(JSON.stringify({ error: 'Internal server error' }));
+  }
 }
