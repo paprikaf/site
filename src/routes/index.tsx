@@ -170,11 +170,17 @@ function IndexComponent() {
         <div>
           <a
             className="button-link button-link--primary"
+            href={publicLinks.email}
+          >
+            ahmed@galite.ai <ArrowUpRight aria-hidden="true" />
+          </a>
+          <a
+            className="text-link"
             href={publicLinks.linkedin}
             target="_blank"
             rel="noreferrer"
           >
-            Message me on LinkedIn <ArrowUpRight aria-hidden="true" />
+            LinkedIn <ArrowUpRight aria-hidden="true" />
           </a>
           <a
             className="text-link"

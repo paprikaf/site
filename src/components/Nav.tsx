@@ -1,5 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link, useLocation } from '@tanstack/react-router';
+import { publicLinks } from '@/data/portfolio';
 
 export function Nav() {
   const location = useLocation();
@@ -39,12 +40,7 @@ export function Nav() {
             </a>
           ) : null}
           <Link to="/resume">Résumé</Link>
-          <a
-            className="site-nav__contact"
-            href="https://www.linkedin.com/in/ahmed-felfel-080895/"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a className="site-nav__contact" href={publicLinks.email}>
             Contact <ArrowUpRight aria-hidden="true" />
           </a>
         </div>

@@ -26,6 +26,9 @@ function ResumeComponent() {
       </header>
 
       <div className="resume-links" aria-label="Professional links">
+        <a href={publicLinks.email}>
+          ahmed@galite.ai <ArrowUpRight aria-hidden="true" />
+        </a>
         <a href={publicLinks.linkedin} target="_blank" rel="noreferrer">
           LinkedIn <ArrowUpRight aria-hidden="true" />
         </a>
@@ -140,6 +143,7 @@ function ResumeComponent() {
       </div>
 
       <footer className="resume-footer">
+        <a href={publicLinks.email}>ahmed@galite.ai</a>
         <a href={publicLinks.github}>github.com/paprikaf</a>
       </footer>
     </div>
