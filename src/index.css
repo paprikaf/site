@@ -2077,6 +2077,10 @@ a.role-fit__source:hover {
   margin-bottom: 1.4rem;
 }
 
+.resume-section--print-only {
+  display: none !important;
+}
+
 .resume-facts {
   margin: 0;
 }
@@ -2373,6 +2377,10 @@ a.role-fit__source:hover {
 
   .resume-columns .resume-section {
     display: block;
+  }
+
+  .resume-section--print-only {
+    display: block !important;
   }
 
   .resume-footer {
