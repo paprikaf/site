@@ -152,7 +152,7 @@ function ResumeComponent() {
         </section>
 
         <section
-          className="resume-section"
+          className="resume-section resume-section--print-only"
           aria-labelledby="resume-education-title"
         >
           <h2 id="resume-education-title">Education + languages</h2>
