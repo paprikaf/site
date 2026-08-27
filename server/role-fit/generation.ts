@@ -1,10 +1,10 @@
 import { anthropic } from '@ai-sdk/anthropic';
 import { generateText, Output } from 'ai';
 
-import { approvedEvidence } from './evidence';
-import { hydrateFitBrief } from './hydration';
-import { modelFitBriefSchema } from './model-contract';
-import type { FitBrief } from '../../src/features/role-fit/types';
+import { approvedEvidence } from './evidence.js';
+import { hydrateFitBrief } from './hydration.js';
+import { modelFitBriefSchema } from './model-contract.js';
+import type { FitBrief } from '../../src/features/role-fit/types.js';
 
 const DEFAULT_FIT_MODEL = 'claude-sonnet-4-6';
 const FIT_TIMEOUT_MS = 20_000;

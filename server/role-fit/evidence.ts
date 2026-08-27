@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
-import approvedClaimsJson from '../../content/approved-claims.json';
+import approvedClaimsJson from '../../content/approved-claims.json' with { type: 'json' };
 import type {
   EvidenceProvenance,
   FitEvidence,
-} from '../../src/features/role-fit/types';
+} from '../../src/features/role-fit/types.js';
 
 const isoDateSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 

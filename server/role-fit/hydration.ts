@@ -1,9 +1,13 @@
 import type {
   FitBrief,
   RoleRequirement,
-} from '../../src/features/role-fit/types';
-import { approvedEvidence, findApprovedClaim, toFitEvidence } from './evidence';
-import { modelFitBriefSchema, type ModelFitBrief } from './model-contract';
+} from '../../src/features/role-fit/types.js';
+import {
+  approvedEvidence,
+  findApprovedClaim,
+  toFitEvidence,
+} from './evidence.js';
+import { modelFitBriefSchema, type ModelFitBrief } from './model-contract.js';
 
 export class FitHydrationError extends Error {
   constructor(message: string) {

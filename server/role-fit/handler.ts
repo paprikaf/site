@@ -5,14 +5,14 @@ import { RetryError } from 'ai';
 import type {
   FitApiError,
   FitApiErrorCode,
-} from '../../src/features/role-fit/types';
-import { generateFitBrief } from './generation';
-import { takeFitRateLimit } from './rate-limit';
+} from '../../src/features/role-fit/types.js';
+import { generateFitBrief } from './generation.js';
+import { takeFitRateLimit } from './rate-limit.js';
 import {
   FitValidationError,
   isSameOriginRequest,
   readAndValidateFitRequest,
-} from './validation';
+} from './validation.js';
 
 const responseHeaders = {
   'Cache-Control': 'no-store, max-age=0',
