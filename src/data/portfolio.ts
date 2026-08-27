@@ -159,6 +159,7 @@ export const expertise = [
 ];
 
 export const publicLinks = {
+  email: 'mailto:ahmed@galite.ai',
   github: 'https://github.com/paprikaf',
   linkedin: 'https://www.linkedin.com/in/ahmed-felfel-080895/',
 };
