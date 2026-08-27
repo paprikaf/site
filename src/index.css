@@ -201,14 +201,12 @@
   line-height: 1.05;
 }
 
-.site-nav__avatar {
+.site-nav__mark {
   width: 2.4rem;
   height: 2.4rem;
   flex: 0 0 auto;
-  border: 1px solid var(--ink);
-  background: #000;
+  display: block;
   object-fit: cover;
-  object-position: 50% 25%;
 }
 
 .site-nav__brand small {
