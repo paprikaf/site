@@ -1,5 +1,5 @@
 {
-  "version": "2026-08-27.4",
+  "version": "2026-08-27.5",
   "reviewedAt": "2026-08-27",
   "claims": [
     {
@@ -369,16 +369,16 @@
     },
     {
       "id": "resume-product-practice",
-      "title": "Ship the first version",
+      "title": "Product + UI/UX",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he takes unclear workflows from rough ideas to useful first versions, then improves them from real use.",
+      "claim": "Ahmed's public résumé says he turns unclear problems into useful workflows, clear interfaces, and testable first versions.",
       "ownership": "role",
       "capabilities": [
-        "zero-to-one",
-        "discovery",
+        "product-design",
+        "user-experience",
+        "user-flows",
         "prototyping",
-        "workflow-design",
-        "user-feedback"
+        "interface-design"
       ],
       "status": "current",
       "sources": [
@@ -445,18 +445,11 @@
     },
     {
       "id": "resume-ai-practice",
-      "title": "Put AI to work",
+      "title": "Applied AI",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he builds MCP and agent workflows around real data and tools, with human review, recovery, and evaluation where mistakes matter.",
+      "claim": "Ahmed's public résumé says he connects models to tools and data with MCP, human review, and evaluation where errors matter.",
       "ownership": "role",
-      "capabilities": [
-        "mcp",
-        "agents",
-        "human-review",
-        "automation",
-        "recovery",
-        "evaluation-loops"
-      ],
+      "capabilities": ["mcp", "agents", "human-review", "evaluation-loops"],
       "status": "current",
       "sources": [
         {
@@ -472,18 +465,16 @@
     },
     {
       "id": "resume-engineering-toolkit",
-      "title": "Build end to end",
+      "title": "Frontend engineering",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he ships TypeScript products end to end, including React interfaces, Node APIs, Convex backends, and GCP infrastructure managed with Terraform.",
+      "claim": "Ahmed's public résumé says he builds complete product interfaces with React and TypeScript, from component systems through application flows.",
       "ownership": "role",
       "capabilities": [
         "react",
         "typescript",
-        "node",
-        "convex",
-        "gcp",
-        "terraform",
-        "api-development"
+        "frontend-frameworks",
+        "component-systems",
+        "application-flows"
       ],
       "status": "current",
       "sources": [
@@ -499,18 +490,72 @@
       "reviewedAt": "2026-08-27"
     },
     {
-      "id": "resume-gtm-systems",
-      "title": "Turn friction into software",
+      "id": "resume-system-architecture",
+      "title": "System architecture",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he turns repeated sales, customer, and partner problems into reliable tools and automations.",
+      "claim": "Ahmed's public résumé says he shapes service boundaries, data flows, and tradeoffs so today's build does not block what comes next.",
       "ownership": "role",
       "capabilities": [
-        "gtm-engineering",
-        "sales-workflows",
-        "customer-workflows",
-        "partner-workflows",
-        "internal-tools",
-        "automation"
+        "system-architecture",
+        "system-design",
+        "service-boundaries",
+        "data-flows",
+        "technical-tradeoffs"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is a self-published practice summary."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "resume-backend-cloud",
+      "title": "Backend + cloud",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé says he designs APIs and backend services with Node and Convex, then deploys and operates them across GCP and AWS.",
+      "ownership": "role",
+      "capabilities": [
+        "backend-engineering",
+        "api-development",
+        "node",
+        "convex",
+        "gcp",
+        "aws",
+        "cloud-infrastructure"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is a self-published practice summary."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "resume-delivery-devops",
+      "title": "Delivery + DevOps",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé says he sets up CI/CD, Terraform, logging, and recovery so releases are repeatable and systems stay operable.",
+      "ownership": "role",
+      "capabilities": [
+        "ci-cd",
+        "devops",
+        "terraform",
+        "infrastructure-as-code",
+        "logging",
+        "recovery"
       ],
       "status": "current",
       "sources": [

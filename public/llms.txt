@@ -20,17 +20,20 @@ engineering. He built software in each role.
 - Galite: early product for organizing meeting notes, decisions, and follow-ups:
   https://galite.ai/
 
-## How Ahmed builds
+## Technical range Ahmed publishes
 
-- Ship the first version: takes unclear workflows from rough ideas to useful
-  first versions, then improves them from real use
-- Put AI to work: builds MCP and agent workflows around real data and tools,
-  with human review, recovery, and evaluation where mistakes matter
-- Build end to end: ships TypeScript products across React
-  interfaces, Node APIs, Convex backends, and GCP infrastructure managed with
-  Terraform
-- Turn friction into software: turns repeated sales, customer, and partner
-  problems into reliable tools and automations
+- Product and UI/UX: turns unclear problems into useful workflows, clear
+  interfaces, and testable first versions
+- System architecture: shapes service boundaries, data flows, and tradeoffs so
+  today's build does not block what comes next
+- Frontend engineering: builds complete product interfaces with React and
+  TypeScript, from component systems through application flows
+- Backend and cloud: designs APIs and backend services with Node and Convex,
+  then deploys and operates them across GCP and AWS
+- Applied AI: connects models to tools and data with MCP, human review, and
+  evaluation where errors matter
+- Delivery and DevOps: sets up CI/CD, Terraform, logging, and recovery so
+  releases are repeatable and systems stay operable
 - Bachelor’s in Computer Science, Collège LaSalle, 2016–2019
 - Fluent English, French, and Arabic; conversational Spanish
 - Based in Montréal, Canada

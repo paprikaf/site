@@ -99,35 +99,48 @@ function ResumeComponent() {
           className="resume-section"
           aria-labelledby="resume-expertise-title"
         >
-          <h2 id="resume-expertise-title">How I build</h2>
+          <h2 id="resume-expertise-title">Technical range</h2>
           <dl className="resume-facts">
             <div>
-              <dt>Ship the first version</dt>
+              <dt>Product + UI/UX</dt>
               <dd>
-                Take an unclear workflow from rough idea to a useful first
-                version, then improve it from real use.
+                Turn an unclear problem into a useful workflow, clear interface,
+                and testable first version.
               </dd>
             </div>
             <div>
-              <dt>Put AI to work</dt>
+              <dt>System architecture</dt>
               <dd>
-                Build MCP and agent workflows around real data and tools, with
-                human review, recovery, and evaluation where mistakes matter.
+                Shape service boundaries, data flows, and tradeoffs so today's
+                build does not block what comes next.
               </dd>
             </div>
             <div>
-              <dt>Build end to end</dt>
+              <dt>Frontend engineering</dt>
               <dd>
-                Ship TypeScript products end to end: React interfaces, Node
-                APIs, Convex backends, and GCP infrastructure managed with
-                Terraform.
+                Build complete product interfaces with React and TypeScript,
+                from component systems through application flows.
               </dd>
             </div>
             <div>
-              <dt>Turn friction into software</dt>
+              <dt>Backend + cloud</dt>
               <dd>
-                Turn repeated sales, customer, and partner problems into
-                reliable tools and automations.
+                Design APIs and backend services with Node and Convex, then
+                deploy and operate them across GCP and AWS.
+              </dd>
+            </div>
+            <div>
+              <dt>Applied AI</dt>
+              <dd>
+                Connect models to tools and data with MCP, human review, and
+                evaluation where errors matter.
+              </dd>
+            </div>
+            <div>
+              <dt>Delivery + DevOps</dt>
+              <dd>
+                Set up CI/CD, Terraform, logging, and recovery so releases are
+                repeatable and systems stay operable.
               </dd>
             </div>
           </dl>
