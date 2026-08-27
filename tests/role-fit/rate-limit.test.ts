@@ -9,7 +9,7 @@ function requestFor(address: string): Request {
 }
 
 describe('best-effort fit rate limiter', () => {
-  it('allows five requests, limits the sixth, and resets after one hour', () => {
+  it('allows five requests, limits the sixth, and resets after ten minutes', () => {
     const takeRateLimit = createFitRateLimiter();
     const request = requestFor('203.0.113.10');
     const startedAt = 10_000;
@@ -20,13 +20,13 @@ describe('best-effort fit rate limiter', () => {
 
     expect(takeRateLimit(request, startedAt)).toEqual({
       allowed: false,
-      retryAfterSeconds: 3_600,
+      retryAfterSeconds: 600,
     });
-    expect(takeRateLimit(request, startedAt + 3_599_999)).toEqual({
+    expect(takeRateLimit(request, startedAt + 599_999)).toEqual({
       allowed: false,
       retryAfterSeconds: 1,
     });
-    expect(takeRateLimit(request, startedAt + 3_600_000)).toEqual({
+    expect(takeRateLimit(request, startedAt + 600_000)).toEqual({
       allowed: true,
     });
   });

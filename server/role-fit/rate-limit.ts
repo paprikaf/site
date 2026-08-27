@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 
-const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1_000;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 
 type RateLimitWindow = {
