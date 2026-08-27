@@ -1,174 +1,190 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { experience, expertise, projects, publicLinks } from '@/data/portfolio';
 
 function IndexComponent() {
   return (
-    <div className="mx-auto max-w-2xl px-6 py-12 md:py-20">
-      {/* Hero Section */}
-      <section className="mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">About</h1>
-        <p className="text-lg md:text-xl text-border/80 leading-relaxed">
-          Montréal-based, building globally.
-          <br />
-          I build technology that earns its place — tools that help people
-          create, build, and move ideas forward.
-          <br />
-          At{' '}
+    <div className="portfolio-page">
+      <section className="portfolio-hero" aria-labelledby="portfolio-title">
+        <div className="portfolio-hero__copy">
+          <p className="eyebrow">AHMED FELFEL / MONTRÉAL</p>
+          <h1 id="portfolio-title">I build products from scratch.</h1>
+          <p className="portfolio-hero__lede">
+            I’m a GTM Engineer at Builder.io. I’ve built learning software,
+            developer tools, and internal AI systems.
+          </p>
+
+          <div className="portfolio-hero__actions">
+            <a className="button-link button-link--primary" href="#work">
+              View my work <ArrowDownRight aria-hidden="true" />
+            </a>
+            <Link className="text-link" to="/resume">
+              View résumé <ArrowUpRight aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+
+        <figure className="portfolio-portrait">
+          <img src="/avatar.webp" alt="Illustrated portrait of Ahmed Felfel" />
+          <figcaption>
+            <span>Current role</span>
+            <strong>GTM Engineer at Builder.io</strong>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section className="work-preview" id="work" aria-labelledby="work-title">
+        <header className="section-heading">
+          <p className="eyebrow">SELECTED WORK</p>
+          <h2 id="work-title">Products and tools I’ve built.</h2>
+          <p>My role and where each project stands today.</p>
+        </header>
+
+        <div className="evidence-list">
+          {projects.map((project, index) => (
+            <article className="evidence-row" key={project.id}>
+              <div className="evidence-row__label">
+                <span>{project.ownership}</span>
+                <span>{project.organization}</span>
+                <span>0{index + 1}</span>
+              </div>
+              <div className="evidence-row__story">
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+                <ul aria-label={`${project.title} scope`}>
+                  {project.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="evidence-row__links">
+                {project.links.length > 0 ? (
+                  project.links.map((link) => (
+                    <a
+                      href={link.href}
+                      key={link.href}
+                      target={
+                        link.href.startsWith('http') ? '_blank' : undefined
+                      }
+                      rel={
+                        link.href.startsWith('http') ? 'noreferrer' : undefined
+                      }
+                    >
+                      {link.label} <ArrowUpRight aria-hidden="true" />
+                    </a>
+                  ))
+                ) : (
+                  <span className="evidence-row__private">INTERNAL SYSTEM</span>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="role-arc"
+        id="experience"
+        aria-labelledby="role-title"
+      >
+        <header className="role-arc__intro">
+          <p className="eyebrow">EXPERIENCE</p>
+          <h2 id="role-title">Where I’ve worked.</h2>
+          <p>
+            I joined Builder.io in customer engineering, moved into
+            partnerships, and now work in GTM engineering. In each role, I ended
+            up building software for problems I saw firsthand.
+          </p>
+        </header>
+
+        <div className="experience-ledger">
+          {experience.map((role, index) => (
+            <article className="experience-row" key={role.company}>
+              <div className="experience-row__number">0{index + 1}</div>
+              <div>
+                <p className="experience-row__period">{role.period}</p>
+                <h3>{role.company}</h3>
+              </div>
+              <div className="experience-row__detail">
+                <p className="experience-row__title">{role.title}</p>
+                {role.roleProgression && (
+                  <ol aria-label="Role progression">
+                    {role.roleProgression.map((title) => (
+                      <li key={title}>{title}</li>
+                    ))}
+                  </ol>
+                )}
+                <p>{role.summary}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="expertise-section"
+        id="expertise"
+        aria-labelledby="expertise-title"
+      >
+        <header>
+          <p className="eyebrow">EXPERTISE</p>
+          <h2 id="expertise-title">What I work on.</h2>
+        </header>
+        <div className="expertise-grid">
+          {expertise.map((item) => (
+            <article key={item.number}>
+              <span>{item.number}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </article>
+          ))}
+        </div>
+        <p className="technical-runway">
+          TOOLS / React · TypeScript · Node · Convex · GCP · Terraform · Builder
+          CMS · MCP · agent systems
+        </p>
+      </section>
+
+      <section className="about-strip" id="about" aria-labelledby="about-title">
+        <p className="eyebrow">OUTSIDE WORK</p>
+        <div>
+          <h2 id="about-title">I’m based in Montréal.</h2>
+          <p>I DJ, ski, travel, and build music tools.</p>
+        </div>
+      </section>
+
+      <section
+        className="contact-section"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <p className="eyebrow">CONTACT</p>
+        <h2 id="contact-title">Get in touch.</h2>
+        <p>
+          I’m interested in product engineering roles where I can build the
+          first version and keep working on it after people start using it.
+        </p>
+        <div>
           <a
-            href="https://www.builder.io"
+            className="button-link button-link--primary"
+            href={publicLinks.linkedin}
             target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open('https://www.builder.io', '_blank');
-            }}
+            rel="noreferrer"
           >
-            builder.io
+            Message me on LinkedIn <ArrowUpRight aria-hidden="true" />
           </a>
-          , I design GTM systems where AI agents serve people — simplifying
-          what's complex and scaling what works.
-          <br />
-          Outside of work, I ski, DJ, travel, and build side projects that make
-          life a bit smoother. That same curiosity led me to create{' '}
           <a
-            href="https://crate.audio"
+            className="text-link"
+            href={publicLinks.github}
             target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open('https://crate.audio', '_blank');
-            }}
+            rel="noreferrer"
           >
-            crate.audio
-          </a>{' '}
-          — an experiment in blending music, data, and design.
-        </p>
-      </section>
-
-      {/* What I Do */}
-      <section className="mb-20 pb-12 border-b border-border/20">
-        <h2 className="text-2xl font-bold mb-6">What I Do</h2>
-        <div className="space-y-4 text-base leading-relaxed text-border/80">
-          <p>
-            I build systems that connect ideas to execution. At Builder.io, I
-            focus on GTM automation, partner enablement, and AI integrations.
-            Recent work includes our CMS MCP Server, giving the tools necessary
-            to manage content and build through prompting
-          </p>
-          <p>
-            I focus on projects that solve real problems and scale well. This
-            includes Academy, our customer success, on-demand learning and
-            certification platform. I also build internal workflows that
-            automate repetitive work. On the side, I maintain Discogs SDK — a
-            library for OAuth and API access.
-          </p>
+            GitHub <ArrowUpRight aria-hidden="true" />
+          </a>
+          <Link className="text-link" to="/resume">
+            Print-ready résumé <ArrowUpRight aria-hidden="true" />
+          </Link>
         </div>
-      </section>
-
-      {/* Currently */}
-      <section className="mb-10 pb-12 border-b border-border/20">
-        <h2 className="text-2xl font-bold mb-6">Currently</h2>
-        <div className="space-y-3 text-base leading-relaxed text-border/80">
-          <div>
-            <p className="font-semibold text-text mb-1">
-              Building &amp; Learning
-            </p>
-            <p>
-              Exploring AI systems and agent architectures. I document what I
-              learn through guides and case studies.
-            </p>
-          </div>
-          <div>
-            <p className="font-semibold text-text mb-1">Writing</p>
-            <p>
-              Sharing notes on productivity and career growth. Topics include
-              moving from hands-on work to team leadership roles.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Related Links */}
-      <section className="mt-1 text-sm text-border/70">
-        <p className="mb-2">Related links</p>
-        <ul className="list-disc ml-5 space-y-1">
-          <li>
-            <a
-              href="https://www.builder.io/c/docs/mcp-builder-server"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(
-                  'https://www.builder.io/c/docs/mcp-builder-server',
-                  '_blank'
-                );
-              }}
-            >
-              Builder CMS MCP Server
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://academy.builder.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('https://academy.builder.io/', '_blank');
-              }}
-            >
-              Builder Academy
-            </a>
-          </li>
-          <li>
-            <a
-              href="discogs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open('https://discogs.com', '_blank');
-              }}
-            >
-              Discogs
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Crate-AI/discogs-sdk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 decoration-yellow-500 decoration-2 hover:text-mainAccent transition-colors"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open(
-                  'https://github.com/Crate-AI/discogs-sdk',
-                  '_blank'
-                );
-              }}
-            >
-              Discogs SDK
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      {/* CTA */}
-      <section className="mt-6">
-        <p className="text-border/70 mb-3">
-          Interested in my thoughts on tech, product, and AI?
-        </p>
-        <a
-          href="/writing"
-          className="inline-block text-base font-semibold text-text underline underline-offset-4 decoration-yellow-500 decoration-2 hover:opacity-70 transition-opacity"
-        >
-          Read my writing →
-        </a>
       </section>
     </div>
   );

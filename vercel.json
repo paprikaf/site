@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.paprikaf.com" }],
+      "destination": "https://paprikaf.com/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/resume", "destination": "/index.html" },
+    { "source": "/writing", "destination": "/index.html" },
+    { "source": "/writing/:path*", "destination": "/index.html" }
+  ]
+}
