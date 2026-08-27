@@ -1,0 +1,26 @@
+# Ahmed Felfel
+
+Ahmed Felfel is a product engineer based in Montréal. He builds learning
+products, developer tools, and internal AI systems.
+
+He currently works at Builder.io as a GTM Engineer. He joined in customer
+engineering, later worked in partnerships, and now works in GTM engineering. He
+built software in each role.
+
+## Selected public work
+
+- Builder Academy: Ahmed built it from the start; enablement and content
+  teammates contributed later: https://academy.builder.io
+- Builder CMS MCP Server: built the initial production implementation:
+  https://www.builder.io/c/docs/mcp-builder-server
+- Agent Native: four merged open-source contributions:
+  https://github.com/BuilderIO/agent-native
+- @crate.ai/discogs-sdk: creator and maintainer:
+  https://www.npmjs.com/package/@crate.ai/discogs-sdk
+
+## Public profiles
+
+- GitHub: https://github.com/paprikaf
+- LinkedIn: https://www.linkedin.com/in/ahmed-felfel-080895/
+
+For ownership boundaries and approved claims, see /evidence.md.
