@@ -98,7 +98,7 @@ describe('fit brief hydration', () => {
     });
     expect(result.meta).toMatchObject({
       requestId: 'request-123',
-      evidenceVersion: '2026-08-27.5',
+      evidenceVersion: '2026-08-27.6',
     });
   });
 

@@ -1,5 +1,5 @@
 {
-  "version": "2026-08-27.5",
+  "version": "2026-08-27.6",
   "reviewedAt": "2026-08-27",
   "claims": [
     {
@@ -369,16 +369,18 @@
     },
     {
       "id": "resume-product-practice",
-      "title": "Product + UI/UX",
+      "title": "Product + UX",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he turns unclear problems into useful workflows, clear interfaces, and testable first versions.",
+      "claim": "Ahmed's public résumé says he turns ambiguous problems into focused products by defining the core workflow, cutting scope, and testing the first useful version.",
       "ownership": "role",
       "capabilities": [
         "product-design",
         "user-experience",
         "user-flows",
         "prototyping",
-        "interface-design"
+        "interface-design",
+        "scope-definition",
+        "product-validation"
       ],
       "status": "current",
       "sources": [
@@ -445,11 +447,18 @@
     },
     {
       "id": "resume-ai-practice",
-      "title": "Applied AI",
+      "title": "AI system design",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he connects models to tools and data with MCP, human review, and evaluation where errors matter.",
+      "claim": "Ahmed's public résumé says he designs production AI systems around agent orchestration, authoritative context, evaluations, human review, and recovery, using MCP when it is the right interface.",
       "ownership": "role",
-      "capabilities": ["mcp", "agents", "human-review", "evaluation-loops"],
+      "capabilities": [
+        "agent-orchestration",
+        "authoritative-context",
+        "evaluation-loops",
+        "human-review",
+        "recovery",
+        "mcp"
+      ],
       "status": "current",
       "sources": [
         {
@@ -465,16 +474,16 @@
     },
     {
       "id": "resume-engineering-toolkit",
-      "title": "Frontend engineering",
+      "title": "Frontend systems",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he builds complete product interfaces with React and TypeScript, from component systems through application flows.",
+      "claim": "Ahmed's public résumé says he builds polished, accessible interfaces and design systems that keep complex workflows clear as products and teams grow.",
       "ownership": "role",
       "capabilities": [
-        "react",
-        "typescript",
-        "frontend-frameworks",
-        "component-systems",
-        "application-flows"
+        "frontend-engineering",
+        "interface-systems",
+        "design-systems",
+        "complex-workflows",
+        "accessibility"
       ],
       "status": "current",
       "sources": [
@@ -493,14 +502,17 @@
       "id": "resume-system-architecture",
       "title": "System architecture",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he shapes service boundaries, data flows, and tradeoffs so today's build does not block what comes next.",
+      "claim": "Ahmed's public résumé says he sets system boundaries, data flows, and failure modes around real constraints, balancing speed, cost, reliability, and room to evolve.",
       "ownership": "role",
       "capabilities": [
         "system-architecture",
         "system-design",
-        "service-boundaries",
+        "system-boundaries",
         "data-flows",
-        "technical-tradeoffs"
+        "failure-modes",
+        "technical-constraints",
+        "technical-tradeoffs",
+        "reliability"
       ],
       "status": "current",
       "sources": [
@@ -517,18 +529,19 @@
     },
     {
       "id": "resume-backend-cloud",
-      "title": "Backend + cloud",
+      "title": "Backend + cloud systems",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he designs APIs and backend services with Node and Convex, then deploys and operates them across GCP and AWS.",
+      "claim": "Ahmed's public résumé says he designs APIs, data models, and cloud services with secure boundaries and clear ownership, balancing reliability, cost, and scale.",
       "ownership": "role",
       "capabilities": [
         "backend-engineering",
-        "api-development",
-        "node",
-        "convex",
-        "gcp",
-        "aws",
-        "cloud-infrastructure"
+        "api-design",
+        "data-modeling",
+        "cloud-services",
+        "security-boundaries",
+        "service-ownership",
+        "reliability",
+        "scalability"
       ],
       "status": "current",
       "sources": [
@@ -545,17 +558,17 @@
     },
     {
       "id": "resume-delivery-devops",
-      "title": "Delivery + DevOps",
+      "title": "Delivery + operations",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé says he sets up CI/CD, Terraform, logging, and recovery so releases are repeatable and systems stay operable.",
+      "claim": "Ahmed's public résumé says he designs the path to production with CI/CD, infrastructure as code, observability, and recovery so teams can ship safely and diagnose failures quickly.",
       "ownership": "role",
       "capabilities": [
         "ci-cd",
         "devops",
-        "terraform",
         "infrastructure-as-code",
-        "logging",
-        "recovery"
+        "observability",
+        "recovery",
+        "release-engineering"
       ],
       "status": "current",
       "sources": [
