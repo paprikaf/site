@@ -1966,8 +1966,27 @@ a.role-fit__source:hover {
   cursor: pointer;
 }
 
+.resume-page :focus-visible {
+  outline-color: var(--route);
+}
+
 .resume-print svg {
   width: 1rem;
+}
+
+.resume-print-actions {
+  display: grid;
+  justify-items: end;
+  gap: 0.45rem;
+  max-width: 15rem;
+}
+
+.resume-print-actions > p {
+  margin: 0;
+  color: var(--steel);
+  font-size: 0.68rem;
+  line-height: 1.35;
+  text-align: right;
 }
 
 .resume-links {
@@ -2062,19 +2081,16 @@ a.role-fit__source:hover {
 }
 
 .resume-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  display: block;
   border-bottom: 1px solid var(--rule);
 }
 
 .resume-columns .resume-section {
-  display: block;
   border: 0;
 }
 
 .resume-columns .resume-section > h2 {
-  margin-bottom: 1.4rem;
+  margin-bottom: 0;
 }
 
 .resume-section--print-only {
@@ -2091,7 +2107,8 @@ a.role-fit__source:hover {
   gap: 1rem;
   padding-block: 0.6rem;
   border-top: 1px solid var(--rule);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .resume-facts dt {
@@ -2292,6 +2309,14 @@ a.role-fit__source:hover {
     flex-direction: column;
   }
 
+  .resume-print-actions {
+    justify-items: start;
+  }
+
+  .resume-print-actions > p {
+    text-align: left;
+  }
+
   .resume-section,
   .resume-columns {
     grid-template-columns: 1fr;
@@ -2303,6 +2328,11 @@ a.role-fit__source:hover {
 
   .resume-columns {
     gap: 0;
+  }
+
+  .resume-facts div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
   }
 }
 
@@ -2320,7 +2350,7 @@ a.role-fit__source:hover {
 
   .site-nav,
   .skip-link,
-  .resume-print {
+  .resume-print-actions {
     display: none !important;
   }
 
@@ -2349,42 +2379,119 @@ a.role-fit__source:hover {
   .resume-section {
     grid-template-columns: 1.2in 1fr;
     gap: 0.2in;
-    padding-block: 0.14in;
-    break-inside: avoid;
+    padding-block: 0.1in;
+    break-inside: auto;
+  }
+
+  .resume-section > h2 {
+    break-after: avoid;
   }
 
   .resume-profile > p {
-    font-size: 9.5pt;
+    font-size: 9pt;
+    line-height: 1.4;
   }
 
   .resume-experience article + article,
   .resume-projects article + article {
-    margin-top: 0.1in;
-    padding-top: 0.1in;
+    margin-top: 0.08in;
+    padding-top: 0.08in;
+  }
+
+  .resume-experience article,
+  .resume-projects article,
+  .resume-facts > div,
+  .resume-education {
+    break-inside: avoid;
+  }
+
+  .resume-project--print-break {
+    break-before: page;
+  }
+
+  .resume-project--print-break::before {
+    display: block;
+    margin-bottom: 0.08in;
+    color: var(--route);
+    content: 'Selected work / continued';
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .resume-experience h3,
+  .resume-projects h3,
+  .resume-education h3 {
+    font-size: 10pt;
   }
 
   .resume-experience header p,
   .resume-experience article > p,
   .resume-projects article > p,
   .resume-education p {
-    font-size: 8pt;
+    font-size: 8.5pt;
+    line-height: 1.35;
+  }
+
+  .resume-experience time,
+  .resume-projects header span,
+  .resume-role-progression {
+    font-size: 8pt !important;
   }
 
   .resume-columns {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.25in;
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 0.22in;
+    align-items: start;
   }
 
   .resume-columns .resume-section {
     display: block;
   }
 
+  .resume-columns .resume-section > h2 {
+    margin-bottom: 0.08in;
+  }
+
+  .resume-facts--ownership {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.16in;
+  }
+
+  .resume-facts--ownership div {
+    display: block;
+    padding-block: 0.05in;
+    font-size: 8.5pt;
+    line-height: 1.35;
+  }
+
+  .resume-facts--ownership dd {
+    margin-top: 0.02in;
+  }
+
   .resume-section--print-only {
     display: block !important;
   }
 
+  .resume-section--print-only .resume-facts div {
+    grid-template-columns: 1fr;
+    gap: 0.02in;
+    padding-block: 0.04in;
+    font-size: 8pt;
+    line-height: 1.35;
+  }
+
+  .resume-education {
+    margin-bottom: 0.08in;
+  }
+
   .resume-footer {
     padding-top: 0.08in;
+    font-size: 8pt;
   }
 }
 
