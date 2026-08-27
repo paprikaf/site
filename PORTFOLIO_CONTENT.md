@@ -23,12 +23,12 @@ Private repository findings and meeting context live under the git-ignored
 Present the Builder.io tenure as one company and three stages:
 
 > Builder.io · 2023—present  
-> Customer Engineer → Partnerships → GTM Engineer
+> Customer Engineer → Partner Enablement Engineer → GTM Engineer
 
 The public explanation is factual:
 
-> I joined Builder.io in customer engineering, moved into partnerships, and now
-> work in GTM engineering. In each role, I ended up building software for
+> I joined Builder.io as a Customer Engineer, moved into partner enablement, and
+> now work in GTM engineering. In each role, I ended up building software for
 > problems I saw firsthand.
 
 Do not invent a cleaner official title history. “0→1 Product Engineer” is the
@@ -36,9 +36,9 @@ functional headline; the official titles remain visible underneath it.
 
 For the résumé, use one Builder.io entry rather than three disconnected jobs.
 Lead with the current role—GTM Engineer on RevOps—then show the title progression
-on one line. Internal evidence places the move into Partnerships in December
-2024 and the formal move into GTM Engineering in March 2026. Confirm the exact
-HR wording of the middle title before adding month-level dates publicly.
+on one line. Internal evidence places the move into Partner Enablement in
+December 2024 and the formal move into GTM Engineering in March 2026. Do not add
+month-level dates publicly without checking the HR record.
 
 ## Ownership language
 
@@ -122,4 +122,3 @@ data, or unpublished metrics.
 - Real-world usage evidence for the Discogs SDK
 - The first Galite loop that works with real data
 - Collaborator credits for each Builder project claim
-- Exact formal HR wording for the Partnerships / Partner Enablement role

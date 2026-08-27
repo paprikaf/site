@@ -7,6 +7,12 @@
       "permanent": true
     }
   ],
+  "functions": {
+    "api/fit.ts": {
+      "maxDuration": 25,
+      "supportsCancellation": true
+    }
+  },
   "rewrites": [
     { "source": "/resume", "destination": "/index.html" },
     { "source": "/writing", "destination": "/index.html" },

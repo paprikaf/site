@@ -63,12 +63,12 @@ export const projects: Project[] = [
     organization: 'Open source',
     title: 'Agent Native',
     summary:
-      'I’ve made four merged contributions to Builder’s Agent Native project, covering approval flows, meeting capture, and meeting history.',
+      'I’ve made four merged contributions to Builder’s Agent Native project, covering approval flows, meeting capture, meeting history, and OAuth URL detection.',
     tags: ['Agent frameworks', 'Product contribution', 'Open source'],
     links: [
       {
-        label: 'Explore the repository',
-        href: 'https://github.com/BuilderIO/agent-native',
+        label: 'View merged contributions',
+        href: 'https://github.com/BuilderIO/agent-native/pulls?q=is%3Apr+is%3Amerged+author%3Apaprikaf',
       },
     ],
   },
@@ -108,7 +108,11 @@ export const experience: Experience[] = [
     company: 'Builder.io',
     period: '2023—Now',
     title: 'GTM Engineer',
-    roleProgression: ['Customer Engineer', 'Partnerships', 'GTM Engineer'],
+    roleProgression: [
+      'Customer Engineer',
+      'Partner Enablement Engineer',
+      'GTM Engineer',
+    ],
     summary:
       'Worked directly with customers, built Builder Academy and the first production Builder CMS MCP server, and now build internal AI tools for GTM.',
   },

@@ -3,9 +3,9 @@
 Ahmed Felfel is a product engineer based in Montréal. He builds learning
 products, developer tools, and internal AI systems.
 
-He currently works at Builder.io as a GTM Engineer. He joined in customer
-engineering, later worked in partnerships, and now works in GTM engineering. He
-built software in each role.
+He currently works at Builder.io as a GTM Engineer. He joined as a Customer
+Engineer, later worked as a Partner Enablement Engineer, and now works in GTM
+engineering. He built software in each role.
 
 ## Selected public work
 
@@ -14,15 +14,31 @@ built software in each role.
 - Builder CMS MCP Server: built the initial production implementation:
   https://www.builder.io/c/docs/mcp-builder-server
 - Agent Native: four merged open-source contributions:
-  https://github.com/BuilderIO/agent-native
+  https://github.com/BuilderIO/agent-native/pulls?q=is%3Apr+author%3Apaprikaf+is%3Amerged
 - @crate.ai/discogs-sdk: creator and maintainer:
   https://www.npmjs.com/package/@crate.ai/discogs-sdk
 - Galite: early product for organizing meeting notes, decisions, and follow-ups:
   https://galite.ai/
+
+## Skills and profile facts Ahmed publishes
+
+- Product practice: 0→1 discovery, prototyping, workflow design, and handoff
+- AI systems: MCP, agents, human review, automation, and evaluation loops
+- Production systems: logging, recovery, and evaluation
+- Customer-to-product work: turning repeated customer problems into reusable
+  software
+- Engineering: React, TypeScript, Node, Convex, GCP, Terraform, and APIs
+- Platforms: Builder CMS, Contentful, HubSpot integrations, and Electron
+- Bachelor’s in Computer Science, Collège LaSalle, 2016–2019
+- Fluent English, French, and Arabic; conversational Spanish
+- Based in Montréal, Canada
+
+These profile facts are Ahmed’s own published account:
+https://paprikaf.com/resume
 
 ## Public profiles
 
 - GitHub: https://github.com/paprikaf
 - LinkedIn: https://www.linkedin.com/in/ahmed-felfel-080895/
 
-For ownership boundaries and approved claims, see /evidence.md.
+For ownership boundaries and published claims, see /evidence.md.

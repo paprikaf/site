@@ -1,6 +1,9 @@
 # Personal agent architecture
 
-Status: proposed MVP
+Status: superseded by [`ROLE_FIT_SYSTEM.md`](ROLE_FIT_SYSTEM.md)
+
+The first public AI feature is the one-shot role-fit brief. Generic chat, Exa
+URL ingestion, and MCP remain later options if real usage justifies them.
 
 ## Goal
 
