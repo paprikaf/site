@@ -1,6 +1,6 @@
-# Ahmed Felfel — public evidence record
+# Ahmed Felfel — published portfolio record
 
-Last verified: 2026-08-27
+Last reviewed: 2026-08-27
 
 This file contains the claims used by the public portfolio. It deliberately
 excludes private meeting notes, internal metrics, customer information, and
@@ -14,7 +14,8 @@ built learning products, developer tooling, and internal AI systems.
 ## Role progression
 
 - Builder.io, 2023—present
-- Role progression: Customer Engineer → Partnerships → GTM Engineer
+- Role progression: Customer Engineer → Partner Enablement Engineer → GTM
+  Engineer
 - Ahmed built software in each role.
 - Appnovation, Full-Stack Developer, 2021—2023
 - Jesta I.S., Web Developer, 2019—2021
@@ -44,10 +45,16 @@ public claims.
 
 ### Agent Native — Contributor
 
-Four merged contributions cover approval flows, meeting capture, and meeting
-history. Ahmed is a contributor, not the creator or maintainer.
+Four merged contributions cover approval flows, meeting capture, meeting
+history, and OAuth URL detection. Ahmed is a contributor, not the creator or
+maintainer.
 
-Public source: https://github.com/BuilderIO/agent-native
+Public contribution records:
+
+- https://github.com/BuilderIO/agent-native/pull/2887
+- https://github.com/BuilderIO/agent-native/pull/2823
+- https://github.com/BuilderIO/agent-native/pull/2647
+- https://github.com/BuilderIO/agent-native/pull/59
 
 ### @crate.ai/discogs-sdk — Creator and maintainer
 
@@ -64,3 +71,20 @@ Public sources:
 Early product for organizing meeting notes, decisions, and follow-ups.
 
 Public site: https://galite.ai/
+
+## Skills and profile facts Ahmed publishes
+
+- Product practice: 0→1 discovery, prototyping, workflow design, and handoff
+- AI systems: MCP, agents, human review, automation, and evaluation loops
+- Production systems: logging, recovery, and evaluation
+- Customer-to-product work: turning repeated customer problems into reusable
+  software
+- Engineering: React, TypeScript, Node, Convex, GCP, Terraform, and APIs
+- Platforms: Builder CMS, Contentful, HubSpot integrations, and Electron
+- Education: Bachelor’s in Computer Science, Collège LaSalle, 2016–2019
+- Languages: fluent English, French, and Arabic; conversational Spanish
+- Current location: Montréal, Canada
+
+These are Ahmed’s own published account, not independent verification.
+
+Public source: https://paprikaf.com/resume

@@ -1,6 +1,7 @@
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { experience, expertise, projects, publicLinks } from '@/data/portfolio';
+import { RoleFit } from '@/features/role-fit/RoleFit';
 
 function IndexComponent() {
   return (
@@ -82,6 +83,8 @@ function IndexComponent() {
         </div>
       </section>
 
+      <RoleFit />
+
       <section
         className="role-arc"
         id="experience"
@@ -91,8 +94,8 @@ function IndexComponent() {
           <p className="eyebrow">EXPERIENCE</p>
           <h2 id="role-title">Where I’ve worked.</h2>
           <p>
-            I joined Builder.io in customer engineering, moved into
-            partnerships, and now work in GTM engineering. In each role, I ended
+            I joined Builder.io as a Customer Engineer, moved into partner
+            enablement, and now work in GTM engineering. In each role, I ended
             up building software for problems I saw firsthand.
           </p>
         </header>

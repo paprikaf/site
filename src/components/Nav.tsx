@@ -28,7 +28,16 @@ export function Nav() {
 
         <div className="site-nav__links">
           {onHome ? <a href="#work">Work</a> : <a href="/#work">Work</a>}
-          {onHome ? <a href="#experience">Experience</a> : null}
+          {onHome ? (
+            <a href="#role-fit">Role fit</a>
+          ) : (
+            <a href="/#role-fit">Role fit</a>
+          )}
+          {onHome ? (
+            <a className="site-nav__experience" href="#experience">
+              Experience
+            </a>
+          ) : null}
           <Link to="/resume">Résumé</Link>
           <a
             className="site-nav__contact"

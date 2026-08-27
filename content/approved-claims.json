@@ -1,0 +1,590 @@
+{
+  "version": "2026-08-27.3",
+  "reviewedAt": "2026-08-27",
+  "claims": [
+    {
+      "id": "builder-academy-built",
+      "projectId": "academy",
+      "title": "Builder Academy",
+      "organization": "Builder.io",
+      "claim": "Ahmed built Builder Academy and owned its application engineering from the start.",
+      "ownership": "built",
+      "capabilities": [
+        "zero-to-one",
+        "product-engineering",
+        "learning-products"
+      ],
+      "status": "shipped",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#work",
+          "provenance": "ahmed-published-claim"
+        },
+        {
+          "id": "builder-academy-product",
+          "label": "Builder Academy",
+          "url": "https://academy.builder.io",
+          "provenance": "public-artifact"
+        }
+      ],
+      "caveats": [
+        "Enablement and content teammates contributed later.",
+        "A broader team maintains the live product now."
+      ],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "builder-academy-application-engineering",
+      "projectId": "academy",
+      "title": "Builder Academy",
+      "organization": "Builder.io",
+      "claim": "Ahmed's application-engineering work on Builder Academy included learner progress and integrations.",
+      "ownership": "built",
+      "capabilities": [
+        "product-engineering",
+        "integrations",
+        "learning-products"
+      ],
+      "status": "shipped",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#work",
+          "provenance": "ahmed-published-claim"
+        },
+        {
+          "id": "builder-academy-product",
+          "label": "Builder Academy",
+          "url": "https://academy.builder.io",
+          "provenance": "public-artifact"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "builder-mcp-initial-production",
+      "projectId": "mcp",
+      "title": "Builder CMS MCP Server",
+      "organization": "Builder.io",
+      "claim": "Ahmed built and launched the first production implementation of Builder's CMS MCP server.",
+      "ownership": "built",
+      "capabilities": ["mcp", "agent-tooling", "content-apis", "zero-to-one"],
+      "status": "shipped",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#work",
+          "provenance": "ahmed-published-claim"
+        },
+        {
+          "id": "builder-mcp-docs",
+          "label": "Builder CMS MCP server documentation",
+          "url": "https://www.builder.io/c/docs/mcp-builder-server",
+          "provenance": "public-artifact"
+        }
+      ],
+      "caveats": ["A broader team owns the product now."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "builder-internal-ai-gtm",
+      "projectId": "operational-ai",
+      "title": "Internal AI tools for GTM",
+      "organization": "Builder.io",
+      "claim": "Ahmed builds internal AI tools for Builder's GTM team and owns the work from prototype through live testing.",
+      "ownership": "current-work",
+      "capabilities": ["applied-ai", "gtm", "prototyping", "live-testing"],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#work",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Internal names, customer data, implementation mechanics, and metrics are not public claims."
+      ],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "agent-native-contributions",
+      "projectId": "agent-native",
+      "title": "Agent Native",
+      "organization": "Open source",
+      "claim": "Ahmed has four merged Agent Native contributions covering approval flows, meeting capture, meeting history, and OAuth URL detection.",
+      "ownership": "contributor",
+      "capabilities": [
+        "agent-tooling",
+        "approval-flows",
+        "open-source",
+        "product-engineering"
+      ],
+      "status": "shipped",
+      "sources": [
+        {
+          "id": "agent-native-pr-2887",
+          "label": "Agent Native PR #2887 · meeting history",
+          "url": "https://github.com/BuilderIO/agent-native/pull/2887",
+          "provenance": "public-contribution-record"
+        },
+        {
+          "id": "agent-native-pr-2823",
+          "label": "Agent Native PR #2823 · meeting capture",
+          "url": "https://github.com/BuilderIO/agent-native/pull/2823",
+          "provenance": "public-contribution-record"
+        },
+        {
+          "id": "agent-native-pr-2647",
+          "label": "Agent Native PR #2647 · approval flow",
+          "url": "https://github.com/BuilderIO/agent-native/pull/2647",
+          "provenance": "public-contribution-record"
+        },
+        {
+          "id": "agent-native-pr-59",
+          "label": "Agent Native PR #59 · OAuth URL detection",
+          "url": "https://github.com/BuilderIO/agent-native/pull/59",
+          "provenance": "public-contribution-record"
+        }
+      ],
+      "caveats": [
+        "Ahmed is a contributor, not the project's creator or maintainer."
+      ],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "discogs-sdk-authorship",
+      "projectId": "discogs-sdk",
+      "title": "@crate.ai/discogs-sdk",
+      "organization": "Open source",
+      "claim": "Ahmed created and maintains the @crate.ai/discogs-sdk TypeScript client for the Discogs API.",
+      "ownership": "creator-maintainer",
+      "capabilities": ["typescript", "sdk-design", "api-design", "open-source"],
+      "status": "maintained",
+      "sources": [
+        {
+          "id": "discogs-sdk-npm",
+          "label": "@crate.ai/discogs-sdk on npm",
+          "url": "https://www.npmjs.com/package/@crate.ai/discogs-sdk",
+          "provenance": "public-authorship-record"
+        },
+        {
+          "id": "discogs-sdk-repository",
+          "label": "Crate-AI/discogs-sdk repository",
+          "url": "https://github.com/Crate-AI/discogs-sdk",
+          "provenance": "public-authorship-record"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "discogs-sdk-capabilities",
+      "projectId": "discogs-sdk",
+      "title": "@crate.ai/discogs-sdk",
+      "organization": "Open source",
+      "claim": "The SDK supports OAuth, search, collections, and identity workflows.",
+      "ownership": "creator-maintainer",
+      "capabilities": ["oauth", "api-design", "sdk-design", "typescript"],
+      "status": "maintained",
+      "sources": [
+        {
+          "id": "discogs-sdk-npm",
+          "label": "@crate.ai/discogs-sdk on npm",
+          "url": "https://www.npmjs.com/package/@crate.ai/discogs-sdk",
+          "provenance": "public-artifact"
+        },
+        {
+          "id": "discogs-sdk-repository",
+          "label": "Crate-AI/discogs-sdk repository",
+          "url": "https://github.com/Crate-AI/discogs-sdk",
+          "provenance": "public-artifact"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "galite-building",
+      "projectId": "galite",
+      "title": "Galite",
+      "organization": "Independent",
+      "claim": "Ahmed is building an early product for organizing meeting notes, decisions, and follow-ups.",
+      "ownership": "creator",
+      "capabilities": [
+        "zero-to-one",
+        "product-engineering",
+        "meeting-workflows"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#work",
+          "provenance": "ahmed-published-claim"
+        },
+        {
+          "id": "galite-product",
+          "label": "Galite",
+          "url": "https://galite.ai/",
+          "provenance": "public-artifact"
+        }
+      ],
+      "caveats": [
+        "Galite is an early product, not a mature production system."
+      ],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "builder-role-progression",
+      "title": "Builder.io role progression",
+      "organization": "Builder.io",
+      "claim": "Ahmed progressed from Customer Engineer to Partner Enablement Engineer to GTM Engineer at Builder.io and built software in each role.",
+      "ownership": "current-work",
+      "capabilities": [
+        "customer-facing",
+        "partnerships",
+        "gtm",
+        "product-engineering"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "appnovation-full-stack",
+      "title": "Full-Stack Developer",
+      "organization": "Appnovation",
+      "claim": "Ahmed worked as a Full-Stack Developer at Appnovation from 2021 to 2023.",
+      "ownership": "role",
+      "capabilities": ["full-stack-development", "product-engineering"],
+      "status": "historical",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "appnovation-product-engineering",
+      "title": "Product engineering at Appnovation",
+      "organization": "Appnovation",
+      "claim": "At Appnovation, Ahmed built React and Electron applications and shared design-system tooling with TypeScript, Contentful, and GCP.",
+      "ownership": "role",
+      "capabilities": [
+        "react",
+        "electron",
+        "typescript",
+        "design-systems",
+        "contentful",
+        "gcp"
+      ],
+      "status": "historical",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#experience",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "jesta-web-development",
+      "title": "Web Developer",
+      "organization": "Jesta I.S.",
+      "claim": "Ahmed worked as a Web Developer at Jesta I.S. from 2019 to 2021.",
+      "ownership": "role",
+      "capabilities": ["web-development", "product-engineering"],
+      "status": "historical",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "jesta-enterprise-retail",
+      "title": "Enterprise retail software at Jesta I.S.",
+      "organization": "Jesta I.S.",
+      "claim": "At Jesta I.S., Ahmed built enterprise retail software and worked with product and design on business-critical workflows.",
+      "ownership": "role",
+      "capabilities": [
+        "enterprise-software",
+        "retail-software",
+        "product-collaboration",
+        "design-collaboration"
+      ],
+      "status": "historical",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#experience",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "resume-product-practice",
+      "title": "Product practice",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé lists 0→1 discovery, prototyping, workflow design, and handoff as areas of practice.",
+      "ownership": "role",
+      "capabilities": [
+        "zero-to-one",
+        "discovery",
+        "prototyping",
+        "workflow-design",
+        "handoff"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is a self-published skills summary."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "portfolio-production-systems-practice",
+      "title": "Production systems practice",
+      "organization": "Public portfolio",
+      "claim": "Ahmed's public portfolio says he adds logging, recovery, and evaluation to the systems he ships.",
+      "ownership": "role",
+      "capabilities": [
+        "production-systems",
+        "logging",
+        "recovery",
+        "evaluation-loops"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#expertise",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is Ahmed's self-published practice summary."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "portfolio-customer-product-translation",
+      "title": "Customer-to-product practice",
+      "organization": "Public portfolio",
+      "claim": "Ahmed's public portfolio says he turns repeated customer problems into reusable software instead of one-off fixes.",
+      "ownership": "role",
+      "capabilities": [
+        "customer-facing",
+        "product-discovery",
+        "product-engineering",
+        "workflow-design"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-portfolio",
+          "label": "Ahmed's public portfolio",
+          "url": "https://paprikaf.com/#expertise",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is Ahmed's self-published practice summary."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "resume-ai-practice",
+      "title": "AI systems practice",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé lists MCP, agents, human review, automation, and evaluation loops as areas of practice.",
+      "ownership": "role",
+      "capabilities": [
+        "mcp",
+        "agents",
+        "human-review",
+        "automation",
+        "evaluation-loops"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is a self-published skills summary."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "resume-engineering-toolkit",
+      "title": "Engineering toolkit",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé lists React, TypeScript, Node, Convex, GCP, Terraform, and API development.",
+      "ownership": "role",
+      "capabilities": [
+        "react",
+        "typescript",
+        "node",
+        "convex",
+        "gcp",
+        "terraform",
+        "api-development"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "This is a self-published skills summary; depth varies by tool."
+      ],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "resume-platform-toolkit",
+      "title": "Platform experience",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé lists Builder CMS, Contentful, HubSpot integrations, and Electron.",
+      "ownership": "role",
+      "capabilities": [
+        "builder-cms",
+        "contentful",
+        "hubspot-integrations",
+        "electron"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "This is a self-published skills summary; depth varies by platform."
+      ],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "education-computer-science",
+      "title": "Bachelor's in Computer Science",
+      "organization": "Collège LaSalle, Montréal",
+      "claim": "Ahmed's public résumé lists a Bachelor's in Computer Science from Collège LaSalle, completed from 2016 to 2019.",
+      "ownership": "role",
+      "capabilities": ["computer-science-education"],
+      "status": "historical",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["This is education information Ahmed has published."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "languages",
+      "title": "Languages",
+      "organization": "Public résumé",
+      "claim": "Ahmed's public résumé lists English, French, and Arabic as fluent and Spanish as conversational.",
+      "ownership": "role",
+      "capabilities": ["english", "french", "arabic", "spanish"],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["Language proficiency is self-reported."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    },
+    {
+      "id": "location-montreal",
+      "title": "Location",
+      "organization": "Montréal, Canada",
+      "claim": "Ahmed's public portfolio lists Montréal, Canada as his current location.",
+      "ownership": "role",
+      "capabilities": ["montreal", "canada"],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": ["Location information was reviewed on 2026-08-27."],
+      "public": true,
+      "reviewedAt": "2026-08-27"
+    }
+  ]
+}
