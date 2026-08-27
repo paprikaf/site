@@ -14,8 +14,8 @@ export function Nav() {
           aria-label="Ahmed Felfel, home"
         >
           <img
-            className="site-nav__avatar"
-            src="/avatar.webp"
+            className="site-nav__mark"
+            src="/brand-mark.png"
             alt=""
             width={38}
             height={38}
