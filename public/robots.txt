@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://site-smoky-phi.vercel.app/sitemap.xml
+Sitemap: https://paprikaf.com/sitemap.xml

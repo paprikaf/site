@@ -74,11 +74,7 @@ function IndexComponent() {
                     </a>
                   ))
                 ) : (
-                  <span className="evidence-row__private">
-                    {project.id === 'galite'
-                      ? 'PRIVATE / EARLY'
-                      : 'INTERNAL SYSTEM'}
-                  </span>
+                  <span className="evidence-row__private">INTERNAL SYSTEM</span>
                 )}
               </div>
             </article>

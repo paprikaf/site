@@ -61,5 +61,6 @@ Public sources:
 
 ### Galite — Now building
 
-Private prototype for keeping track of meeting notes, decisions, and
-follow-ups. It is not launched or open source.
+Early product for organizing meeting notes, decisions, and follow-ups.
+
+Public site: https://galite.ai/

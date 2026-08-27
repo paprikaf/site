@@ -17,6 +17,8 @@ built software in each role.
   https://github.com/BuilderIO/agent-native
 - @crate.ai/discogs-sdk: creator and maintainer:
   https://www.npmjs.com/package/@crate.ai/discogs-sdk
+- Galite: early product for organizing meeting notes, decisions, and follow-ups:
+  https://galite.ai/
 
 ## Public profiles
 

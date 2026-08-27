@@ -97,9 +97,9 @@ export const projects: Project[] = [
     organization: 'Independent',
     title: 'Galite',
     summary:
-      'I’m building an early private prototype for organizing meeting notes, decisions, and follow-ups.',
+      'I’m building an early product for organizing meeting notes, decisions, and follow-ups.',
     tags: ['Early stage', 'Agent-native', 'Personal systems'],
-    links: [],
+    links: [{ label: 'Open Galite', href: 'https://galite.ai/' }],
   },
 ];
 

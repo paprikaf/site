@@ -50,7 +50,7 @@ HR wording of the middle title before adding month-level dates publicly.
 - **Internal AI tools for GTM:** Current work; internal system
 - **Agent Native:** Contributor
 - **@crate.ai/discogs-sdk:** Creator and maintainer
-- **Galite:** Now building; private and early
+- **Galite:** Now building; public and early
 
 Prefer ownership, scope, public links, and concrete decisions over unsupported
 metrics. Do not imply sole ownership of products now maintained by a broader
