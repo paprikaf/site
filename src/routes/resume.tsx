@@ -16,16 +16,19 @@ function ResumeComponent() {
             Currently GTM Engineer at Builder.io · Montréal, Canada
           </p>
         </div>
-        <button
-          className="resume-print"
-          type="button"
-          onClick={() => window.print()}
-        >
-          <Printer aria-hidden="true" /> Print / Save PDF
-        </button>
+        <div className="resume-print-actions">
+          <button
+            className="resume-print"
+            type="button"
+            onClick={() => window.print()}
+          >
+            <Printer aria-hidden="true" /> Print / Save PDF
+          </button>
+          <p>For a clean PDF, turn off browser headers and footers.</p>
+        </div>
       </header>
 
-      <div className="resume-links" aria-label="Professional links">
+      <nav className="resume-links" aria-label="Professional links">
         <a href={publicLinks.email}>
           ahmed@galite.ai <ArrowUpRight aria-hidden="true" />
         </a>
@@ -38,7 +41,7 @@ function ResumeComponent() {
         <a href="https://academy.builder.io" target="_blank" rel="noreferrer">
           Builder Academy <ArrowUpRight aria-hidden="true" />
         </a>
-      </div>
+      </nav>
 
       <section
         className="resume-section resume-profile"
@@ -82,8 +85,13 @@ function ResumeComponent() {
       <section className="resume-section" aria-labelledby="resume-work-title">
         <h2 id="resume-work-title">Selected work</h2>
         <div className="resume-projects">
-          {resumeProjects.map((project) => (
-            <article key={project.id}>
+          {resumeProjects.map((project, index) => (
+            <article
+              className={
+                index === 3 ? 'resume-project--print-break' : undefined
+              }
+              key={project.id}
+            >
               <header>
                 <h3>{project.title}</h3>
                 <span>{project.ownership}</span>
@@ -96,11 +104,11 @@ function ResumeComponent() {
 
       <div className="resume-columns">
         <section
-          className="resume-section"
+          className="resume-section resume-section--ownership"
           aria-labelledby="resume-expertise-title"
         >
           <h2 id="resume-expertise-title">What I can own</h2>
-          <dl className="resume-facts">
+          <dl className="resume-facts resume-facts--ownership">
             <div>
               <dt>Product + UX</dt>
               <dd>
