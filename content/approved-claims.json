@@ -1,5 +1,5 @@
 {
-  "version": "2026-08-27.3",
+  "version": "2026-08-27.4",
   "reviewedAt": "2026-08-27",
   "claims": [
     {
@@ -369,16 +369,16 @@
     },
     {
       "id": "resume-product-practice",
-      "title": "Product practice",
+      "title": "Ship the first version",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé lists 0→1 discovery, prototyping, workflow design, and handoff as areas of practice.",
+      "claim": "Ahmed's public résumé says he takes unclear workflows from rough ideas to useful first versions, then improves them from real use.",
       "ownership": "role",
       "capabilities": [
         "zero-to-one",
         "discovery",
         "prototyping",
         "workflow-design",
-        "handoff"
+        "user-feedback"
       ],
       "status": "current",
       "sources": [
@@ -445,15 +445,16 @@
     },
     {
       "id": "resume-ai-practice",
-      "title": "AI systems practice",
+      "title": "Put AI to work",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé lists MCP, agents, human review, automation, and evaluation loops as areas of practice.",
+      "claim": "Ahmed's public résumé says he builds MCP and agent workflows around real data and tools, with human review, recovery, and evaluation where mistakes matter.",
       "ownership": "role",
       "capabilities": [
         "mcp",
         "agents",
         "human-review",
         "automation",
+        "recovery",
         "evaluation-loops"
       ],
       "status": "current",
@@ -471,9 +472,9 @@
     },
     {
       "id": "resume-engineering-toolkit",
-      "title": "Engineering toolkit",
+      "title": "Build end to end",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé lists React, TypeScript, Node, Convex, GCP, Terraform, and API development.",
+      "claim": "Ahmed's public résumé says he ships TypeScript products end to end, including React interfaces, Node APIs, Convex backends, and GCP infrastructure managed with Terraform.",
       "ownership": "role",
       "capabilities": [
         "react",
@@ -493,23 +494,23 @@
           "provenance": "ahmed-published-claim"
         }
       ],
-      "caveats": [
-        "This is a self-published skills summary; depth varies by tool."
-      ],
+      "caveats": ["This is a self-published practice summary."],
       "public": true,
       "reviewedAt": "2026-08-27"
     },
     {
-      "id": "resume-platform-toolkit",
-      "title": "Platform experience",
+      "id": "resume-gtm-systems",
+      "title": "Turn friction into software",
       "organization": "Public résumé",
-      "claim": "Ahmed's public résumé lists Builder CMS, Contentful, HubSpot integrations, and Electron.",
+      "claim": "Ahmed's public résumé says he turns repeated sales, customer, and partner problems into reliable tools and automations.",
       "ownership": "role",
       "capabilities": [
-        "builder-cms",
-        "contentful",
-        "hubspot-integrations",
-        "electron"
+        "gtm-engineering",
+        "sales-workflows",
+        "customer-workflows",
+        "partner-workflows",
+        "internal-tools",
+        "automation"
       ],
       "status": "current",
       "sources": [
@@ -520,9 +521,7 @@
           "provenance": "ahmed-published-claim"
         }
       ],
-      "caveats": [
-        "This is a self-published skills summary; depth varies by platform."
-      ],
+      "caveats": ["This is a self-published practice summary."],
       "public": true,
       "reviewedAt": "2026-08-27"
     },

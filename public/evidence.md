@@ -72,15 +72,17 @@ Early product for organizing meeting notes, decisions, and follow-ups.
 
 Public site: https://galite.ai/
 
-## Skills and profile facts Ahmed publishes
+## How Ahmed builds
 
-- Product practice: 0→1 discovery, prototyping, workflow design, and handoff
-- AI systems: MCP, agents, human review, automation, and evaluation loops
-- Production systems: logging, recovery, and evaluation
-- Customer-to-product work: turning repeated customer problems into reusable
-  software
-- Engineering: React, TypeScript, Node, Convex, GCP, Terraform, and APIs
-- Platforms: Builder CMS, Contentful, HubSpot integrations, and Electron
+- Ship the first version: takes unclear workflows from rough ideas to useful
+  first versions, then improves them from real use
+- Put AI to work: builds MCP and agent workflows around real data and tools,
+  with human review, recovery, and evaluation where mistakes matter
+- Build end to end: ships TypeScript products across React
+  interfaces, Node APIs, Convex backends, and GCP infrastructure managed with
+  Terraform
+- Turn friction into software: turns repeated sales, customer, and partner
+  problems into reliable tools and automations
 - Education: Bachelor’s in Computer Science, Collège LaSalle, 2016–2019
 - Languages: fluent English, French, and Arabic; conversational Spanish
 - Current location: Montréal, Canada
