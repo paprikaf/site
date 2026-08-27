@@ -20,20 +20,23 @@ engineering. He built software in each role.
 - Galite: early product for organizing meeting notes, decisions, and follow-ups:
   https://galite.ai/
 
-## Technical range Ahmed publishes
+## Published areas of ownership
 
-- Product and UI/UX: turns unclear problems into useful workflows, clear
-  interfaces, and testable first versions
-- System architecture: shapes service boundaries, data flows, and tradeoffs so
-  today's build does not block what comes next
-- Frontend engineering: builds complete product interfaces with React and
-  TypeScript, from component systems through application flows
-- Backend and cloud: designs APIs and backend services with Node and Convex,
-  then deploys and operates them across GCP and AWS
-- Applied AI: connects models to tools and data with MCP, human review, and
-  evaluation where errors matter
-- Delivery and DevOps: sets up CI/CD, Terraform, logging, and recovery so
-  releases are repeatable and systems stay operable
+- Product and UX: turns ambiguous problems into focused products by defining
+  the core workflow, cutting scope, and testing the first useful version
+- System architecture: sets system boundaries, data flows, and failure modes
+  around real constraints, balancing speed, cost, reliability, and room to
+  evolve
+- Frontend systems: builds polished, accessible interfaces and design systems
+  that keep complex workflows clear as products and teams grow
+- Backend and cloud systems: designs APIs, data models, and cloud services with
+  secure boundaries and clear ownership, balancing reliability, cost, and scale
+- AI system design: designs production AI systems around agent orchestration,
+  authoritative context, evaluations, human review, and recovery, using MCP
+  when it is the right interface
+- Delivery and operations: designs the path to production with CI/CD,
+  infrastructure as code, observability, and recovery so teams can ship safely
+  and diagnose failures quickly
 - Bachelor’s in Computer Science, Collège LaSalle, 2016–2019
 - Fluent English, French, and Arabic; conversational Spanish
 - Based in Montréal, Canada

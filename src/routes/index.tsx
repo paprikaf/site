@@ -144,7 +144,7 @@ function IndexComponent() {
         </div>
         <p className="technical-runway">
           TOOLS / React · TypeScript · Node · Convex · GCP · Terraform · Builder
-          CMS · MCP · agent systems
+          CMS · agent systems · MCP
         </p>
       </section>
 

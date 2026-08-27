@@ -141,9 +141,9 @@ export const expertise = [
   },
   {
     number: '02',
-    title: 'AI and MCP',
+    title: 'AI systems',
     description:
-      'Connect AI models to tools and data, with review steps where mistakes matter.',
+      'Design agent workflows around orchestration, authoritative context, evaluation, human review, and recovery.',
   },
   {
     number: '03',

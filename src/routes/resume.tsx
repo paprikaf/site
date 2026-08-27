@@ -99,48 +99,53 @@ function ResumeComponent() {
           className="resume-section"
           aria-labelledby="resume-expertise-title"
         >
-          <h2 id="resume-expertise-title">Technical range</h2>
+          <h2 id="resume-expertise-title">What I can own</h2>
           <dl className="resume-facts">
             <div>
-              <dt>Product + UI/UX</dt>
+              <dt>Product + UX</dt>
               <dd>
-                Turn an unclear problem into a useful workflow, clear interface,
-                and testable first version.
+                Turn ambiguous problems into focused products by defining the
+                core workflow, cutting scope, and testing the first useful
+                version.
               </dd>
             </div>
             <div>
               <dt>System architecture</dt>
               <dd>
-                Shape service boundaries, data flows, and tradeoffs so today's
-                build does not block what comes next.
+                Set system boundaries, data flows, and failure modes around real
+                constraints, balancing speed, cost, reliability, and room to
+                evolve.
               </dd>
             </div>
             <div>
-              <dt>Frontend engineering</dt>
+              <dt>Frontend systems</dt>
               <dd>
-                Build complete product interfaces with React and TypeScript,
-                from component systems through application flows.
+                Build polished, accessible interfaces and design systems that
+                keep complex workflows clear as products and teams grow.
               </dd>
             </div>
             <div>
-              <dt>Backend + cloud</dt>
+              <dt>Backend + cloud systems</dt>
               <dd>
-                Design APIs and backend services with Node and Convex, then
-                deploy and operate them across GCP and AWS.
+                Design APIs, data models, and cloud services with secure
+                boundaries and clear ownership, balancing reliability, cost, and
+                scale.
               </dd>
             </div>
             <div>
-              <dt>Applied AI</dt>
+              <dt>AI system design</dt>
               <dd>
-                Connect models to tools and data with MCP, human review, and
-                evaluation where errors matter.
+                Design production AI systems around agent orchestration,
+                authoritative context, evaluations, human review, and recovery,
+                using MCP when it is the right interface.
               </dd>
             </div>
             <div>
-              <dt>Delivery + DevOps</dt>
+              <dt>Delivery + operations</dt>
               <dd>
-                Set up CI/CD, Terraform, logging, and recovery so releases are
-                repeatable and systems stay operable.
+                Design the path to production with CI/CD, infrastructure as
+                code, observability, and recovery so teams can ship safely and
+                diagnose failures quickly.
               </dd>
             </div>
           </dl>
