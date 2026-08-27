@@ -99,23 +99,36 @@ function ResumeComponent() {
           className="resume-section"
           aria-labelledby="resume-expertise-title"
         >
-          <h2 id="resume-expertise-title">Expertise</h2>
+          <h2 id="resume-expertise-title">How I build</h2>
           <dl className="resume-facts">
             <div>
-              <dt>Product</dt>
-              <dd>0→1 discovery, prototyping, workflow design, handoff</dd>
+              <dt>Ship the first version</dt>
+              <dd>
+                Take an unclear workflow from rough idea to a useful first
+                version, then improve it from real use.
+              </dd>
             </div>
             <div>
-              <dt>AI systems</dt>
-              <dd>MCP, agents, human review, automation, evaluation loops</dd>
+              <dt>Put AI to work</dt>
+              <dd>
+                Build MCP and agent workflows around real data and tools, with
+                human review, recovery, and evaluation where mistakes matter.
+              </dd>
             </div>
             <div>
-              <dt>Engineering</dt>
-              <dd>React, TypeScript, Node, Convex, GCP, Terraform, APIs</dd>
+              <dt>Build end to end</dt>
+              <dd>
+                Ship TypeScript products end to end: React interfaces, Node
+                APIs, Convex backends, and GCP infrastructure managed with
+                Terraform.
+              </dd>
             </div>
             <div>
-              <dt>Platforms</dt>
-              <dd>Builder CMS, Contentful, HubSpot integrations, Electron</dd>
+              <dt>Turn friction into software</dt>
+              <dd>
+                Turn repeated sales, customer, and partner problems into
+                reliable tools and automations.
+              </dd>
             </div>
           </dl>
         </section>
