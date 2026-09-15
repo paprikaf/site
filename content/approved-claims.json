@@ -145,10 +145,10 @@
       "status": "shipped",
       "sources": [
         {
-          "id": "agent-native-pr-4506",
-          "label": "Agent Native PR #4506 · Nomad docs link",
-          "url": "https://github.com/BuilderIO/agent-native/pull/4506",
-          "provenance": "public-contribution-record"
+          "id": "nomad-source",
+          "label": "Nomad · source",
+          "url": "https://github.com/paprikaf/nomad",
+          "provenance": "public-authorship-record"
         },
         {
           "id": "agent-native-pr-4409",

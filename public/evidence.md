@@ -51,7 +51,7 @@ maintainer.
 
 Public contribution records:
 
-- https://github.com/BuilderIO/agent-native/pull/4506
+- https://github.com/paprikaf/nomad
 - https://github.com/BuilderIO/agent-native/pull/4409
 - https://github.com/BuilderIO/agent-native/pull/2887
 - https://github.com/BuilderIO/agent-native/pull/2823
