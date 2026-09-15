@@ -101,7 +101,7 @@ export const projects: Project[] = [
     tags: ['Residency', 'Tax presence', 'Agent-native'],
     links: [
       {
-        label: 'View source',
+        label: 'View on GitHub',
         href: 'https://github.com/paprikaf/nomad',
       },
       {
