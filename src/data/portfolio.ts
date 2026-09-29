@@ -87,7 +87,7 @@ export const projects: Project[] = [
     organization: 'Independent',
     title: 'Crate',
     summary:
-      'I’m building Crate, a record room for DJs. Sign in with Discogs and your collection becomes something you can search, play, shape into playlists, and explore with a DJ assistant. Next, it becomes an MCP server so the same tools work from any AI client.',
+      'I’m building Crate, a record room for DJs. Sign in with Discogs and your collection becomes something you can search, play, and shape into playlists you can share by link or embed, like the one on this page. Next, it becomes an MCP server so the same tools work from any AI client.',
     tags: ['DJ tools', 'Discogs', 'Live product'],
     links: [
       { label: 'Open Crate', href: 'https://cr8.audio' },
@@ -206,6 +206,8 @@ export const publicLinks = {
   email: 'mailto:ahmed@galite.ai',
   github: 'https://github.com/paprikaf',
   linkedin: 'https://www.linkedin.com/in/ahmed-felfel-080895/',
-  records: 'https://cr8.audio/listen/baston2rue',
+  // A playlist from my record collection, shared from Crate. The embed is
+  // live: renaming or reordering it in Crate updates it here.
+  recordsEmbed: 'https://cr8.audio/embed/44a77fe5-f03c-4409-a1d3-0c8ae0a1cbd1',
   repo: 'https://github.com/paprikaf/site',
 };

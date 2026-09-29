@@ -228,14 +228,13 @@ function IndexComponent() {
         <div>
           <h2 id="about-title">I’m based in Montréal.</h2>
           <p>I DJ, ski, travel, and build music tools.</p>
-          <a
-            className="button-link button-link--primary about-strip__action"
-            href={publicLinks.records}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Listen to my records <ArrowUpRight aria-hidden="true" />
-          </a>
+          <iframe
+            className="about-strip__player"
+            src={publicLinks.recordsEmbed}
+            title="A set from my record collection, playing on Crate"
+            loading="lazy"
+            allow="autoplay; encrypted-media; picture-in-picture"
+          />
         </div>
       </section>
 

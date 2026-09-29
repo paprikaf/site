@@ -18,7 +18,7 @@ engineering. He built software in each role.
 - Nomad: building for people who live across borders — travel history against visa and tax-day clocks (not legal or tax advice):
   https://github.com/paprikaf/nomad
 - Crate: building a record room for DJs on top of their Discogs collection —
-  search, play, playlists, and a DJ assistant; moving toward an MCP server:
+  search, play, and playlists you can share or embed; moving toward an MCP server:
   https://cr8.audio
 - @cr8.audio/discogs-sdk: creator and maintainer:
   https://www.npmjs.com/package/@cr8.audio/discogs-sdk

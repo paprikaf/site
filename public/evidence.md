@@ -73,10 +73,11 @@ Public sources:
 ### Crate — Building
 
 Ahmed started Crate and is building it: a record room for DJs. Sign in with
-Discogs, then search your collection, play tracks through YouTube, shape
-playlists, and ask a DJ assistant for direction. It is moving toward an MCP
-server so the same tools work from any AI client; that server is the direction,
-not a shipped feature. Another contributor has also committed to the repository.
+Discogs, then search your collection, play tracks through YouTube, and build
+playlists you can share by link or embed on another site. It is moving toward
+an MCP server so the same tools work from any AI client; that server is the
+direction, not a shipped feature. Another contributor has also committed to the
+repository.
 
 Public sources:
 
