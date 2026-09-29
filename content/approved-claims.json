@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-27.7",
-  "reviewedAt": "2026-09-18",
+  "version": "2026-08-27.8",
+  "reviewedAt": "2026-09-29",
   "claims": [
     {
       "id": "builder-academy-built",
@@ -210,14 +210,13 @@
       "projectId": "crate",
       "title": "Crate",
       "organization": "Independent",
-      "claim": "Ahmed started and is building Crate, a record room for DJs: sign in with Discogs, then search your collection, play tracks through YouTube, shape playlists, and ask a DJ assistant for direction. It is live at cr8.audio and is moving toward an MCP server so the same tools work from any AI client.",
+      "claim": "Ahmed started and is building Crate, a record room for DJs: sign in with Discogs, then search your collection, play tracks through YouTube, and build playlists you can share by link or embed on another site. It is live at cr8.audio and is moving toward an MCP server so the same tools work from any AI client.",
       "ownership": "creator",
       "capabilities": [
         "zero-to-one",
         "product-engineering",
         "oauth",
         "integrations",
-        "applied-ai",
         "open-source"
       ],
       "status": "current",
@@ -241,7 +240,7 @@
         "Ahmed started the repository and is its main committer; another contributor has also committed, so do not imply sole authorship."
       ],
       "public": true,
-      "reviewedAt": "2026-09-18"
+      "reviewedAt": "2026-09-29"
     },
     {
       "id": "discogs-sdk-authorship",

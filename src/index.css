@@ -2419,8 +2419,22 @@ a.role-fit__source:hover {
   font-size: 1.12rem;
 }
 
-.about-strip__action {
+.about-strip__player {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: 380px;
   margin-top: 1.5rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  box-shadow: var(--shadow-md-checkpoint);
+}
+
+/* The player stacks its video above the controls when narrow. */
+@media (max-width: 620px) {
+  .about-strip__player {
+    height: 520px;
+  }
 }
 
 .contact-section {
