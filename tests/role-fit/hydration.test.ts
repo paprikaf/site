@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
+import { approvedEvidence } from '../../server/role-fit/evidence';
+
 import {
   FitHydrationError,
   hydrateFitBrief,
@@ -98,7 +100,7 @@ describe('fit brief hydration', () => {
     });
     expect(result.meta).toMatchObject({
       requestId: 'request-123',
-      evidenceVersion: '2026-08-27.8',
+      evidenceVersion: approvedEvidence.version,
     });
   });
 

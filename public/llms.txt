@@ -9,6 +9,14 @@ engineering. He built software in each role.
 
 ## Selected public work
 
+- Builder AI GTM platform: built from scratch, used daily by all sales reps and
+  also used by SDRs and marketing. Covers ICP and territory generation,
+  enrichment with Exa, Parallel AI, Clay, Similarweb, and Apollo, HubSpot and
+  product signals, rep dashboards, and outbound actions. Dobby handles inbound
+  enrichment, triage, and automatic HubSpot sequences from Slack. Adoption is
+  self-reported; no revenue, lead-volume, or time-saving metrics are claimed:
+  https://paprikaf.com/resume#resume-work-title
+
 - Builder Academy: Ahmed built it from the start; enablement and content
   teammates contributed later: https://academy.builder.io
 - Builder CMS MCP Server: built the initial production implementation:
@@ -48,6 +56,8 @@ engineering. He built software in each role.
 
 These profile facts are Ahmed’s own published account:
 https://paprikaf.com/resume
+
+Download the résumé PDF: https://paprikaf.com/resume.pdf
 
 ## Public profiles
 

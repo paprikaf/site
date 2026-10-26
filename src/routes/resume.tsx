@@ -2,7 +2,40 @@ import { ArrowUpRight, Printer } from 'lucide-react';
 import { createFileRoute } from '@tanstack/react-router';
 import { experience, projects, publicLinks } from '@/data/portfolio';
 
-const resumeProjects = projects.slice(0, 5);
+const resumeProjects = [
+  {
+    id: 'territory-generation',
+    title: 'AI territory generation + enrichment',
+    ownership: 'Built from scratch',
+    summary:
+      'Built an agent workflow that generates sales territories from prompts, configurable ICP criteria, or existing templates, then enriches companies and finds contacts matching target personas. Teams refine ICP criteria using HubSpot and product analytics, and run territory generation quarterly or when new reps join. Integrated Exa, Parallel AI, Clay, Similarweb, and Apollo for enrichment.',
+  },
+  {
+    id: 'account-signals',
+    title: 'Account signals + outbound workflows',
+    ownership: 'Built from scratch',
+    summary:
+      'Connected HubSpot with product signals including platform engagement, credit consumption, and connected codebases. Built rep dashboards showing assigned accounts and prioritized signals: a first login from a target account triggers contact enrichment, with champions, power users, and executives informing priority. Reps can initiate email or sequencing from a signal with one click.',
+  },
+  {
+    id: 'dobby',
+    title: 'Dobby — automated inbound agent',
+    ownership: 'Built from scratch',
+    summary:
+      'Built an inbound agent that operates in Slack within the GTM platform. Dobby enriches incoming leads and triages them for qualification, recycling, nurturing, bot filtering, or partnerships. After extensive tuning of its triage and wording, it automatically sends the appropriate emails through HubSpot sequences.',
+  },
+  ...projects.filter((project) => ['academy', 'mcp'].includes(project.id)),
+];
+
+const resumeExperience = experience.map((role) =>
+  role.company === 'Builder.io'
+    ? {
+        ...role,
+        summary:
+          'Built an internal AI GTM platform from scratch, used daily by all sales reps and also used by SDRs and marketing to research accounts, find leads, prioritize work, and take action. Earlier work included customer engineering, partner enablement, Builder Academy, and the first production Builder CMS MCP server.',
+      }
+    : role
+);
 
 function ResumeComponent() {
   return (
@@ -11,12 +44,15 @@ function ResumeComponent() {
         <div>
           <p className="eyebrow">RÉSUMÉ / 2026</p>
           <h1>Ahmed Felfel</h1>
-          <p className="resume-header__title">0→1 Product Engineer</p>
+          <p className="resume-header__title">GTM Engineer · AI Platforms</p>
           <p className="resume-header__subline">
             Currently GTM Engineer at Builder.io · Montréal, Canada
           </p>
         </div>
         <div className="resume-print-actions">
+          <a className="resume-print" href="/resume.pdf" download>
+            <ArrowUpRight aria-hidden="true" /> Download PDF
+          </a>
           <button
             className="resume-print"
             type="button"
@@ -49,10 +85,12 @@ function ResumeComponent() {
       >
         <h2 id="resume-profile-title">Profile</h2>
         <p>
-          Product engineer and current GTM Engineer at Builder.io. I built
-          Builder Academy and the first production version of Builder’s CMS MCP
-          server. I now build internal AI tools for GTM. Earlier roles included
-          customer engineering, partnerships, and full-stack development.
+          GTM Engineer at Builder.io. Built an internal AI platform from scratch
+          for territory generation, account and contact enrichment, product
+          signals, outbound workflows, and automated inbound qualification. All
+          sales reps use it daily; SDRs and marketing also work from the
+          platform. Background in customer engineering, partner enablement, and
+          full-stack product development.
         </p>
       </section>
 
@@ -62,7 +100,7 @@ function ResumeComponent() {
       >
         <h2 id="resume-experience-title">Experience</h2>
         <div className="resume-experience">
-          {experience.map((role) => (
+          {resumeExperience.map((role) => (
             <article key={role.company}>
               <header>
                 <div>
@@ -110,50 +148,43 @@ function ResumeComponent() {
           <h2 id="resume-expertise-title">What I can own</h2>
           <dl className="resume-facts resume-facts--ownership">
             <div>
-              <dt>Product + UX</dt>
+              <dt>Territories + ICP</dt>
               <dd>
-                Turn ambiguous problems into focused products by defining the
-                core workflow, cutting scope, and testing the first useful
-                version.
+                Build agent workflows for ICP configuration, territory
+                generation, company enrichment, and persona-based lead
+                discovery.
               </dd>
             </div>
             <div>
-              <dt>System architecture</dt>
+              <dt>CRM + product signals</dt>
               <dd>
-                Set system boundaries, data flows, and failure modes around real
-                constraints, balancing speed, cost, reliability, and room to
-                evolve.
+                Connect HubSpot and product usage data to account research,
+                contact enrichment, and prioritized rep dashboards.
               </dd>
             </div>
             <div>
-              <dt>Frontend systems</dt>
+              <dt>Inbound + outbound</dt>
               <dd>
-                Build polished, accessible interfaces and design systems that
-                keep complex workflows clear as products and teams grow.
+                Build lead triage agents, HubSpot sequencing, and email actions
+                that connect account signals to a rep’s next step.
               </dd>
             </div>
             <div>
-              <dt>Backend + cloud systems</dt>
+              <dt>Enrichment stack</dt>
+              <dd>Exa, Parallel AI, Clay, Similarweb, and Apollo.</dd>
+            </div>
+            <div>
+              <dt>AI-assisted delivery</dt>
               <dd>
-                Design APIs, data models, and cloud services with secure
-                boundaries and clear ownership, balancing reliability, cost, and
-                scale.
+                Use Claude Code and Cursor daily to build and iterate on
+                internal tools, with live testing and tuning of agent behavior.
               </dd>
             </div>
             <div>
-              <dt>AI system design</dt>
+              <dt>Product engineering</dt>
               <dd>
-                Design production AI systems around agent orchestration,
-                authoritative context, evaluations, human review, and recovery,
-                using MCP when it is the right interface.
-              </dd>
-            </div>
-            <div>
-              <dt>Delivery + operations</dt>
-              <dd>
-                Design the path to production with CI/CD, infrastructure as
-                code, observability, and recovery so teams can ship safely and
-                diagnose failures quickly.
+                Build products from the first useful version through production,
+                including interfaces, integrations, APIs, and data flows.
               </dd>
             </div>
           </dl>

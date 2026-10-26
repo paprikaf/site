@@ -1,6 +1,6 @@
 # Ahmed Felfel — published portfolio record
 
-Last reviewed: 2026-09-18
+Last reviewed: 2026-10-26
 
 This file contains the claims used by the public portfolio. It deliberately
 excludes private meeting notes, internal metrics, customer information, and
@@ -37,11 +37,34 @@ models and create or update CMS content. A broader team owns the product now.
 
 Public source: https://www.builder.io/c/docs/mcp-builder-server
 
-### Internal AI tools for GTM — Current work
+### AI GTM platform — Built from scratch
 
-Builds internal AI tools for Builder's GTM team and owns the work from prototype
-through live testing. Internal names, data, mechanics, and metrics are not
-public claims.
+Ahmed built Builder.io's internal AI GTM platform from scratch. All sales reps
+use it daily; SDRs and marketing also use it to research accounts, find leads,
+prioritize work, and act on findings.
+
+- An agent generates sales territories from prompts, configurable ICP criteria,
+  or existing templates, enriches companies, and finds contacts matching target
+  personas. Teams run it quarterly or when new reps join.
+- HubSpot and product analytics help teams refine ICP criteria with an agent.
+  Signals include platform engagement, credit consumption, and connected
+  codebases. A GitHub organization URL is one example of enterprise intent.
+- Enrichment integrates Exa, Parallel AI, Clay, Similarweb, and Apollo.
+- Rep dashboards surface assigned accounts and prioritized signals. A first
+  login from a target account triggers contact enrichment; champions, power
+  users, and executives inform priority. Reps can initiate email or sequencing
+  from a signal with one click.
+- Dobby is an inbound agent within the platform that operates in Slack,
+  enriches incoming leads, and triages them for qualification, recycling,
+  nurturing, bot filtering, or partnerships. After extensive tuning of its
+  triage and wording, it automatically sends emails through HubSpot sequences.
+- Ahmed uses Claude Code and Cursor daily to build and iterate on GTM tools.
+
+These are Ahmed's own published account. Adoption is self-reported; no lead
+counts, revenue impact, or time savings are claimed. Customer data and private
+implementation details remain excluded.
+
+Public source: https://paprikaf.com/resume#resume-work-title
 
 ### Agent Native — Contributor
 

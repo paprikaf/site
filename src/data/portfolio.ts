@@ -58,11 +58,11 @@ export const projects: Project[] = [
     ownership: 'Current work',
     facets: ['building'],
     organization: 'Builder.io',
-    title: 'Internal AI tools for GTM',
+    title: 'AI GTM platform',
     summary:
-      'I build internal AI tools for Builder’s GTM team and own the work from prototype through live testing.',
-    tags: ['Applied AI', 'Internal tools', 'Live testing'],
-    links: [],
+      'I built Builder’s internal AI GTM platform from scratch. All sales reps use it daily, alongside SDRs and marketing, for ICP and territory generation, account and contact enrichment, prioritized product signals, and outbound actions. Dobby handles inbound enrichment, triage, and automated HubSpot sequences from Slack.',
+    tags: ['HubSpot', 'Clay + enrichment', 'AI agents', 'Sales workflows'],
+    links: [{ label: 'Read the GTM work', href: '/resume#resume-work-title' }],
   },
   {
     id: 'agent-native',
@@ -158,7 +158,7 @@ export const experience: Experience[] = [
       'GTM Engineer',
     ],
     summary:
-      'Worked directly with customers, built Builder Academy and the first production Builder CMS MCP server, and now build internal AI tools for GTM.',
+      'Built an internal AI GTM platform from scratch, used daily by all sales reps and also by SDRs and marketing. Earlier work included customer engineering, partner enablement, Builder Academy, and the first production Builder CMS MCP server.',
   },
   {
     company: 'Appnovation',

@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-27.8",
-  "reviewedAt": "2026-09-29",
+  "version": "2026-10-26.1",
+  "reviewedAt": "2026-10-26",
   "claims": [
     {
       "id": "builder-academy-built",
@@ -97,25 +97,242 @@
     {
       "id": "builder-internal-ai-gtm",
       "projectId": "operational-ai",
-      "title": "Internal AI tools for GTM",
+      "title": "AI GTM platform",
       "organization": "Builder.io",
-      "claim": "Ahmed builds internal AI tools for Builder's GTM team and owns the work from prototype through live testing.",
+      "claim": "Ahmed built Builder.io's internal AI GTM platform from scratch. All sales reps use it daily; SDRs and marketing also use it to research accounts, find leads, prioritize work, and act on findings.",
       "ownership": "current-work",
-      "capabilities": ["applied-ai", "gtm", "prototyping", "live-testing"],
+      "capabilities": [
+        "applied-ai",
+        "gtm",
+        "zero-to-one",
+        "product-engineering",
+        "sales-enablement",
+        "live-testing"
+      ],
       "status": "current",
       "sources": [
         {
-          "id": "ahmed-public-portfolio",
-          "label": "Ahmed's public portfolio",
-          "url": "https://paprikaf.com/#work",
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
           "provenance": "ahmed-published-claim"
         }
       ],
       "caveats": [
-        "Internal names, customer data, implementation mechanics, and metrics are not public claims."
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
       ],
       "public": true,
-      "reviewedAt": "2026-08-27"
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-gtm-territory-generation",
+      "projectId": "operational-ai",
+      "title": "AI territory generation + enrichment",
+      "organization": "Builder.io",
+      "claim": "Ahmed built an agent workflow that generates sales territories from prompts, configurable ICP criteria, or existing templates, enriches companies, and finds contacts matching target personas. Teams run it quarterly or when new reps join.",
+      "ownership": "built",
+      "capabilities": [
+        "gtm",
+        "territory-generation",
+        "icp",
+        "lead-generation",
+        "enrichment",
+        "agent-tooling"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-gtm-icp-product-data",
+      "projectId": "operational-ai",
+      "title": "HubSpot + product analytics",
+      "organization": "Builder.io",
+      "claim": "Ahmed connected HubSpot and product data so teams can refine ICP criteria with an agent. Signals include Builder platform engagement, credit consumption, and connected codebases; a GitHub organization URL is one example of an enterprise-intent signal.",
+      "ownership": "built",
+      "capabilities": [
+        "gtm",
+        "hubspot",
+        "crm-integrations",
+        "product-analytics",
+        "icp",
+        "intent-signals"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-gtm-enrichment-stack",
+      "projectId": "operational-ai",
+      "title": "Account + contact enrichment",
+      "organization": "Builder.io",
+      "claim": "Ahmed integrated Exa, Parallel AI, Clay, Similarweb, and Apollo for account and contact enrichment in the Builder GTM platform.",
+      "ownership": "built",
+      "capabilities": [
+        "gtm",
+        "enrichment",
+        "exa",
+        "parallel-ai",
+        "clay",
+        "similarweb",
+        "apollo",
+        "integrations"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-gtm-signals-outbound",
+      "projectId": "operational-ai",
+      "title": "Account signals + outbound workflows",
+      "organization": "Builder.io",
+      "claim": "Ahmed built dashboards where reps see their assigned accounts and prioritized signals, then initiate email or sequencing with one click. First logins from target accounts trigger contact enrichment; champions, power users, and executives inform priority.",
+      "ownership": "built",
+      "capabilities": [
+        "gtm",
+        "sales-enablement",
+        "intent-signals",
+        "outbound",
+        "email-sequencing",
+        "enrichment"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-dobby-inbound-triage",
+      "projectId": "operational-ai",
+      "title": "Dobby — automated inbound agent",
+      "organization": "Builder.io",
+      "claim": "Ahmed built Dobby, an inbound agent within Builder's GTM platform that operates in Slack, enriches incoming leads, and triages them for qualification, recycling, nurturing, bot filtering, or partnerships.",
+      "ownership": "built",
+      "capabilities": [
+        "gtm",
+        "applied-ai",
+        "slack",
+        "inbound",
+        "lead-qualification",
+        "enrichment"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-dobby-hubspot-sequences",
+      "projectId": "operational-ai",
+      "title": "Dobby — automated HubSpot follow-up",
+      "organization": "Builder.io",
+      "claim": "After extensive tuning of its triage and wording, Dobby automatically sends the appropriate emails through HubSpot sequences.",
+      "ownership": "built",
+      "capabilities": [
+        "gtm",
+        "hubspot",
+        "inbound",
+        "email-sequencing",
+        "agent-tuning",
+        "automation"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
+    },
+    {
+      "id": "builder-gtm-ai-assisted-delivery",
+      "projectId": "operational-ai",
+      "title": "AI-assisted GTM engineering",
+      "organization": "Builder.io",
+      "claim": "Ahmed uses Claude Code and Cursor daily to build and iterate on internal GTM tools.",
+      "ownership": "current-work",
+      "capabilities": [
+        "gtm",
+        "claude-code",
+        "cursor",
+        "ai-assisted-development"
+      ],
+      "status": "current",
+      "sources": [
+        {
+          "id": "ahmed-public-resume",
+          "label": "Ahmed's public résumé",
+          "url": "https://paprikaf.com/resume",
+          "provenance": "ahmed-published-claim"
+        }
+      ],
+      "caveats": [
+        "Self-reported work and adoption; no lead counts, revenue impact, or time savings are claimed."
+      ],
+      "public": true,
+      "reviewedAt": "2026-10-26"
     },
     {
       "id": "agent-native-contributions",

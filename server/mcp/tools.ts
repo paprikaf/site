@@ -276,10 +276,9 @@ function runGetProfile(): ToolResult {
   const body = [
     '# Ahmed Felfel',
     '',
-    'Product engineer in Montréal who builds products from scratch. Currently a ' +
-      'GTM Engineer at Builder.io, where he has worked as a Customer Engineer ' +
-      'and in partner enablement. He has built learning software, developer ' +
-      'tools, and internal AI systems.',
+    'GTM Engineer and product engineer in Montréal. Built Builder.io’s AI GTM ' +
+      'platform from scratch. Earlier roles included customer engineering and ' +
+      'partner enablement; other work covers learning products and developer tools.',
     '',
     `Site: ${SITE_URL} · Résumé: ${SITE_URL}/resume · Contact: ahmed@galite.ai`,
     `Evidence set ${meta.version}, last reviewed ${meta.reviewedAt}.`,
@@ -289,7 +288,13 @@ function runGetProfile(): ToolResult {
     ...artifacts.map((project) =>
       [
         `- **${project.title}** (${project.projectId}) — ${project.organization}`,
-        `  ${project.ownership}, ${project.status} · ${project.capabilities.join(', ')}`,
+        `  ${project.ownership}, ${project.status} · ${project.capabilities
+          .slice(0, 6)
+          .join(', ')}${
+          project.capabilities.length > 6
+            ? ` · +${project.capabilities.length - 6} more via get_project`
+            : ''
+        }`,
         project.links.length === 0
           ? '  no public link (internal system)'
           : `  ${project.links

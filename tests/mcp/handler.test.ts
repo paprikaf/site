@@ -480,7 +480,7 @@ describe('ChatGPT compatibility', () => {
   });
 
   it('returns an empty result set rather than an error for a miss', async () => {
-    const result = await callTool('search', { query: 'zzzzqqq nothing here' });
+    const result = await callTool('search', { query: 'zzzzqqq qqqxxxnnn' });
 
     expect(result.isError).toBeUndefined();
     expect(
