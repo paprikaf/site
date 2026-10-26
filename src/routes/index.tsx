@@ -57,6 +57,14 @@ function IndexComponent() {
             <a className="button-link button-link--primary" href="#work">
               View my work <ArrowDownRight aria-hidden="true" />
             </a>
+            <a
+              className="text-link"
+              href={publicLinks.calendar}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Book a call <ArrowUpRight aria-hidden="true" />
+            </a>
             <Link className="text-link" to="/resume">
               View résumé <ArrowUpRight aria-hidden="true" />
             </Link>

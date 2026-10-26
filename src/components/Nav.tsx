@@ -56,8 +56,13 @@ export function Nav() {
             Experience
           </a>
           <Link to="/resume">Résumé</Link>
-          <a className="site-nav__contact" href={publicLinks.email}>
-            Contact <ArrowUpRight aria-hidden="true" />
+          <a
+            className="site-nav__contact"
+            href={publicLinks.calendar}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Book a call <ArrowUpRight aria-hidden="true" />
           </a>
         </div>
 
@@ -91,8 +96,13 @@ export function Nav() {
         <Link to="/resume" onClick={closeMenu}>
           Résumé
         </Link>
-        <a href={publicLinks.email} onClick={closeMenu}>
-          Contact <ArrowUpRight aria-hidden="true" />
+        <a
+          href={publicLinks.calendar}
+          target="_blank"
+          rel="noreferrer"
+          onClick={closeMenu}
+        >
+          Book a call <ArrowUpRight aria-hidden="true" />
         </a>
       </div>
     </nav>
