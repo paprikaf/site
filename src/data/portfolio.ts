@@ -204,6 +204,7 @@ export const expertise = [
 
 export const publicLinks = {
   email: 'mailto:ahmed@galite.ai',
+  calendar: 'https://calendar.agent-native.com/book/ahmed-2/chat-with-ahmed',
   github: 'https://github.com/paprikaf',
   linkedin: 'https://www.linkedin.com/in/ahmed-felfel-080895/',
   // A playlist from my record collection, shared from Crate. The embed is

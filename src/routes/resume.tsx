@@ -68,6 +68,9 @@ function ResumeComponent() {
         <a href={publicLinks.email}>
           ahmed@galite.ai <ArrowUpRight aria-hidden="true" />
         </a>
+        <a href={publicLinks.calendar} target="_blank" rel="noreferrer">
+          Book a call <ArrowUpRight aria-hidden="true" />
+        </a>
         <a href={publicLinks.linkedin} target="_blank" rel="noreferrer">
           LinkedIn <ArrowUpRight aria-hidden="true" />
         </a>
